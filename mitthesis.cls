@@ -500,11 +500,11 @@ requirements for the \@degreeword\ of \\
 % The \kern0pt pushes any depth into the height.  Thanks to Richard Stone.
 \def\endtitlepage{\par\kern 0pt\egroup\vss\egroup\newpage}
 
-\def\MIT{MASSACHUSETTS INSTITUTE OF TECHNOLOGY}
-\def\Mit{Massachusetts Institute of Technology}
+\def\MIT{UNIVERSIDAD NACIONAL DEL ESTE}
+\def\Mit{Universidad Nacional del Este}
 
 \def\permission{\par\noindent{\centering
-   The author hereby grants to MIT permission to reproduce and
+   The author hereby grants to UNE permission to reproduce and
    distribute publicly paper and electronic copies of this thesis
    document in whole or in part.}\par}
 
