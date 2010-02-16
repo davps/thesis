@@ -1,3 +1,33 @@
 \section{Classes}
 
+%%TODO: cite adobe book
 %\input{chapters/ch-oop/classes-definitions}
+A class is an abstract representation of an object. 
+A class stores information about the types of data 
+that an object can hold and the behaviors that an 
+object can exhibit.
+
+\subsection{Methods}
+Methods are functions that are part of a class 
+definition. Once an instance of the class is created, 
+a method is bound to that instance.
+
+	\subsubsection{Get and set accessor methods}
+	Get and set accessor functions, also called getters 
+	and setters, allow you to adhere to the programming principles of 
+	information hiding and encapsulation while providing an 
+	easy-to-use programming interface for the classes that you 
+	create. Get and set functions allow you to keep your class 
+	properties private to the class, but allow users of your class 
+	to access those properties as if they were accessing a 
+	class variable instead of calling a class method. 
+	The advantage of this approach is that you can avoid 
+	having two public-facing functions for each property 
+	that allows both read and write access.
+	
+	\subsubsection{Constructor methods}
+	Constructor methods, sometimes simply called constructors, 
+	are functions that share the same name as the class in 
+	which they are defined. Any code that you include in 
+	a constructor method is executed whenever an instance of the 
+	class is created with the  new  keyword.
