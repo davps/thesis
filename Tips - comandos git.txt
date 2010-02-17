@@ -1,0 +1,36 @@
+-crear una nueva carpeta
+ mkdir CARPETA
+
+-cd CARPETA	
+ ingresa a la carpeta creada
+
+-pwd
+ muestra la ruta del directorio actual
+
+-ls
+ lista de los archivos contenidos en el directorio actual
+
+-git init
+ inicializa un nuevo repositorio git
+
+-touch README
+ no se bien que hace pero parece importante, buscar luego
+
+-git add README
+ agrega el archivo README al repositorio
+
+-git commit -m 'first commit'
+ le agrega esta palabra al archivo commettido
+
+-git remote add origin git@github.com:david5/TFG.git
+ le cuenta cual es el origen del repo git
+
+-git push origin master
+ esto hace que se sincronice el escritorio con la carpeta
+ del servidor git. actualiza el server git.
+
+-git pull
+ sincroniza los archivos contenidos en el cliente con los
+ que estan en el servidor
+
+
