@@ -1,0 +1,244 @@
+\documentclass[conference,twocolumn]{IEEEtran}
+
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+
+\title{Trabajo Final de Grado  David Danie P\'erez Sosa}
+
+\title{
+	Modelado completo de objetos y servicios de comunicaci\'on del regulador de velocidad necesarios para la automatizaci\'on de una unidad generadora t\'ipica de Itaipu implementando la norma IEC 61850
+}
+
+\author{
+              \IEEEauthorblockN{David Daniel P\'erez Sosa}
+              \IEEEauthorblockA{
+                                               Ingenier\'ia Electrica\\Facultad Polit\'ecnica
+                                               \\Universidad Nacional del Este
+                                               \\Campus Universitario, Km. 8, lado Acaray
+                                                \\Email: contact@david5.com
+                                             }
+}
+
+\IEEEspecialpapernotice{(Propuesta de investigaci\'on)}
+
+
+% make the title area
+\maketitle
+
+
+%%\begin{abstract}
+%\boldmath
+%%	The abstract goes here. 
+%%\end{abstract}
+
+
+\IEEEpeerreviewmaketitle
+
+
+
+
+
+
+
+\section{Introducci\'on}
+
+La energ\'ia en todo el mundo mueve por lo menos 7 billones de d\'olares anuales, y es un negocio en expansi\'on. Por ello, la energ\'ia afecta profundamente nuestra econom\'ia, sociedad y entorno \cite{Dukert2009}, debido a esto, existe una constante investigaci\'on, y han surgido nuevas tecnolog\'ias y est\'andares en los sistemas de potencia, en \'areas como la automatizaci\'on y tratamiento de la informaci\'on, por dar unos ejemplos, con el objetivo de mejorar el performance y la seguridad en el sistema de potencia, a trav\'es de redes inteligentes (Smart Grids).\\
+
+En los \'ultimos a\~nos, la automatizaci\'on de sistemas de potencia en todo el mundo utiliza ampliamente dispositivos basados en uno o varios microprocesadores \cite{Santoso2000, Schwarz2000} integrados llamados Intelligent Electronic Devices (IEDs)  que utilizan tecnolog\'ias de redes de comunicaci\'on con el objetivo de enviar o recibir informaci\'on de o para varias fuentes con el objetivo de monitorear, controlar, y supervisar la generaci\'on, transmisi\'on y distribuci\'on de la energ\'ia \cite{McDonald2007, IEEE1997, Schwarz2008}.\\
+
+El intercambio de informaci\'on entre IEDs de diferentes fabricantes se ha vuelto muy complejo, costoso, y a veces imposible, es por ello que la industria se ha puesto de acuerdo para adoptar el est\'andar IEC 61850 y as\'i conseguir interoperabilidad, confiabilidad y mayor calidad en el intercambio de informaci\'on dentro del Sistema de Gerenciamiento de Energ\'ia (EMS-Energy Management System). \\
+
+La norma IEC 61850 ``Comunication Networks and Systems in Substations" provee un perfecto soporte para una interoperabilidad sustentable entre IEDs: modelado de la informaci\'on, m\'etodos para intercambio de la informaci\'on, mapeo a protocolos de comunicaci\'on, y un lenguaje de configuraci\'on de subestaciones (SCL) para sistemas el\'ectricos de energ\'ia (Generaci\'on, Transmisi\'on y Distribuci\'on para alta, media y baja tensi\'on) \cite{Schwarz2008}. \\
+
+La norma IEC 61850, en la actualidad, no se enfoca \'unicamente a subestaciones, tambi\'en es aplicable y extensible para satisfacer las necesidades de casi la totalidad de la cadena de suministro de energ\'ia, entre los cuales destacamos la protecci\'on de l\'ineas de transmisi\'on, plantas de energ\'ia e\'olica, distribuci\'on de energ\'ia y centrales hidroel\'ectricas, sistemas fotovoltaicos y coches el\'ectricos \cite{Schwarz2005, DER2009, German2009}. \\
+
+El modelado jer\'arquico de la informaci\'on a trav\'es de nodos l\'ogicos es una cuesti\'on clave. La agrupaci\'on correcta de los nodos l\'ogicos representan funciones o equipos utilizados en los sistemas de potencia. Cada nodo l\'ogico provee una lista de informaci\'on bien designada y organizada. Los objetos y servicios definidos en la parte IEC 61850-7-2 de la norma permiten el intercambio de esta informaci\'on \cite{TC572004}.\\
+
+En julio del 2007 las extensiones de los nodos l\'ogicos a centrales hidroel\'ectricas han sido aprobadas, publicadas y est\'an listas para su uso, en el apartado IEC 61850-7-4-10: \emph{Hydroelectric Power Plants - Communication for monitoring and control}; agregando 60 nodos l\'ogicos y 350 \emph{Data Objects} a la serie IEC 61850 \cite{IEC61850TC57, Schwarz2008b}.\\
+
+Este trabajo consiste en la aplicaci\'on de la norma IEC 61850, en especial del modelado de nodos l\'ogicos definidos en la parte 7-4-10 Hydro Power Plants y de los objetos y servicios de comunicaci\'on para la automatizaci\'on de una unidad generadora t\'ipica de Itaipu, y proponer al TC57 (International Electrotechnical Commission, Technical Committee 57) la complementaci\'on o extensi\'on de nodos l\'ogicos de la norma que actualmente son insuficientes para las unidades generadoras de Itaipu. Como estudio de caso, se modelar\'an los nodos l\'ogicos y servicios de comunicaci\'on necesarios para el regulador de velocidad de la unidad generadora. Este trabajo de investigaci\'on se basa en el \'item del documento ``Proposta de Temas para Monografias de Especializa\c c\~ao - Automa\c c\~ao, Controle e Supervis\~ao do Processo el\'etrico Baseado na Norma  IEC 61850 -  A-4 - Automa\c c\~ao de Unidades Geradoras - Modelagem Completa da Unidade Geradora" de la Itaipu Binacional, redactado por Marcos Fonseca Mendes, Antonio Sertich Koehler, Ladislao Aranda Arriola, funcionarios de la Itaipu Binacional. 
+
+
+
+
+
+
+
+
+
+\section{Objetivos}
+	% no \IEEEPARstart
+
+	\subsection{Generales}
+		Definir modelos y proveer servicios de intercambio de informaci\'on espec\'ificos entre IEDs conformes a la norma IEC 61850 para funciones de automatizaci\'on del regulador de velocidad de una unidad generadora t\'ipica de Itaipu.
+		%%Analizar la adecuaci\'on, modelado de nodos l\'ogicos, e identificaci\'on de servicios de la norma IEC 61850 	necesarios para el regulador de velocidad de una unidad generadora t\'ipica de Itaipu.
+
+	\subsection{Espec\'ificos}
+		\begin{enumerate}
+			\item Implementar los nodos l\'ogicos del apartado IEC 61850-7-4-10 necesarios para las funciones de automatizaci\'on del regulador de velocidad.
+			\item Identificar los servicios de comunicaci\'on del apartado IEC 61850-7-2 necesarios para el regulador de velocidad.
+			\item Definir las funciones de automatizaci\'on requeridas por el regulador de velocidad y los nodos l\'ogicos que las componen.
+			\item Implementar los nodos l\'ogicos, servicios de comunicaci\'on, y sus relaciones, considerando la herencia de objetos y sus ubicaciones centralizadas y/o distribuidas en la red de automatizaci\'on mediante herramientas de ingenier\'ia.
+			\item Proponer la extensi\'on/complementaci\'on de nodos l\'ogicos y Descripci\'ones de Configuraci\'on de IEDs (ICDs) si fueren necesarios para un generador t\'ipico de Itaip\'u.
+			\\
+		\end{enumerate}
+
+
+
+
+
+
+
+
+\section{Plan de trabajo y cronograma de ejecuci\'on}
+
+A continuaci\'on se expone el plan de trabajo para la aplicaci\'on de la norma IEC 61850 en el regulador de velocidad de una unidad generadora t\'ipica de Itaipu.
+Parte de esta metodolog\'ia se extrajo de una tesis doctoral y paper sobre modelado de objetos en hidroel\'ectricas \cite{Villacorta2002,VillacortaB}.
+
+
+	\subsection{Agosto del 2009}
+		\emph{Paradigma de programaci\'on orientada a objetos:}
+			Clases, m\'etodos, atributos. 
+			Objeto. 
+			Instanciaci\'on.
+			Herencia. 
+			Abstracci\'on. 
+			Encapsulaci\'on. 
+			Polimorfismo. 
+			Interfaces. 
+			Recursividad. 
+			Tipos de datos.
+	\subsection{Septiembre del 2009}
+		\emph{Unified Modeling Language - UML}:
+			Diagrama de clases. 
+			Representaci\'on de objetos mediante UML.
+	\subsection{Octubre del 2009}
+		\emph{XML - Extensible Markup Language}:
+			Lenguajes de marcaci\'on.
+			XML.
+			DTD (\emph{Document Type Definition}).
+			XSD (\emph{XML Schema Definition})
+	\subsection{Noviembre del 2009}
+		\subsubsection{An\'alisis de los conceptos de la automatizaci\'on de Sistemas El\'ectricos de Potencia}
+			Sistema de automatizaci\'on de hidroel\'ectricas, en especial de una unidad generadora. 
+			Topolog\'ia de red del sistema de automatizaci\'on. 
+			Funciones del sistema de automatizaci\'on de una unidad generadora: comando, adquisici\'on de datos, protecciones, supervisi\'on, alarmas, secuencia de eventos, enclavamientos y bloqueos.
+		\subsubsection{Identificaci\'on de las comunicaciones en el Sistema de Automatizaci\'on El\'ectrico}
+			Redes de \'area local.
+			Tecnolog\'ias de red, en especial las implementaciones de la norma IEEE 802.3. 
+			Jerarqu\'ias de protocolos.
+			Servicios: Connection-Oriented y Connectionless.
+			Relaciones entre servicios y protocolos.
+			Modelo de referencia \emph{Open System Interconnection} (OSI). 
+			Medios de transmisi\'on de informaci\'on. 
+			Control, flujo, correcci\'on y detecci\'on de errores. 
+			Algoritmos de enrutamiento: broadcast y multicast.
+			Arquitecturas cliente-servidor, \emph{peer-to-peer}.
+	\subsection{Diciembre del 2009 y enero del 2010}	
+		\emph{Lectura e interpretaci\'on de la norma IEC  61850}: Incluyendo las partes 1, 2, 4 (solo la sub parte 5), 6, 7-1, 7-2, 7-3, 7-4, 8-1.
+	\subsection{Febrero del 2010}
+			{Desglosar la arquitectura, los elementos y modelos de comunicaci\'on de un Sistema de Automatizaci\'on de Usinas}
+	\subsection{Marzo del 2010}
+		\emph{Conocer el funcionamiento y clasificar las funcionalidades  generales necesarias en el sistema de automatizaci\'on de un regulador de velocidad}: Comandos, adquisici\'on de datos, protecciones, supervisi\'on, alarmas, secuencia de eventos, enclavamientos, secuencias autom\'aticas, controles de velocidad, sincronizaci\'on, informes, valores hidroenerg\'eticos, entre otros.
+	\subsection{Abril del 2010}
+		\emph{Estudio del funcionamiento y caracter\'isticas particulares del regulador de velocidad de una unidad generadora t\'ipica de Itaipu}: Identificaci\'on de las funciones de automatizaci\'on con ayuda de especialistas de la m\'aquina. Desglosar cada funci\'on de automatizaci\'on en los nodos l\'ogicos correspondientes.
+	\subsection{Mayo del 2010}
+		Breve estudio de la arquitectura de red necesaria para la automatizaci\'on del regulador de velocidad implementando la norma IEC 61850.
+	\subsection{Junio y Julio del 2010}
+		Modelado de los nodos l\'ogicos normalizados del apartado IEC 61850-7-4-10 \emph{Hydro Power Plants} utilizando herramientas de ingenier\'ia disponibles en el mercado.
+	\subsection{Agosto a Septiembre del 2010}
+		Identificaci\'on y modelado de los servicios de comunicaci\'on necesarios para el regulador de velocidad. Apartado 7-2 de la norma IEC 61850
+	\subsection{Octubre a Diciembre del 2010}
+			Validaci\'on y correcci\'on de errores del trabajo mediante simulaci\'on por software en una red IEC 61850 y posterior revisi\'on por pares.
+
+
+
+
+
+\section{Materiales y m\'etodos}
+	\paragraph{Investigaci\'on bibliogr\'afica} 
+		Incluye la investigaci\'on y estudio de la norma IEC 61850, en especial las definiciones de modelos de informaci\'on definidos en la parte IEC 61850-7-4-10 \emph{Basic communication structure for substation and feeder equipment – Compatible logical node classes and data classes - Hydro Power Plants}, los servicios de intercambio de informaci\'on para diferentes funciones (por ejemplo, control, reporte, \emph{getters} y \emph{setters}) definidos en el apartado IEC 61850-7-2 \emph{Basic communication structure for substation and feeder equipment – Abstract communication service interface (ACSI)}, la implementaci\'on de dichos servicios de comunicaci\'on a trav\'es de protocolos especificados en la parte IEC 61850-8-1 \emph{Specific Communication Service Mapping (SCSM) – Mappings to MMS (ISO 9506-1 and ISO 9506-2) and to ISO/IEC 8802-3} para las necesidades de la unidad generadora, y otros documentos, normas, y tecnolog\'ias relacionadas.
+	\paragraph{Investigaci\'on de campo}
+		Incluye el levantamiento de informaciones del generador de Itaip\'u, la identificaci\'on de las funciones de automatizaci\'on inherentes regulador de velocidad de la unidad generadora y otras documentaciones y estad\'isticas relacionadas al caso en estudio. Tambi\'en incluye la simulaci\'on en una red IEC 61850 utilizando las herramientas de ingenier\'ia disponibles en el mercado para tal efecto.
+	\paragraph{Creaci\'on de los objetos}
+		Dise\~no de los nodos l\'ogicos normalizados en la parte IEC 61850-7-4, e IEC 61850-7-4-10 mediante UML, implementaciones en Java, C++, o mediante las herramientas de ingenier\'ia especializadas en la norma IEC 61850 disponibles en el mercado.
+	\paragraph{Identificaci\'on de servicios de informaci\'on}
+		Modelado completo de los servicios de comunicaci\'on necesarios para el regulador de velocidad de una unidad generadora t\'ipica de Itaipu utilizando la parte IEC 61850-7-2.
+	\paragraph{Propuesta de extensi\'on/complementaci\'on de los nodos l\'ogicos e ICDs}
+		Por ejemplo, ZAXN, insuficiente para la alimentaci\'on AC y DC de los servicios auxiliares de Itaipu.
+	\paragraph{Estructuraci\'on de una metodolog\'ia de aplicaci\'on de la norma IEC 61850 en la automatizaci\'on de hidroel\'ectricas}
+		Elecci\'on de las herramientas de ingenier\'ia disponibles en el mercado y que mejor se adapten a la automatizaci\'on de unidades generadoras aplicando la norma IEC 61850 y la creaci\'on de procedimientos padronizados utilizando dichas herramientas, para satisfacer los requerimientos de ingenier\'ia definidos en el apartado IEC 61850-4 subsecci\'on 3, y para identificar las funciones de automatizaci\'on que son necesarias para el modelado de los nodos l\'ogicos, pero no est\'an contempladas en la norma IEC 61850.
+
+
+
+
+
+
+
+\section {Resultados esperados}
+Modelar completamente la automatizaci\'on del regulador de velocidad de una unidad generadora t\'ipica de Itaipu. Proponer la extensi\'on/complementaci\'on de los nodos l\'ogicos e ICDs, modelar completamente los objetos y servicios de comunicaci\'on necesarios para el regulador de velocidad.
+
+
+
+
+
+
+
+
+
+\begin{thebibliography}{1}
+
+	\bibitem{Dukert2009}
+		Dukert, Joseph M., \emph{Energy}, Greenwood Publishing Group, 2009, pp. 12
+
+	\bibitem{Santoso2000}
+	 	Santoso, S.; Lamoree, J.; Grady, W.M.; Powers, E.J.; Bhatt, \emph{S.C. A Scalable PQ Events Identification System. IEEE Transactions on Power Delivery}, Volume 15, Issue 2, Apr 2000 Pages:738 - 743, No.2.
+
+	\bibitem{Schwarz2000}
+		Schwarz, K., \emph{Micro-controller vs. Sub-Credit card size PC}, 
+	         NettedAutomation GmbH Information \& Communication Systems (NAICS), Sep. 07, 2000, [Online, HTML]
+    	         http://bit.ly/6DilU5
+	        [Accedido, Octubre 10, 2009].
+                   
+	\bibitem{McDonald2007}
+		McDonald, J. D., Ed., \emph{Electric Power Substations Engineering}, 2nd ed. Florida, Taylor \& Francis Group, 2007, pp. 100-101
+
+	\bibitem{IEEE1997}
+		Institute of Electrical and Electronics Engineers, \emph{An Enhanced Version of the IEEE Standard Dictionary of Electrical and Electronics Terms}, IEEE Std. 100, IEEE, Piscataway, NJ, 1997 [CD-ROM].
+
+	\bibitem{Schwarz2008}
+		Schwarz, K., \emph{What is IEC 61850 - one page overview}, NettedAutomation GmbH Information \& Communication Systems (NAICS), Sep. 12,  2008, [Online, PDF] http://bit.ly/88SzPC, [Accedido, Octubre 10, 2009].
+
+	\bibitem{Schwarz2005}
+		Schwarz, K., \emph{IEC 61850 Also Outside the Substation for the Whole Electrical Power System}, presented at 15th Power Systems Computation Conference PSCC, Liège, Belgium, Invited session, Agosto 22-26, 2005,  [Online, PDF]  	http://bit.ly/4MNDFb, [Accedido, Octubre 10, 2009].
+
+	\bibitem{DER2009}
+	 	\emph{Distributed Power Generation or Distributed Energy Resources (DER)}, [Online, HTML]  http://www.dispowergen.com, [Accedido, Noviembre 1, 2009].
+
+	\bibitem{German2009}
+		 German Section of the International Solar Energy Society, \emph{Smart Grid Vehicle… Putting IEC 61850-7-420 on wheels - SVG}, Deutshe Geselischaft für Sonnenenergie e.V. [Online, HTML] http://www.smartgridvehicle.org,  [Accedido, Noviembre 1, 2009].
+
+	\bibitem{TC572004}
+		International Electrotechnical Commission Technical Committee - IEC TC 57, \emph{IEC 61850 - Communication networks and systems in substations - Informative tutorial on the object models}, Version 1.1, Marzo 22, 2004, [E-Book]. Disponible: 		Nettedautomation
+
+	\bibitem{IEC61850TC57}
+		International Electrotechnical Commission, \emph{IEC 61850-7-4-10 International Standard - Communication networks and systems for power utility automation – Part 7-410: Hydroelectric power plants – Communication for monitoring and control – Edition 		1.0 2007-08 - Preview}, International Electrotechnical Commission, Agosto, 2007, [Online, PDF] http://bit.ly/7GW3f5, [Accedido, Octubre 10, 2009].
+
+	\bibitem{Schwarz2008b}
+		Schwarz, K., \emph{Future of IEC 61850 and IEC 61400-25 - IEC 61850-x-y: Communication networks and systems for power utility automation}, presentado en la conferencia “FGH Weiterentwicklung und Pflege der Normenreihen IEC 61850 und IEC 	61400-25 FGH Fachtagung IEC 61850, Heidelberg”, 12.-13. Junio 2008  [Online, PDF]  http://bit.ly/6VZ8aZ, [Accedido, Noviembre 1, 2009].
+
+	\bibitem{Villacorta2002}
+		Villacorta, A., \emph{Automaçao de Usinas Hidroel\'etricas. Aplicação do Padrão UCA – Utility Communication Architecture}, Ph.D. thesis, Universidade de São Paulo, São Paulo, Brasil, 2002.
+
+	\bibitem{VillacortaB}
+		Villacorta, C. A., Jardini, J.A., Magrini, L.C., \emph{Appling Object-Oriented Technology to project Hydroelectric Power Plant SCADA Systems}.
+
+\end{thebibliography}
+
+
+
+
+% fin del documento
+\end{document}
