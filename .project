@@ -20,5 +20,10 @@
 			<type>1</type>
 			<location>C:/Program Files/MiKTeX 2.8/bibtex/bib/ieeetran/IEEEabrv.bib</location>
 		</link>
+		<link>
+			<name>chapters/.tex</name>
+			<type>1</type>
+			<location>C:/Program Files/MiKTeX 2.8/tex/latex/tools/.tex</location>
+		</link>
 	</linkedResources>
 </projectDescription>
