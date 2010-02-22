@@ -1,0 +1,44 @@
+-------------------------------------------------------
+Debo organizar los capítulos de la siguiente manera:
+-------------------------------------------------------
+Capítulo 1 - 	hacer una revisión de la tesis
+
+Capítulo   -	hablar sobre programación orientada 
+		a objetos
+		demasiado bien va a caer comenzar con
+		este capítulo, dado que mi tema trata
+		mucho sobre POO.
+
+Capítulo	hablar sobre la automatización de usinas
+		(basado en la tesis brasilera)
+
+Capítulo  - 	hablar sobre subestaciones, lo básico 
+		para poder entender la norma. 
+
+Capítulo  - 	hablar sobre redes, de absolutamente todos
+		los conceptos necesarios.
+
+Capítulo  - 	hablar sobre POO, UML y XML: 
+		todo lo necesario
+
+Capítulo  -	se puede estandarizar a UML las notaciones
+		y explicaciones de arquitecturas que
+		explica la norma
+
+Capítulo  -	hablar sobre la turbina itaipú
+
+Capítulo  -	hablar sobre la norma en si.
+		(esto se puede subdividir otra vez
+		en más capítulos especializados si es
+		necesario)
+
+Capítulo  - 	se puede hablar sobre las funciones 
+		de automatización aplicadas a la turbina
+
+y en los siguientes capítulos... veremos después....
+
+-------------------------------------------------------
+Posibles cosas que agregar
+-------------------------------------------------------
+Implementar los servicios MMS.
+
