@@ -33,4 +33,5 @@
  sincroniza los archivos contenidos en el cliente con los
  que estan en el servidor
 
-
+-git clone git@github.com:david5/TFG.git
+ clona en el disco duro (desde cero) un proyecto existente en github.
