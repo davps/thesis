@@ -1,5 +1,4 @@
 %!TEX TS-program = xelatex 
-%!TEX TS-options = -synctex=1 -output-driver="xdvipdfmx -q -E"
 %!TEX encoding = UTF-8 Unicode
 %
 %  my_title
@@ -41,6 +40,18 @@
 %\pagestyle{drafthead}
 
 
+%%package for TODO lists, comments, annotations on pdf, with colors
+\usepackage[enable, spanish, colorinlistoftodos]{todonotes}
+%%el comando de abajo hace el trabajo automaticamente identificando si es un
+%%draft
+%\usepackage[obeyDraft]{todonotes}
+%%los posibles COLORES usados para \todo[color=green!40]{test12} son:
+%%green, red, blue!20!white (para mezclar dos colores)
+%%la UBICACION del comentario, en el borde o entre parrafos:
+%%\todo[noline]{A note with no line ...} noline o line o inline
+%%\missingfigure[figwidth=6cm]{Testing a long text string}
+
+
 \usepackage{lgrind}
 
 %% in case I include .eps versions of all figures for those w/o pdftex
@@ -56,6 +67,7 @@
 \usepackage{subfig} % multi-part figures
 \usepackage{pdfpages} % makes it easy to insert all those nsigmapi fits
 
+
 % Feynman diagrams
 \usepackage{feynmp}
 \DeclareGraphicsRule{*}{mps}{*}{}
@@ -63,18 +75,37 @@
 \begin{document}
 
 \include{cover}
+
+%%Agrega la lista de cosas (comentarios) que hay que hacer
+\listoftodos
 \pagestyle{plain}
 \include{contents}
 \begin{fmffile}{feynman-diagrams}
+
+
+\\.
+\\.
+\\.
+\\.
+\todo[inline]{Debo agregar una hoja donde indique que estos cap\'itulos son
+				el marco teorico de la investigaci\'on, dicho comando para
+				agregar la palabra parte A por ejemplo, sin numeraci\'on de 
+				paginas en esta, voy a encontrar en el formato de tesis 
+				de la universidad de washintong basado en la del MIT, 
+				dicho template esta en mis archivos de Google Docs}
 \include{chapters/ch-overview}
 \include{chapters/ch-oop}
 \include{chapters/ch-networks}
+
+
 %\include{ch1-theory}
 %\include{ch2-experiment}
 %\include{ch3-reconstruction}
 %\include{ch4-analysis}
 %\include{ch5-results}
 %\include{ch6-conclusions}
+
+
 \end{fmffile}
  \appendix
  \include{appendices/appa}
