@@ -41,7 +41,7 @@
 
 
 %%package for TODO lists, comments, annotations on pdf, with colors
-\usepackage[enable, spanish, colorinlistoftodos]{todonotes}
+\usepackage[disable, spanish, colorinlistoftodos]{todonotes}
 %%el comando de abajo hace el trabajo automaticamente identificando si es un
 %%draft
 %\usepackage[obeyDraft]{todonotes}
@@ -72,12 +72,17 @@
 \usepackage{feynmp}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
+%paquete para agregar codigo fuente
+%\usepackage{listings}
+
+
+
 \begin{document}
 
 %\include{cover}
 
 \pagestyle{plain}
-%\include{contents}
+\include{contents}
 \begin{fmffile}{feynman-diagrams}
 
 
@@ -94,9 +99,6 @@
 %	paginas en esta, voy a encontrar en el formato de tesis 
 %	de la universidad de washintong basado en la del MIT, 
 %	dicho template esta en mis archivos de Google Docs
-
- 
-
 
 
 
