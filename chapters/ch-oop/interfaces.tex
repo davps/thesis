@@ -1,21 +1,19 @@
-\section{Intefaces}
+\subsection{Intefaces}
 
-%\input{chapters/ch-oop/blah blah blah}
-An interface is a collection of method declarations 
-that allows unrelated objects to communicate with one 
-another. 
+A external interface is a group of 
+methods declarations of a class 
+that allows that serves to comunicate the class
+with other classes and thus between the 
+designer of the class with 
+another classes. The other clases should 
+exist at the moment of the interface definition 
+or could be created in the future 
+\cite[pp.~90-105]{Adobe:AS3man2008} 
+\cite{Snyder:1986}. 
 
-Interfaces are based on the distinction between a 
-method’s interface and its implementation. A method’s interface 
-includes all the information necessary to invoke that 
-method, including the name of the method, all of its 
-parameters, and its return type. A method’s 
-implementation includes not only the interface 
-information, but also the executable statements 
-that carry out the method’s behavior. An 
-interface definition contains only method 
-interfaces, and any class that implements 
-the interface is responsible for defining the 
-method implementations. \cite[pp.~90-105]{Adobe:AS3man2008}  
-%%TODO: falta explicar más, enfocando desde 
-%%el punto de vista de ingeniería de software
+The interface of a class serves 
+to know how to interact with a determined
+behabiour of the object, their input, ouput, 
+and optionally the error handling parameters
+but not knowing how the behavior is implemented.
+
