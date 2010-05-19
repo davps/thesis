@@ -30,7 +30,7 @@
 %For the final thesis
 \documentclass[12pt,vi]{mitthesis}
 \pagestyle{plain} 
-
+ 
 %for technical report
 %\documentclass[12pt,vi,twoside]{mitthesis}
 %\pagestyle{plain}
@@ -72,14 +72,60 @@
 \usepackage{feynmp}
 \DeclareGraphicsRule{*}{mps}{*}{}
 
+
+%%%%%%%%%%%%%%%%%%%%begin code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %paquete para agregar codigo fuente
 %\usepackage{listings}
+\usepackage{listings}
+\usepackage{courier}
+\lstset{
+         basicstyle=\footnotesize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+         extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+         keywordstyle=\color{red},
+                frame=b,         
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
+ }
+ \lstloadlanguages{% Check Dokumentation for further languages ...
+         %[Visual]Basic
+         %Pascal
+         %C
+         %C++
+         %XML
+         %HTML
+         Java
+}
+    %\DeclareCaptionFont{blue}{\color{blue}} 
 
+  %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{white}}
+\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+
+%%%%%%%%%%%%%%%%%%%%end code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \begin{document}
 
-%\include{cover}
+\include{cover}
 
 \pagestyle{plain}
 \include{contents}
@@ -89,7 +135,7 @@
 
 
 %\\.
-%\\.
+%\\. 
 %\\.
 %\\.
 %\todo[inline]{Agregar la secci\'on del cover}
@@ -103,9 +149,9 @@
 
 
 %\include{chapters/annotations}
-%\include{chapters/ch-overview}
+\include{chapters/ch-overview}
 \include{chapters/ch-oop}
-%\include{chapters/ch-networks}
+\include{chapters/ch-networks}
 \include{chapters/ch-iec61850-overview}
 
 %\include{ch1-theory}
