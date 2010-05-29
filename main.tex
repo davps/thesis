@@ -41,7 +41,7 @@
 
 
 %%package for TODO lists, comments, annotations on pdf, with colors
-\usepackage[disable, spanish, colorinlistoftodos]{todonotes}
+\usepackage[enable, spanish, colorinlistoftodos]{todonotes}
 %%el comando de abajo hace el trabajo automaticamente identificando si es un
 %%draft
 %\usepackage[obeyDraft]{todonotes}
@@ -73,6 +73,7 @@
 \DeclareGraphicsRule{*}{mps}{*}{}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%begin code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %paquete para agregar codigo fuente
 %\usepackage{listings}
@@ -121,7 +122,7 @@
 \captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
 
 %%%%%%%%%%%%%%%%%%%%end code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
 
@@ -149,11 +150,30 @@
 
 
 %\include{chapters/annotations}
+
 \include{chapters/ch-overview}
+
+\chapter{Introduction to the IEC 61850}
+For comming\ldots  \cite{IEC61850-6:2004} 
+
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{appendices/IEC61850approach}
+  \caption{Borrador - Esquema del futuro capitulo }
+  \label{fig:lan-networks-topologies-fig3}
+\end{figure}
+
+\begin{figure}
+  \includegraphics[width=1.0\textwidth]{appendices/IEC61850SCL}
+  \caption{Borrador - Esquema del futuro capitulo }
+  \label{fig:lan-networks-topologies-fig4}
+\end{figure}
+
+
+
 \include{chapters/ch-oop}
 \include{chapters/ch-networks}
 \include{chapters/ch-iec61850-overview}
-
+\include{chapters/ch-scl} 
 %\include{ch1-theory}
 %\include{ch2-experiment}
 %\include{ch3-reconstruction}
