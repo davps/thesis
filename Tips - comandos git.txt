@@ -35,3 +35,78 @@
 
 -git clone git@github.com:david5/TFG.git
  clona en el disco duro (desde cero) un proyecto existente en github.
+
+
+
+
+--------------------------------------------------------------
+como usar git en ubuntu
+
+
+
+$ pwd
+/home/USUARIO
+$ cd Tesis
+$~/Tesis$ ls
+$~/Tesis$ pwd
+/home/USUARIO/Tesis
+
+$~/Tesis$ ssh-keygen -t rsa -C "email@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/USUARIO/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/USUARIO/.ssh/id_rsa.
+Your public key has been saved in /home/USUARIO/.ssh/id_rsa.pub.
+The key fingerprint is:
+..............
+$~/Tesis$ sudo apt-get install xclip
+$~/Tesis$ cat ~/.ssh/id_rsa.pub | xclip -sel clip
+
+-aca debo agregar mi public key id_rsa.pub que se ha generado 
+en mi computador, en el directorio /home/USUARIO/.ssh 
+en github.com https://github.com/account 
+Simplemente debo abrir el archivo de texto 
+y copiarlo al github asi mismo, sin especios, igualito.
+
+$~/Tesis$ ssh git@github.com
+PTY allocation request failed on channel 0
+ERROR: Hi david5! You've successfully authenticated, but GitHub does not provide shell access
+             Connection to github.com closed.
+$~/Tesis$ git config --global user.name "david5"
+$~/Tesis$ git config --global user.email "email@gmail.com"
+$~/Tesis$ git clone git@github.com:david5/thesis.git
+$~/Tesis$ cd thesis
+
+ya esta... el resto es normal...... como siempre.... 
+
+$~/Tesis/thesis$ git diff
+diff --git a/main.tex b/main.tex
+index f899ff1..4103b2c 100644
+--- a/main.tex
++++ b/main.tex
+@@ -168,7 +168,7 @@ For comming\ldots  \cite{IEC61850-6:2004}
+   \label{fig:lan-networks-topologies-fig4}
+ \end{figure}
+ 
+-
++%%hello world!  first commit from linux! - this is a test
+ 
+ \include{chapters/ch-oop}
+ \include{chapters/ch-networks}
+
+
+$~/Tesis/thesis$ git commit main.tex 
+[master ec86655] Hello world! This is my first commit from linux - it is just a test.
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+
+
+$~/Tesis/thesis$ git push
+Counting objects: 5, done.
+Delta compression using up to 2 threads.
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 385 bytes, done.
+Total 3 (delta 2), reused 0 (delta 0)
+To git@github.com:david5/thesis.git
+    master -> master
+
