@@ -10,7 +10,7 @@ be better again, but one step at a time.)
 
 ## Copyright
 
-The work herein is Copyright 2010 David Daniel Pérez Sosa. 
+The work herein is Copyright 2010 David Daniel Perez Sosa. 
 **No rights are given to reproduce or modify this work.**
 
 ## Plagiarism
@@ -26,5 +26,5 @@ You won't be able to compile it yourselves. Sorry.
 
 -----
  
-David Pérez
+David Perez
 Junio 2010
