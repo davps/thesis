@@ -41,7 +41,7 @@
 
 
 %%package for TODO lists, comments, annotations on pdf, with colors
-\usepackage[enable, spanish, colorinlistoftodos]{todonotes}
+%\usepackage[enable, spanish, colorinlistoftodos]{todonotes}
 %%el comando de abajo hace el trabajo automaticamente identificando si es un
 %%draft
 %\usepackage[obeyDraft]{todonotes}
@@ -51,16 +51,24 @@
 %%\todo[noline]{A note with no line ...} noline o line o inline
 %%\missingfigure[figwidth=6cm]{Testing a long text string}
 
+%\usepackage[pdfborder={0 0 0}]{hyperref}
+\usepackage[colorinlistoftodos, textwidth=2.8cm, shadow]{todonotes}
+\usepackage{amsmath}
+\usepackage[displaymath, tightpage]{preview}
 
+
+
+
+ 
 \usepackage{lgrind}
 
 %% in case I include .eps versions of all figures for those w/o pdftex
-\usepackage{ifpdf}
-\ifpdf
-\usepackage[pdftex]{graphicx}
-\else
-\usepackage{graphicx}
-\fi
+%\usepackage{ifpdf}
+%\ifpdf
+%\usepackage[pdftex]{graphicx}
+%\else
+\usepackage{graphicx} 
+%\fi
 
 \usepackage{amsmath,amssymb,amsfonts} % easily align arrays of equations
 \usepackage{hyperref} % hyperlinks
@@ -162,8 +170,7 @@
 
 \include{chapters/ch-overview}
 
-\chapter{Introduction to the IEC 61850}
-For comming\ldots  \cite{IEC61850-6:2004} 
+\include{chapters/ch-iec61850-introduction}
 
 \begin{figure}
   \includegraphics[width=1.0\textwidth]{appendices/IEC61850approach}
@@ -202,6 +209,8 @@ For comming\ldots  \cite{IEC61850-6:2004}
 %esta es la bibliografia standard de la IEEE
 \bibliographystyle{IEEEtran}
 \bibliography{IEEEabrv,bibliography/myIEEEbibliography}
+%\bibliographystyle{plain}
+%\bibliography{bibliography/myIEEEbibliography}
 
 %\bibliography{main}
 %\bibliographystyle{plain}

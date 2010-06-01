@@ -5,7 +5,7 @@ de SCL, que es, explicar de que es un lenguaje basado en xml, y
 que su estructura esta descripta en los XSDs definidos 
 en la parte 6 de la norma}
 
-As explained in section \ref{} \todo{completar referencia!}, 
+As explained in section \ref{fig:pdf-SCL-uml-deept2} \todo{completar bien la referencia}, 
 the SCL describes the SAS by modelling objects.
 The standard IEC 61850-6 \cite{IEC61850-6:2004} object model 
 structure and constraints are described in terms of the 
@@ -21,8 +21,16 @@ Basically, it is composed by:
   		(a instance of tSubstation) with their designations structured according to 
   		IEC 61346-1 \cite{IEC61346-1:1996}. 
   \item The communication model: the object model of the IED 
-  		communication system configuration, i.e.,
-  		the the networks, subnetworks and ports informations.
+  		communication system configuration, 
+  		i.e.,
+  		the the networks, subnetworks, ports informations
+  		\todo[color=green!40]{61850, parte6, cl6.1, \textparagraph 5},
+  		the communication connection relations of IEDs to 
+  		subnetworks, the routing for another subnetworks informations, 
+  		and clocks configuration information and locations for 
+  		time synchronisation (the gateways are not considered here, 
+  		a gateway has to be modelled as another IED)
+  		\todo[color=green!40]{61850, parte6, cl6.1, \textparagraph 8}.
   \item The product model: Contains the IEDs objects and their 
   		logical node implementations. 	
 \end{itemize}
@@ -38,8 +46,7 @@ a las instancias de las clases de la parte 7-x}
 
 \begin{landscape}
 	\begin{figure}
-	  \includegraphics[angle=-90, width=1.0\linewidth]
-	  				{chapters/ch-scl/figures/SCL-uml-Deept2}
+	  \includegraphics[angle=-90, width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-Deept2}
 	  \caption{SCL object model}  
 	  \label{fig:pdf-SCL-uml-deept2}
 	\end{figure}
@@ -48,8 +55,7 @@ a las instancias de las clases de la parte 7-x}
 
 \begin{landscape}
 	\begin{figure}
-	  \includegraphics[angle=-90, width=1.0\linewidth]
-	  				{chapters/ch-scl/figures/SCL-uml-DATypeTemplate-Deept2}
+	  \includegraphics[angle=-90, width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-DATypeTemplate-Deept2}
 	  \caption{DAType object model template with heritance details}  
 	  \label{fig:pdf-SCL-uml-DATypeTemplate-Deept2}
 	\end{figure}
@@ -57,8 +63,7 @@ a las instancias de las clases de la parte 7-x}
 
 \begin{landscape}
 	\begin{figure}
-	  \includegraphics[angle=-90, width=1.0\linewidth]
-	  				{chapters/ch-scl/figures/SCL-uml-DATypeTemplate-Deept2-inherited}
+	  \includegraphics[angle=-90, width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-DATypeTemplate-Deept2-inherited}
 	  \caption{DAType object model template inherited}  
 	  \label{fig:pdf-SCL-uml-DATypeTemplate-Deept2-inherited}
 	\end{figure}
@@ -66,8 +71,7 @@ a las instancias de las clases de la parte 7-x}
 
 \begin{landscape}
 	\begin{figure}
-	  \includegraphics[angle=-90, width=1.0\linewidth]
-	  				{chapters/ch-scl/figures/SCL-uml-communication-Deept3}
+	  \includegraphics[angle=-90, width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-communication-Deept3}
 	  \caption{SCL Communication object model}  
 	  \label{fig:pdf-SCL-uml-communication-Deept3}
 	\end{figure}
@@ -76,52 +80,44 @@ a las instancias de las clases de la parte 7-x}
 \todo[inline]{podria convenir cambiar la palabra object model por class diagram
 en todos estos graficos}
 
+\todo[inline]{a este le valta
+expandir la clase correspondiente hasta que muestre el transformador }
 \begin{figure}
-  \includegraphics[width=1.0\linewidth]
-  				{chapters/ch-scl/figures/SCL-uml-substation-Deept2}
+  \includegraphics[width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-substation-Deept2}
   \caption{SCL Substation object model with heritance 
-  details \todo[inline]{a este le valta
-  expandir la clase correspondiente hasta que muestre el transformador } } 
+  details  } 
   \label{fig:pdf-SCL-uml-substation-Deept2}
 \end{figure}
 
 
+\todo[inline]{a este le valta
+  expandir la clase correspondiente hasta que muestre el transformador }
 \begin{figure}
-  \includegraphics[width=1.0\linewidth]
-  				{chapters/ch-scl/figures/SCL-uml-substation-Deept2-inherited}
-  \caption{SCL Substation object model inherited \todo[inline]{a este le valta
-  expandir la clase correspondiente hasta que muestre el transformador } }
+  \includegraphics[width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-substation-Deept2-inherited}
+  \caption{SCL Substation object model inherited  }
   \label{fig:pdf-SCL-uml-substation-Deept2-inherited}
 \end{figure}
 
+The UML of the 
+figure \ref{fig:SCL-uml-Resumen} 
+is a resume of
+the SCL model, where is evident the 
+key importance of the Logical Node for  
+the information topology description (see 
+the composition of the Substation 
+class). The Logical Node is  
+the transition object to 
+connect the diferent structures of the SAS 
+\todo[color=green!40]{61850, parte6, cl6.1, \textparagraph 9} 
+that are defined by IEC 61341-1 \cite{IEC61346-1:1996}.
 
 
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
+\begin{landscape}
 
- 
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla
-tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros. Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
-Lorem Ipsum Sed Aliquam
-Sed lacus. Donec lectus. Nullam pretium nibh ut turpis. Nam bibendum. In nulla tortor, elementum vel, tempor at, varius non, purus. Mauris vitae nisl nec consectetuer. Donec ipsum. Proin imperdiet est. Phasellus dapibus semper urna. Pellentesque ornare, orci in consectetuer hendrerit, urna elit eleifend nunc, ut consectetuer nisl felis ac diam. Etiam non felis. Donec ut ante. In id eros.
- 
-
-The SCL describes a model of  
+\begin{figure}
+  \includegraphics[angle=-90,
+  width=1.0\linewidth]{chapters/ch-scl/figures/SCL-uml-Resumen-inherited}
+  \caption{Resume of SCL shema represented by a UML class diagram}
+  \label{fig:SCL-uml-Resumen}
+\end{figure}
+\end{landscape}
