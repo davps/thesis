@@ -43,6 +43,54 @@ significan los comentarios que hago con el comando TODO, etc.
 	el proceso de redacci\'on se ir\'a agregando el contenido faltante
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{\LaTeX comand testing}
+
+\Glspl{svm} are used widely in the area of pattern recognition.
+
+This is the text produced without a link: \glsentrytext{svm}.
+This is the text produced on first use without a link:
+\glsentryfirst{svm}. This is the entry's description without
+a link: \glsentrydesc{svm}.
+
+This is the entry in uppercase: \GLS{svm}.
+
+The \gls{ksvm} is \ifglsused{svm}{an}{a} \gls{svm} that uses
+the so called ``kernel trick''. Plural: \glspl{ksvm}.
+
+\glsresetall
+Possessive: \gls{ksvm}['s].
+Make the glossary entry number bold for this 
+one \gls[format=hyperbf]{svm}.
+
+You don't need to worry about makeindex's special characters:
+\gls{rna}.
+
+
+
+
+--------------------------------------------------------
+
+The \gls{svm} is used widely in the area of pattern recognition.
+ % plural form with initial letter in uppercase:
+\Glspl{svm} are \ldots
+
+This is the text produced without a link: \glsentrytext{svm}.
+This is the text produced on first use without a link:
+\glsentryfirst{svm}. This is the entry's description without
+a link: \glsentrydesc{svm}.
+
+This is the entry in uppercase: \GLS{svm}.
+
+The \gls{ksvm} is \ifglsused{svm}{an}{a} \gls{svm} that uses
+the so called ``kernel trick''. This is the entry's description without
+a link: \glsentrydesc{ksvm}.
+
+\glsresetall
+Possessive: \gls{ksvm}['s].
+Make the glossary entry number bold for this 
+one \gls[format=hyperbf]{svm}.
+
 
 
 %%Agrega la lista de cosas (comentarios) que hay que hacer
