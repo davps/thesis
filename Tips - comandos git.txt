@@ -110,3 +110,14 @@ Total 3 (delta 2), reused 0 (delta 0)
 To git@github.com:david5/thesis.git
     master -> master
 
+
+
+-----------------------------------------------------------
+para compilar el archivo utilizo los comandos
+pdflatex main  
+makeglossaries main
+pdflatex main  -> 2 veces
+bibtex
+pdflatex main  -> 2 veces
+(aun me falta algo por compilar para
+los marcadores, no pillo que exactamente)

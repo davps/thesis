@@ -29,7 +29,7 @@
 
 %For the final thesis
 \documentclass[12pt,vi]{mitthesis}
-\pagestyle{plain} 
+\pagestyle{plain}
 
 %for technical report
 %\documentclass[12pt,vi,twoside]{mitthesis}
@@ -84,6 +84,24 @@
 %%%%Paquete usado para rotar la pagina,
 %%%%encontrado en http://texblog.wordpress.com/2007/11/10/landscape-in-latex/
 \usepackage{pdflscape}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%Paquete usado para el glosario y los acronimos,
+%%%%encontrado en http://www.ctan.org/tex-archive/macros/latex/contrib/glossaries/
+%\usepackage[nonumberlist]{glossaries}
+%\usepackage[style=long,toc]{glossaries}
+\usepackage[style=altlist, % use altlist style
+            %toc, % add the glossary to the table of contents
+            sanitize={description=false},% want to use description in main
+            document description% acronyms have a user-supplied description
+           ]{glossaries}
+
+%\makeglossaries
+%\loadglsentries{glossaries/database1}
+\makeglossaries
+\loadglsentries{glossaries/acronyms}
+%\printglossaries
 
 
 
