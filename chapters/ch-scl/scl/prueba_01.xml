@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<scl:SCL xmlns:scl="http://www.iec.ch/61850/2006/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL file:///D:/My%20Documents/IEC61850/SCL/xsd/SCL.xsd">
+	<scl:Header id=""/>
+	
+	<scl:Substation name="220KV" desc="Substation 220 KV">
+		<scl:VoltageLevel name="200Kv">
+			<scl:Voltage unit="V" multiplier="k" >10</scl:Voltage>
+			<scl:Bay name="bay1">
+				<scl:ConnectivityNode name="conectivityNode1" pathName="220KV/200Kv/bay1/conectivityNode1"/>
+			</scl:Bay>
+			
+			<scl:Bay name="bay8">
+				<scl:ConductingEquipment name="conductingEquipmentVTR" type="VTR">
+					<!-- aca el kalki usa "null" en vez de "None" -->
+					<scl:LNode lnClass="MMXU" 
+									desc="Nodo logico MMXU"
+									ldInst="1"
+									iedName="None" 
+									lnInst="1"
+									prefix=""
+									lnType="MMXU" />
+					<scl:LNode lnClass="TVTR"
+									desc="Nodo logico TVTR"
+									ldInst="1"
+									iedName="None"
+									lnInst="1"
+									prefix=""
+									lnType="MMXU" />
+					<scl:Terminal bayName="bay8" 
+									substationName="220KV" 
+									voltageLevelName="200Kv" 
+									cNodeName="terminal_Trafo" 
+									connectivityNode="220KV/200Kv/bay8/conectivityNode2"/>
+				</scl:ConductingEquipment>
+				<scl:ConductingEquipment name="conductingEquipmentCBR" type="CBR">
+					<scl:LNode lnClass="XCBR" 
+									desc="Nodo logico XCBR"
+									ldInst="1"
+									iedName="None" 
+									lnInst="1"
+									prefix=""
+									lnType="MMXU" />
+					<scl:LNode lnClass="CILO"
+									desc="Nodo logico CILO"
+									ldInst="1"
+									iedName="None"
+									lnInst="1"
+									prefix=""
+									lnType="CILO" />
+					<scl:LNode lnClass="CSWI"
+									desc="Nodo logico CSWI"
+									ldInst="1"
+									iedName="None"
+									lnInst="1"
+									prefix=""
+									lnType="CSWI" />
+				</scl:ConductingEquipment>
+				<scl:ConnectivityNode name="conectivityNode2" pathName="220KV/200Kv/bay8/conectivityNode2"/>
+			</scl:Bay>
+		</scl:VoltageLevel>
+	</scl:Substation>
+	<scl:Communication>
+		<scl:SubNetwork name="SUBNET" type="8-MMS">
+			<scl:Text>Station Bus</scl:Text>
+			<scl:BitRate unit="b/s">10</scl:BitRate>
+			<scl:ConnectedAP apName="AP1" iedName="IED_B1">
+				<scl:Address>
+					<scl:P type="IP">10.0.0.3</scl:P>
+					<scl:P type="IP-SUBNET">255.255.255.0</scl:P>
+					<scl:P type="IP-GATEWAY">10.0.0.101</scl:P>
+					<scl:P type="OSI-TSEL">00000001</scl:P>
+					<scl:P type="OSI-SSEL">0001</scl:P>
+				</scl:Address>
+			</scl:ConnectedAP>
+			<scl:ConnectedAP apName="AP1" iedName="IED_B2">
+				<scl:Address>
+					<scl:P type="IP">10.0.0.4</scl:P>
+					<scl:P type="IP-SUBNET">255.255.255.0</scl:P>
+					<scl:P type="IP-GATEWAY">10.0.0.101</scl:P>
+					<scl:P type="OSI-TSEL">00000001</scl:P>
+					<scl:P type="OSI-SSEL">0001</scl:P>
+				</scl:Address>
+			</scl:ConnectedAP>
+		</scl:SubNetwork>
+	</scl:Communication>
+	<scl:IED name="IED_B1">
+		<scl:Services>
+			<scl:DynAssociation/>
+			<scl:GetDirectory/>
+			<scl:GetDataObjectDefinition/>
+			<scl:GetDataSetValue/>
+			<scl:DataSetDirectory/>
+			<scl:ReadWrite/>
+			<scl:GetCBValues/>
+			<scl:ConfLNs fixPrefix="true" fixLnInst="true"/>
+			<scl:FileHandling/>
+			<scl:GSEDir/>
+		</scl:Services>
+	</scl:IED>
+</scl:SCL>

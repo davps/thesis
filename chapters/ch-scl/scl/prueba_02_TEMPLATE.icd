@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL SCL.xsd">
+	<!--Header id=""/=-->
+	<Header id="SCL Example T1-1" nameStructure="IEDName"/>
+
+	<IED name="E1Q1SB1">
+		<Services>
+			<DynAssociation/>
+			<GetDirectory/>
+			<GetDataObjectDefinition/>
+			<GetDataSetValue/>
+			<DataSetDirectory/>
+			<ReadWrite/>
+			<FileHandling/>
+			<ConfDataSet max="4" maxAttributes="50"/>
+			<ConfReportControl max="12"/>
+			<ReportSettings bufTime="Dyn" cbName="Conf" rptID="Dyn" datSet="Conf" intgPd="Dyn" optFields="Conf"/>
+			<ConfLogControl max="1"/>
+			<ConfLNs fixLnInst="true"/>
+			<GetCBValues/>
+			<GOOSE max="2"/>
+			<GSESettings appID="Conf" cbName="Conf" datSet="Conf"/>
+		</Services>
+		<AccessPoint name="S1">
+			<Server>
+				<Authentication/>
+				<LDevice inst="C1">
+					<LN0 lnType="LN0" lnClass="LLN0" inst="">
+						<DataSet name="Positions">
+							<FCCB ldInst="C1" lnClass="LLN0" fc="RP" cbName="PosReport"/>
+							<FCDA ldInst="C1" prefix="" lnInst="1" lnClass="CSWI" doName="Pos" fc="ST"/>
+							<FCCB ldInst="C1" lnClass="LLN0" fc="RP" cbName="MeaReport"/>
+							<FCDA ldInst="C1" prefix="" lnInst="2" lnClass="CSWI" doName="Pos" fc="ST"/>
+						</DataSet>
+						<DataSet name="Measurands">
+							<FCDA ldInst="C1" prefix="" lnInst="1" lnClass="MMXU" doName="Amps" fc="ST"/>
+							<FCDA ldInst="C1" prefix="" lnInst="1" lnClass="MMXU" doName="Volts" fc="ST"/>
+						</DataSet>
+						<DataSet name="smv">
+							<FCDA ldInst="C1" prefix="" lnClass="TVTR" lnInst="1" doName="Vol" daName="instMag" fc="MX"/>
+						</DataSet>
+						<ReportControl name="PosReport" rptID="E1Q1Switches" datSet="Positions" confRev="0">
+							<TrgOps dchg="true" qchg="true"/>
+							<OptFields/>
+							<RptEnabled max="5">
+								<ClientLN iedName="A1KA1" ldInst="LD1" lnInst="1" lnClass="IHMI"/>
+							</RptEnabled>
+						</ReportControl>
+						<ReportControl name="MeaReport" rptID="E1Q1Measurands" datSet="Measurands" intgPd="2000" confRev="0">
+							<TrgOps qchg="true" period="true"/>
+							<OptFields reasonCode="true"/>
+							<RptEnabled max="5">
+								<ClientLN iedName="A1KA1" ldInst="LD1" lnInst="1" lnClass="IHMI"/>
+							</RptEnabled>
+						</ReportControl>
+						<LogControl name="Log" datSet="Positions" logName="C1">
+							<TrgOps dchg="true" qchg="true"/>
+						</LogControl>
+						<GSEControl name="ItlPositions" datSet="Positions" appID="Itl"/>
+						<SampledValueControl name="Volt" datSet="smv" smvID="11" smpRate="4800" nofASDU="5" multicast="true">
+							<SmvOpts sampleRate="true" refreshTime="true" sampleSynchronized="true"/>
+						</SampledValueControl>
+					</LN0>
+					<LN lnType="LPHDa" lnClass="LPHD" inst="1">
+						<DOI name="Proxy">
+							<DAI name="stVal">
+								<Val>false</Val>
+							</DAI>
+						</DOI>
+					</LN>
+					<LN inst="1" lnClass="CSWI" lnType="CSWIa"/>
+					<LN inst="2" lnClass="CSWI" lnType="CSWIa"/>
+					<LN inst="1" lnClass="MMXU" lnType="MMXUa">
+						<DOI name="Volts">
+							<SDI name="sVC">
+								<DAI name="offset">
+									<Val>10</Val>
+								</DAI>
+								<DAI name="scaleFactor">
+									<Val>200</Val>
+								</DAI>
+							</SDI>
+						</DOI>
+					</LN>
+					<LN lnType="TVTRa" lnClass="TVTR" inst="1"/>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	
+	<DataTypeTemplates>
+		<LNodeType id="LN0" lnClass="LLN0">
+			<DO name="Mod" type="myMod"/>
+			<DO name="Health" type="myHealth"/>
+			<DO name="Beh" type="myBeh"/>
+			<DO name="NamPlt" type="myLPL"/>
+		</LNodeType>
+	</DataTypeTemplates>
+</SCL>
