@@ -75,11 +75,6 @@
 \usepackage{pdfpages} % makes it easy to insert all those nsigmapi fits
 
 
-% Feynman diagrams
-\usepackage{feynmp}
-\DeclareGraphicsRule{*}{mps}{*}{}
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%Paquete usado para rotar la pagina,
 %%%%encontrado en http://texblog.wordpress.com/2007/11/10/landscape-in-latex/
@@ -164,7 +159,6 @@
 
 \pagestyle{plain}
 \include{contents}
-\begin{fmffile}{feynman-diagrams}
 
 
 
@@ -189,36 +183,17 @@
 
 \include{chapters/ch-iec61850-introduction}
 
-\begin{figure}
-  \includegraphics[width=1.0\textwidth]{appendices/IEC61850approach}
-  \caption{Borrador - Esquema del futuro capitulo }
-  \label{fig:lan-networks-topologies-fig3}
-\end{figure}
-
-\begin{figure}
-  \includegraphics[width=1.0\textwidth]{appendices/IEC61850SCL}
-  \caption{Borrador - Esquema del futuro capitulo }
-  \label{fig:lan-networks-topologies-fig4}
-\end{figure}
-
 %%hello world!  first commit from linux! - this is a test
 
 \include{chapters/ch-oop}
 \include{chapters/ch-networks}
 \include{chapters/ch-iec61850-overview}
 \include{chapters/ch-scl} 
-%\include{ch1-theory}
-%\include{ch2-experiment}
-%\include{ch3-reconstruction}
-%\include{ch4-analysis}
-%\include{ch5-results}
-%\include{ch6-conclusions}
 
 
-\end{fmffile}
- \appendix
-% \include{appendices/appa}
-%% \include{appendices/appb}
+\appendix
+\include{appendices/appa}
+\include{appendices/appb}
 \begin{singlespace}
 
 
