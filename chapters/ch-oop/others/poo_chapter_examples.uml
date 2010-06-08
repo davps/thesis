@@ -23,10 +23,9 @@
 <XPD:OBJ name="OwnedViews[0]" type="UMLClassView" guid="8FGhw3klMU2+RKnpJaw7RQAA">
 <XPD:ATTR name="LineColor" type="string">clMaroon</XPD:ATTR>
 <XPD:ATTR name="FillColor" type="string">$00B9FFFF</XPD:ATTR>
-<XPD:ATTR name="Left" type="integer">212</XPD:ATTR>
-<XPD:ATTR name="Top" type="integer">124</XPD:ATTR>
-<XPD:ATTR name="Width" type="integer">118</XPD:ATTR>
-<XPD:ATTR name="Height" type="integer">108</XPD:ATTR>
+<XPD:ATTR name="Top" type="integer">4</XPD:ATTR>
+<XPD:ATTR name="Width" type="integer">146</XPD:ATTR>
+<XPD:ATTR name="Height" type="integer">126</XPD:ATTR>
 <XPD:REF name="Model">VHSkCwnP4UaZpk9xJ+DZuAAA</XPD:REF>
 <XPD:OBJ name="NameCompartment" type="UMLNameCompartmentView" guid="WwX9i4DBdE+IFxw6r4PmXgAA">
 <XPD:OBJ name="NameLabel" type="LabelView" guid="2sgTNy+64UWtC4LcoMNOygAA">
@@ -72,15 +71,15 @@
 <XPD:REF name="Owner">VHSkCwnP4UaZpk9xJ+DZuAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[2]" type="UMLAttribute" guid="uB6OUhwAOkyb1gU0EjaTOQAA">
-<XPD:ATTR name="Name" type="string">tSwitch</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">tBay</XPD:ATTR>
 <XPD:REF name="Owner">VHSkCwnP4UaZpk9xJ+DZuAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[3]" type="UMLAttribute" guid="5tuj1VwTfEOmNnJZxh5LRAAA">
-<XPD:ATTR name="Name" type="string">tCurrentTransformer</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">tConductingEquipment</XPD:ATTR>
 <XPD:REF name="Owner">VHSkCwnP4UaZpk9xJ+DZuAAA</XPD:REF>
 </XPD:OBJ>
 <XPD:OBJ name="Attributes[4]" type="UMLAttribute" guid="cNKoJDsl+ECwxz9Mt27LTAAA">
-<XPD:ATTR name="Name" type="string">tBusBar</XPD:ATTR>
+<XPD:ATTR name="Name" type="string">tLNode</XPD:ATTR>
 <XPD:REF name="Owner">VHSkCwnP4UaZpk9xJ+DZuAAA</XPD:REF>
 </XPD:OBJ>
 </XPD:OBJ>
