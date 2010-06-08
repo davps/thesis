@@ -13,22 +13,18 @@ that the object can
 store.\\
 
 To give a concrete example, this section 
-focuses on the current transformer 
-(abbreviated as TCTR 
+focuses on data acquisition model of 
+the current transformer and their 
+(conveniently abbreviated TCTR 
 for this chapter). 
-Hay muchos datos de placa, 
-\todo{
-	traducir, no se traducir 
-	la palabra datos de
-	placa
-} 
-and the right {TCTR} depend of 
+The datas of switchyard functionalities, 
+such as {TCTR}, depends of 
 each specific situation. Then, 
 the {TCTR} should be modelled as 
-a class, i.e., a static template 
+a class, i.e., a static template  
 which diferents current transformer objects 
 are created. The same reasoning might be 
-applied to the Disconnecting Switchs 
+applied to the Disconnecting Switches 
 (by convention, here called {XSWI})
 and circuit breakers ({XCBR}).
 
@@ -39,16 +35,39 @@ and circuit breakers ({XCBR}).
 %documentos\tesismayo\tesismayo\thesis\chapters\ch-oop\source\java\src\HelloWorld.java
 %\lstinputlisting[label=samplecode,caption=A sample]{sourceCode/HelloWorld.java}
 %chapters\ch-oop\source\java\src\HelloWorld.java
-\lstinputlisting[label=codeClass,
-caption=Class in Java]{chapters/ch-oop/source/java/src/SERVER_v1.java}
+
+\lstinputlisting[label=code:TCTR_v1java,
+caption=TCTR class in Java]{chapters/ch-oop/source/java/src/TCTR_v1.java}
+
+\\
+
+\lstinputlisting[label=code:XSWI_v1java,
+caption=XSWI class in Java]{chapters/ch-oop/source/java/src/XSWI_v1.java}
+
+\\ 
+
+\lstinputlisting[label=code:XCBR_v1java,
+caption=XCBR class in Java]{chapters/ch-oop/source/java/src/XCBR_v1.java}
+
+\lstinputlisting[label=code:TVoltageLevel_v1java,
+caption=Voltage Level class 
+in Java]{chapters/ch-oop/source/java/src/TVoltageLevel_v1.java}
+
+
+
+%\lstinputlisting[label=codeClass,
+%caption=Class in Java]{chapters/ch-oop/source/java/src/SERVER_v1.java}
 
 %%TODO: cite adobe book
 
 \subsection{Attributes}
 \todo[inline]{completar esta parte}
-	\lstinputlisting[label=codeAttributes,
-	caption=Class with attributes in Java]
-	{chapters/ch-oop/source/java/src/SERVER_v2.java}
+%	\lstinputlisting[label=codeAttributes,
+%	caption=Class with attributes in Java]
+%	{chapters/ch-oop/source/java/src/SERVER_v2.java}
+	\lstinputlisting[label=codeMethodr,
+	caption=Class with attributes and methods in Java]
+	{chapters/ch-oop/source/java/src/TSubstation_v2.java}
 
 
 
@@ -56,9 +75,9 @@ caption=Class in Java]{chapters/ch-oop/source/java/src/SERVER_v1.java}
 Methods are functions that are part of a class 
 definition. Once an instance of the class is created, 
 a method is bound to that instance.\\
-	\lstinputlisting[label=codeMethod,
+	\lstinputlisting[label=codeMethodr,
 	caption=Class with attributes and methods in Java]
-	{chapters/ch-oop/source/java/src/SERVER_v3.java}
+	{chapters/ch-oop/source/java/src/SERVER_v2.java}
 
 
 
@@ -75,7 +94,7 @@ a method is bound to that instance.\\
 	having two public-facing functions for each property 
 	that allows both read and write access. \\
 
-		\lstinputlisting[label=codeMethod,
+		\lstinputlisting[label=codeMethods,
 		caption=Class with attributes, methods, getters and setters in Java]
 		{chapters/ch-oop/source/java/src/SERVER_v4.java}
 	
@@ -87,7 +106,7 @@ a method is bound to that instance.\\
 	a constructor method is executed whenever an instance of the 
 	class is created with the  new  keyword. \\
 
-		\lstinputlisting[label=codeMethod,
+		\lstinputlisting[label=codeMethodt,
 		caption=Class with attributes, methods, 
 		getters, setters and constructors in
 		Java] {chapters/ch-oop/source/java/src/SERVER_v5.java}
