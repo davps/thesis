@@ -18,42 +18,85 @@ name={Kernel support vector machine (ksvm)}% change the default way of displayin
 ]{ksvm}{ksvm}{kernel 
 support vector machine}
 
-\newacronym[
-description={Object Oriented should be: Object oriented system, 
+%%%O-O
+\newacronym[description={Object Oriented should be: Object oriented system, 
 object oriented programming, object oriented model, object oriented 
 technology},
 %name={Intelligent Electronic Device}
 ]{O-O}{O-O}{Object-Oriented}
 
 
+%%%ICD
+\newacronym[description={SCL file that contains 
+the description of the IED: Logical node implementations, 
+the quantity of avaliable instances of them, 
+their services and communication settings objects
+(without their values before SAS description 
+explained in the 
+section \ref{sec:SAS-description-scl-engineering} 
+and with the object values after the SAS description)
+}, 
+name={IED Capability Description}]
+{ICD}{ICD}{IED Capability Description}
+
+
+%%%IED
 \newacronym[description={microprocessor based 
-device with network capabilities},% acronym's description
-name={Intelligent Electronic Device}% change the default way of displaying the entry name in the list of acronyms
+device with network capabilities},
+name={Intelligent Electronic Device}
 ]{IED}{IED}{Intelligent 
 Electronic Device}
 
+%%%LN
 \newacronym[description={This abbreviation of \emph{Logical Node} is used 
 by IED xml child node in the SCL},%
 %name={Logical Node}
 ]{LN}{LN}{Logical Node}
 
+%%%LNode
 \newacronym[description={This abbreviation of \emph{Logical Node} is used 
 by Substation xml child nodes in the SCL},%
 %name={Logical Node}
 ]{LNode}{LNode}{Logical Node}
 
+%%%SAS
 \newacronym[name={Substation Automation System}% change the default way of displaying the entry name in the list of acronyms
 ]{SAS}{SAS}{Substation Automation System}
 
+%%%SCD
+\newacronym[description={SCL file that contains 
+the power system functions, i.e, the substation 
+xml node of the SCL, with a high level of detail, 
+including descriptions  
+such as substation LNodes 
+correspondences with IED LN objects, 
+all the IED's ICD, headers, 
+communications details (identifies adresses and subnetworks) 
+},
+name={Substation Capability Description}]
+{SCD}{SCD}{Substation Capability Description}
+
+%%%SCL
 \newacronym[description={The SCL is a XML based language defined as a
 standard (IEC 61850-6 \cite{IEC61850-6:2004} ) and is used for IED
 configuration},% acronym's description name={Substation Configuration description Language}
 ]{SCL}{SCL}{Substation Configuration description Language}
 
+%%%SSD
+\newacronym[description={SCL file that contains 
+the power system functions, i.e, the substation 
+xml node of the SCL, but without great details, 
+not including descriptions  
+such as substation LNodes 
+correspondences with IED LN objects},
+name={System Specification Description}]
+{SSD}{SSD}{System Specification Description}
+
+%%%UML
 \newacronym[description={Unified Modeling Language {\texttrademark}
 \cite{UML2:2009} is a specification to 
 describes the model of a application structure, 
 behabiour and system architecture}, %
 name={Unified Modeling Language {\texttrademark} - 
 UML}]{UML}{UML}{Unified Modeling Language}
-			
+
