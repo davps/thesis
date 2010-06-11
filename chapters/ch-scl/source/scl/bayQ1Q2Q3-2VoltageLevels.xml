@@ -1,0 +1,23 @@
+<Substation name="S12" desc="Baden">
+	<!-- childs here -->	
+	<VoltageLevel name="D1" desc="Voltage level D1 of the substation">
+		<!-- childs here -->
+		<Bay name="Q1">
+			<!-- childs here -->
+		</Bay>
+	</VoltageLevel>	
+	<VoltageLevel name="E1" desc="Voltage level E1 of the substation">
+		<!-- childs here -->
+		<Bay name="Q1">
+			<!-- childs here -->
+		</Bay>
+	
+		<Bay name="Q2" desc="Turgi">
+			<!-- childs here -->
+		</Bay>
+	
+		<Bay name="Q3" desc="London">
+			<!-- childs here -->
+		</Bay>
+	</VoltageLevel>
+</Substation>		
