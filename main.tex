@@ -89,7 +89,7 @@
 \usepackage[style=altlist, % use altlist style
             %toc, % add the glossary to the table of contents
             sanitize={description=false},% want to use description in main
-            document description% acronyms have a user-supplied description
+%            document description% acronyms have a user-supplied description
            ]{glossaries}
 
 %\makeglossaries
@@ -133,15 +133,18 @@
          %backgroundcolor=\color{lightgray},
          showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
  }
- \lstloadlanguages{% Check Dokumentation for further languages ...
-         %[Visual]Basic
-         %Pascal
-         %C
-         %C++
-         XML
-         %HTML
-         Java
-}
+ \lstloadlanguages{XML, Java}
+
+
+% \lstloadlanguages{% Check Dokumentation for further languages ...
+%         %[Visual]Basic
+%         %Pascal
+%         %C
+%         %C++
+%         XML
+%         %HTML
+%         Java
+%}
     %\DeclareCaptionFont{blue}{\color{blue}} 
 
   %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
@@ -155,10 +158,10 @@
 
 \begin{document}
 
-\include{cover}
+%\include{cover}
 
 \pagestyle{plain}
-\include{contents}
+%\include{contents}
 
 
 
@@ -177,23 +180,23 @@
 
 
 
-\include{chapters/annotations}
+%\include{chapters/annotations}
 
-\include{chapters/ch-overview}
+%\include{chapters/ch-overview}
 
-\include{chapters/ch-iec61850-introduction}
+%\include{chapters/ch-iec61850-introduction}
 
 %%hello world!  first commit from linux! - this is a test
 
-\include{chapters/ch-oop}
-\include{chapters/ch-networks}
-\include{chapters/ch-iec61850-overview}
+%\include{chapters/ch-oop}
+%\include{chapters/ch-networks}
+%\include{chapters/ch-iec61850-overview}
 \include{chapters/ch-scl} 
 
 
 \appendix
-\include{appendices/appa}
-\include{appendices/appb}
+%\include{appendices/appa}
+%\include{appendices/appb}
 \begin{singlespace}
 
 

@@ -9,8 +9,8 @@ communication services modelling example with SCL}
 	
 	\lstinputlisting[label=code:namespacesXML,
 	caption=IEC 61850 SCL Namespaces
-	]{chapters/ch-scl/source/scl/namespaces.xml}
-	
+	]{chapters/ch-scl/source/scl/header/namespaces.xml}
+
 
 
 
@@ -21,21 +21,21 @@ communication services modelling example with SCL}
 	SCL engineering.
 	\lstinputlisting[label=code:headerXML,
 	caption= SCL header
-	]{chapters/ch-scl/source/scl/header.xml}
+	]{chapters/ch-scl/source/scl/header/header.xml}
 
 
 
 
 %%%Substation
 \subsection{Substation}
-	This xml node group the primary power system topology
+	The substation xml node group the primary power system topology
 	and their respective functions.
-	The substation level are described in the section
+	The substation model are described in the section
 	\ref{sec:ch-scl--SCL-object-model}.
 	
 	\lstinputlisting[label=code:substationXML,
 	caption= SCL Substation node
-	]{chapters/ch-scl/source/scl/substation.xml}
+	]{chapters/ch-scl/source/scl/substation/substation.xml}
 
 
 
@@ -44,31 +44,31 @@ communication services modelling example with SCL}
 \subsection{Voltage Level}
 	The VoltageLevel tag allow the agrupation 
 	of various levels of switchyard equipments in the same 
-	potential under a this object.
+	potential. %under a this object.
 	In the listing \ref{code:voltageLevelD1XML} 
 	are defined a first level of voltage called ``\emph{D1}'':
 	
 	\lstinputlisting[label=code:voltageLevelD1XML,
 	caption= SCL Substation voltage level D1
-	]{chapters/ch-scl/source/scl/voltageLevelD1.xml}
+	]{chapters/ch-scl/source/scl/substation/voltageLevel/voltageLevelD1.xml}
 	
 	and the second level of voltage of this example is provided
 	in the listing \ref{code:voltageLevelE1XML}:
 	\lstinputlisting[label=code:voltageLevelE1XML,
 	caption= SCL Substation voltage level E1
-	]{chapters/ch-scl/source/scl/voltageLevelE1.xml}
+	]{chapters/ch-scl/source/scl/substation/voltageLevel/voltageLevelE1.xml}
 	
-	grouping theses voltage levels at the substation:
+	grouping theses voltage levels into the substation:
 	\lstinputlisting[label=code:voltageLevelXML,
 	caption= SCL Substation voltage levels
-	]{chapters/ch-scl/source/scl/voltageLevel.xml}
+	]{chapters/ch-scl/source/scl/substation/voltageLevel/voltageLevel.xml}
 	
 	and finally, assigning determined voltages to the 
 	diferents voltage levels:
 	\lstinputlisting[label=code:voltageLevel-and-voltage-XML,
 	caption= SCL Substation voltage levels containing 
 	their respective voltage
-	information]{chapters/ch-scl/source/scl/voltageLevel-and-voltage.xml}
+	information]{chapters/ch-scl/source/scl/substation/voltageLevel/voltageLevel-and-voltage.xml}
 
 
 \subsection{Bay}
@@ -76,12 +76,12 @@ communication services modelling example with SCL}
 	A voltage level can contain several bays.
 	The bay object are represented here:
 	\lstinputlisting[label=code:bay-XML,
-	caption= Bay ]{chapters/ch-scl/source/scl/bayQ1.xml}
+	caption= Bay ]{chapters/ch-scl/source/scl/substation/voltageLevel/bay/bayQ1.xml}
 	
 	And here several bays of a unique voltage level.
 	\lstinputlisting[label=code:bay-XML,
 	caption= Bay as child of the voltage level D1 
-	]{chapters/ch-scl/source/scl/bayQ1Q2Q3.xml}
+	]{chapters/ch-scl/source/scl/substation/voltageLevel/bay/bayQ1Q2Q3.xml}
 	
 	and 4 bays in a substation. The references to 
 	theses bays are:
@@ -97,7 +97,7 @@ communication services modelling example with SCL}
 	do not point to the same object.
 	\lstinputlisting[label=code:bay-XML,
 	caption= 2 Bays in the Substation context. 
-	]{chapters/ch-scl/source/scl/bayQ1Q2Q3-2VoltageLevels.xml}
+	]{chapters/ch-scl/source/scl/substation/voltageLevel/bay/bayQ1Q2Q3-2VoltageLevels.xml}
 
 \subsection{Conducting Equipment}
 The conducting equipment are \todo{completar\ldots}
@@ -113,11 +113,11 @@ The conducting equipment are \todo{completar\ldots}
 \subsection{Complete SSD}
 The complete SSD are provided here:
 %scl-Example-T1-1-SSD-complete.xml
-\lstinputlisting[label=code:TCTR_v1java,
-caption=Example
-of SSD]{chapters/ch-scl/source/scl/scl-Example-T1-1-SSD-complete.xml}
+%\lstinputlisting[label=code:TCTR_v1java,
+%caption=Example
+%of SSD]{chapters/ch-scl/source/scl/scl-Example-T1-1-SSD-complete.xml}
 
-\\
+
 
 
 
