@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL" 
+	 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	 xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL xsd/SCL.xsd ">
+	<Text>
+  		This is a SCL file of a 1 1/2 breaker 
+  		IEC 61850 substation schema.
+  		Created by David Perez. 
+	</Text>
+	<Private source="http://tempuri.org">
+		This is a private tag.
+	</Private>
+	<Header id="SCL Example - PTI virtual substation"
+  			nameStructure="IEDName"
+  			revision="R01.0"
+  			toolID="Eclipse XML plugin"
+  			version="1">
+		<History>
+			<Hitem when="25/07/2010" version="1.0" revision="1">
+				This is the first iteration of this SCL file.
+			</Hitem>
+		</History>
+	</Header>  			
+	<Substation name="SPTI">
+		<PowerTransformer name="powerTransformer" type="PTR">
+			<TransformerWinding name="R" type="PTW">
+				<Terminal voltageLevelName="VL1" 
+							bayName="BAY5" 
+							connectivityNode="SPTI/VL1/BAY5/NOD16" 
+							substationName="SPTI" 
+							cNodeName="NOD16"></Terminal>
+				<Terminal voltageLevelName="VL2" 
+							bayName="BAY6" 
+							connectivityNode="SPTI/VL1/BAY5/NOD17" 
+							substationName="SPTI" 
+							cNodeName="NOD17"></Terminal>
+			</TransformerWinding>
+		</PowerTransformer>
+		<VoltageLevel name="VL1" desc="voltage level: 500KV">
+			<Voltage unit="V" multiplier="k">500</Voltage>
+			<Bay name="BAY0" desc="500 KV Bus bar, and their related equipments">
+				<ConductingEquipment name="BusBar" desc="Bus bar 500 KV" type="CBR">
+					<Terminal voltageLevelName="VL1" 
+				 				bayName="BAY0" 
+				 				connectivityNode="SPTI/VL1/BAY1/NOD1" 
+				 				substationName="SPTI" 
+				 				cNodeName="NOD1"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="TP1" type="VTR" 
+					desc="Transformador de medición de potencial de la barra">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD1" desc="node: bus bar, 500KV" pathName="SPTI/VL1/BAY0/NOD1"/>
+			</Bay>
+			<Bay name="BAY1" desc="BAY1 : 1 circuit breaker and 2 switches">
+				<ConductingEquipment name="SW_1_2" desc="interruptor 1_2" type="CBR">
+					<LNode lnClass="XSWI"></LNode>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD01" 
+							  substationName="SPTI" 
+							  cNodeName="NOD01"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD02" 
+							  substationName="SPTI" 
+							  cNodeName="NOD02"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="CB_1_2" type="CBR">
+					<LNode lnClass="XCBR"></LNode>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD02" 
+							  substationName="SPTI" 
+							  cNodeName="NOD02"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD03" 
+							  substationName="SPTI" 
+							  cNodeName="NOD03"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="TC1" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="SW_4_5" desc="interruptor 4_5" type="CBR">
+<!--					<LNode lnClass="XSWI"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD05" 
+							  substationName="SPTI" 
+							  cNodeName="NOD04"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY1" 
+							  connectivityNode="SPTI/VL1/BAY1/NOD04" 
+							  substationName="SPTI" 
+							  cNodeName="NOD05"></Terminal>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD02" pathName="SPTI/VL1/BAY1/NOD02"></ConnectivityNode>
+				<ConnectivityNode name="NOD03" pathName="SPTI/VL1/BAY1/NOD03"></ConnectivityNode>
+				<ConnectivityNode name="NOD04" pathName="SPTI/VL1/BAY1/NOD04"></ConnectivityNode>
+				<ConnectivityNode name="NOD05" pathName="SPTI/VL1/BAY1/NOD05"></ConnectivityNode>
+<!--				<ConnectivityNode name="NOD" pathName="SPTI/VL1/BAY1/NOD"></ConnectivityNode>-->
+			</Bay>
+			<Bay name="BAY2" desc="BAY2 : 1 circuit breaker and 2 switches">
+				<ConductingEquipment name="SW_5_8" desc="interruptor 5_8" type="CBR">
+<!--					<LNode lnClass="XSWI"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD05" 
+							  substationName="SPTI" 
+							  cNodeName="NOD05"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD08" 
+							  substationName="SPTI" 
+							  cNodeName="NOD08"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="CB_8_9" type="CBR">
+<!--					<LNode lnClass="XCBR"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD08" 
+							  substationName="SPTI" 
+							  cNodeName="NOD08"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD09" 
+							  substationName="SPTI" 
+							  cNodeName="NOD09"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="TC2" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="SW_10_11" desc="interruptor 10_11" type="CBR">
+<!--					<LNode lnClass="XSWI"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD10" 
+							  substationName="SPTI" 
+							  cNodeName="NOD10"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY2" 
+							  connectivityNode="SPTI/VL1/BAY2/NOD11" 
+							  substationName="SPTI" 
+							  cNodeName="NOD11"></Terminal>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD08" pathName="SPTI/VL1/BAY2/NOD08"></ConnectivityNode>
+				<ConnectivityNode name="NOD09" pathName="SPTI/VL1/BAY2/NOD09"></ConnectivityNode>
+				<ConnectivityNode name="NOD10" pathName="SPTI/VL1/BAY2/NOD10"></ConnectivityNode>
+				<ConnectivityNode name="NOD11" pathName="SPTI/VL1/BAY2/NOD11"></ConnectivityNode>
+			</Bay>
+			<Bay name="BAY3" desc="BAY3 : 1 circuit breaker and 2 switches">
+				<ConductingEquipment name="SW_11_12" desc="interruptor 11_12" type="CBR">
+<!--					<LNode lnClass="XSWI"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD11" 
+							  substationName="SPTI" 
+							  cNodeName="NOD11"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD12" 
+							  substationName="SPTI" 
+							  cNodeName="NOD12"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="CB_8_9" type="CBR">
+<!--					<LNode lnClass="XCBR"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD12" 
+							  substationName="SPTI" 
+							  cNodeName="NOD12"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD13" 
+							  substationName="SPTI" 
+							  cNodeName="NOD13"></Terminal>
+				</ConductingEquipment>
+				<ConductingEquipment name="TC3" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="SW_10_11" desc="interruptor 10_11" type="CBR">
+<!--					<LNode lnClass="XSWI"></LNode>-->
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD14" 
+							  substationName="SPTI" 
+							  cNodeName="NOD14"></Terminal>
+					<Terminal voltageLevelName="VL1" 
+							  bayName="BAY3" 
+							  connectivityNode="SPTI/VL1/BAY3/NOD15" 
+							  substationName="SPTI" 
+							  cNodeName="NOD15"></Terminal>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD12" pathName="SPTI/VL1/BAY3/NOD12"></ConnectivityNode>
+				<ConnectivityNode name="NOD13" pathName="SPTI/VL1/BAY3/NOD13"></ConnectivityNode>
+				<ConnectivityNode name="NOD14" pathName="SPTI/VL1/BAY3/NOD14"></ConnectivityNode>
+				<ConnectivityNode name="NOD15" pathName="SPTI/VL1/BAY3/NOD15"></ConnectivityNode>
+			</Bay>
+			<Bay name="BAY4">
+				<ConductingEquipment name="TC4" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="TP3" type="VTR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD06" pathName="SPTI/VL1/BAY4/NOD06"></ConnectivityNode>
+			</Bay>
+			<Bay name="BAY5">
+				<ConductingEquipment name="TC5" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD16" pathName="SPTI/VL1/BAY5/NOD16"></ConnectivityNode>
+			</Bay>
+		</VoltageLevel>
+		<VoltageLevel name="VL2" desc="voltage level: 200KV">
+			<Voltage unit="V" multiplier="k">200</Voltage>
+			<Bay name="BAY6">
+				<ConductingEquipment name="TC6" type="TCR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConductingEquipment name="TP4" type="VTR">
+					<SubEquipment name="R" phase="A"></SubEquipment>
+					<SubEquipment name="S" phase="B"></SubEquipment>
+					<SubEquipment name="T" phase="C"></SubEquipment>
+				</ConductingEquipment>
+				<ConnectivityNode name="NOD17" pathName="SPTI/VL1/BAY5/NOD17"></ConnectivityNode>
+				<ConnectivityNode name="NOD18" pathName="SPTI/VL1/BAY5/NOD18"></ConnectivityNode>
+				<ConnectivityNode name="NOD19" pathName="SPTI/VL1/BAY5/NOD19"></ConnectivityNode>
+			</Bay>
+		</VoltageLevel>
+	</Substation>
+</SCL>
