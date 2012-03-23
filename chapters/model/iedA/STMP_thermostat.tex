@@ -1,0 +1,61 @@
+
+\subsection{Nodo l\'ogico: 			 STMP}
+
+    \subsubsection{Instancias del nodo l\'ogico STMP}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Tmp\_STMP3 & LD7accesories & (LI) Thermostat temperature controller \\
+            \hline
+            Tmp\_STMP4 & LD7accesories & (13) Temperature controller \\
+            \hline
+    \end{tabular}
+    \caption{Instancias STMP en el IED IEDMainTnk}
+    \label{table:lnInstSTMP_thermostat}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedSTMP,
+            caption=Instancias STMP representadas en SCL
+            ]{chapters/model/iedA/iedSTMP_thermostat.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ STMP}  - Thermostat temperature controller} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            Alm & SPS & Temperature alarm level reached \\
+            \hline
+            Trip & SPS & Temperature trip level reached \\
+            \hline
+            TmpAlmSpt & ASG & Temperature alarm level reached \\
+            \hline
+            TmpTrSpt & ASG & Temperature trip level reached \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla STMP del IED IEDMainTnk}
+    \label{table:lnTypeSTMP_thermostat}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclSTMP,
+            caption=STMP - Thermostat temperature controller - Representaci\'on en SCL
+            ]{chapters/model/iedA/STMP.xml}
+    

@@ -1,0 +1,19 @@
+<LNodeType desc="PID Function" id="FPID_reg" lnClass="FPID">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Measured values-->
+			<DO name="Out" type="Out_pid"/>
+			<DO name="PAct" type="PAct_pid"/>
+			<DO name="IAct" type="IAct_pid"/>
+			<DO name="DAct" type="DAct_pid"/>
+			<DO name="P" type="P_pid"/>
+			<DO name="I" type="I_pid"/>
+			<DO name="D" type="D_pid"/>
+			<!--Settings-->
+			<!--DO type="PidAlg_pid" name="PidAlg"/>
+			<DO type="Kp_pid" name="Kp"/>
+			<DO type="Kl_pid" name="Kl"/-->
+		</LNodeType>

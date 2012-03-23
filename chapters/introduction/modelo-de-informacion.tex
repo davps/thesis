@@ -1,0 +1,117 @@
+\section{Modelo de la información}
+\label{sec:Modelo-informacion-61850}
+La norma IEC 61850 define un modelo de información 
+orientado a objetos, y organiza dicho modelo en 
+tres niveles: nivel 1, nivel 2 y nivel 3. Este modelo
+de información provee una estructura normalizada
+de datos que cubre las necesidades del 
+sistema eléctrico \cite{Ozansoy:2009}. En las figuras
+\ref{fig:Intro-LNs} y 
+\ref{fig:virtualizacion-LNs} 
+se presentan  
+el modelo de información existente en sistemas
+de potencia reales, sus equipamientos, 
+y la representación virtual del sistema eléctrico
+a través del modelo IEC 61850 que 
+responde con el mismo comportamiento que
+en el mundo real, pero ejecutándose por software.
+
+%\begin{landscape}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/introduction/figures/nodos-logicos.eps}
+  \caption{Nodos lógicos}
+  \label{fig:Intro-LNs}
+\end{center}
+\end{figure}
+%\end{landscape}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/introduction/figures/virtualizacion.eps}
+  \caption{Virtualización en el contexto de la norma IEC 61850}
+  \label{fig:virtualizacion-LNs}
+\end{center}
+\end{figure}
+
+
+	\subsection{Niveles del modelo de la información}
+%	\todo[inline]{agregar algo aca}
+	El nivel 1, o \gls{ACSI}, provee las definiciones
+	básicas de la estructura de la información, 
+	sin vincularlos con ninguna información del dominio eléctrico.
+	Los niveles 2 y 3 son modelos específicos del dominio eléctrico 
+	utilizados en los objetos de los IEDs. A continuación, se
+	describen en forma breve cada uno de estos niveles. 
+	
+		\subsubsection{Nivel 1: ACSI}
+			\label{sec:INTRO-acsi-concepto}
+		
+		El \gls{ACSI} tiene el rol de sentar las bases
+		para un modelo más preciso, y a la vez más simple de
+		la información.
+		%, siendo esta la capa de software
+		%que sirve de interfaz con la pila de protocolos utilizados.	
+		
+		La abstracción y el encubrimiento de la información
+		son los pilares fundamentales de todo software 
+		orientado a objetos \cite{Levy:1984}. La norma IEC 
+		61850-7-2 \cite{IEC61850-7-2:2003} realiza el primer paso
+		para la abstracción de la información en base a tecnologías 
+		orientadas a objetos para proveer  
+		una descripción simplificada del sistema eléctrico
+		enfatizando algunos detalles o propiedades del sistema,
+		y eliminando otros detalles \cite{Shaw:1984}.
+
+		Los pilares del \textbf{ACSI} son: 
+		      \begin{itemize}
+		        \item El modelo de información abstracto: Las clases
+		        abstractas que definen la estructura 
+		        de toda la información.
+		        \item El modelo de servicios abstractos: 
+				Las interfaces abstractas definidas en el 
+				apartado IEC 61850--7--2 \cite{IEC61850-7-2:2003}
+				declaran un grupo de métodos de clase que permiten
+				a los \Glspl{IED} comunicar las instancias de la clase 
+				con otras instancias.
+				Los servicios abstractos definidos en el \gls{ACSI} 
+				sirven al proyectista para 
+				conocer los siguientes aspectos de los 
+				servicios de comunicación: 
+				su comportamiento, 
+				sus entradas, salidas, y opcionalmente 
+				el tratamiento de los errores si fuere el caso,
+				pero sin la necesidad de conocer como 
+				ese comportamiento está implementado
+				en el \gls{IED} (el fabricante de \Glspl{IED} es 
+				el responsable del mapeo de los servicios
+				\gls{ACSI} a la pila de protocolos 
+				seleccionados por la norma IEC 61850).
+		      \end{itemize}
+			
+		\subsubsection{Nivel 2: Clases de Datos Comunes o \textbf{CDC}}
+			En el apartado IEC 61850--7--3 \cite{IEC61850-7-3:2003}
+			los \Glspl{CDC} extienden las clases abstractas 
+			que se emplearon para crear la estructura básica 
+			del modelo de información definido en el
+			\gls{ACSI}.
+			
+		\subsubsection{Nivel 3: Nodos Lógicos y Clases de Datos compatibles}
+			Este nivel del modelo de la información está definido
+			en el apartado IEC 61850--7--4, y ya es utilizado 
+			para situaciones específicas en el contexto eléctrico 
+			(en términos de diseño \gls{O-O-es} serían
+			las definiciones de las clases finales).
+			Los modelos del nivel 3 son definidos como
+			\emph{modelos de objetos compatibles} según 
+			la IEC 61850,
+			a través de tipos de nodos lógicos compatibles
+			y tipos de datos compatibles (por ejemplo, posición del 
+			interruptor con estampa de tiempo de calidad del dato).
+			Son estas definiciones las que proveen la semántica
+			al modelado de la información de los sistemas eléctricos
+			realizada en la norma IEC 61850.  
+
+
+
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Header id="MyTNKICD" 
+		nameStructure="IEDName" 
+		revision="1.0.5" 
+		toolID="XMLSpy" 
+		version="1">
+	<Text>DataTypeTemplate de la parte hidraulica del regulador de velocidad</Text>
+	<History>
+		<Hitem revision="1" what="Este ICD fue iniciado a partir de la version 1.2 rev 3 del ICD del tanque principal." when="20-10-2010" 
+			version="1.0"
+			who="David Perez" 
+			why="Conviene reaprovechar un ICD existente"/>
+		<Hitem when="20-10-2010" revision="2" version="1.0">
+			TODO: Falta eliminar los DataTypeTemplates que no se usan aqui.
+		</Hitem>
+	</History>
+</Header>

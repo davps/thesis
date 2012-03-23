@@ -1,0 +1,83 @@
+\section{Introducción}
+
+La energía en todo el mundo mueve por lo menos siete billones de dólares
+anuales, y es un negocio en expansión, afectando profundamente nuestra economía,
+sociedad y entorno \cite{Dukert:2009ab}, debido a esto, existe una constante
+investigación en el sector y han surgido nuevas tecnologías y normas 
+que están llevándonos hacia la nueva era de los sistemas de potencia:
+los sistemas eléctricos inteligentes (en inglés, \emph{Smart Grids}).
+En este contexto, la automatización y el tratamiento de la información de los
+sistemas de potencia se constituyen como infraestructuras estratégicas en el
+desarrollo de los países, muchos de los cuales ya han comenzado el proceso de
+actualización tecnológica.
+
+Este proceso de actualización tecnológica del sector eléctrico está siendo
+proyectado y ejecutado a nivel mundial, introduciéndose nuevos paradigmas
+en el proceso de ingeniería de los sistemas eléctricos, apoyado en nuevos
+pilares que resaltan por su sofisticación, integración
+multidisciplinar, innovación y pueden atender las exigencias globales del
+consumo de energía, ayudando al ser humano en la construcción de un mundo
+mejor.
+
+En la automatización de los sistemas de energía se destaca el proceso de
+digitalización de la información gracias a la amplia utilización de 
+dispositivos basados en uno o varios microprocesadores
+\cite{Santoso:2000} integrados llamados \Glspl{IED},
+los cuales aprovechan una serie de tecnologías de redes de comunicación que
+son adecuadas para cubrir las necesidades de monitoreo, supervisión,
+automatización, control y protección de los sistemas eléctricos.
+
+El intercambio de información entre \Glspl{IED} de diferentes fabricantes se ha
+vuelto muy complejo, costoso, y a veces imposible, es por ello que la
+industria ha comenzado a desarrollar normas internacionales en forma
+colaborativa, y así conseguir interoperabilidad, confiabilidad
+y mayor calidad en el intercambio de información dentro del sistema de
+automatización de los procesos eléctricos de potencia.
+
+La norma internacional IEC 61850 \emph{``Comunication Networks and Systems in
+Substations''} provee soporte para una interoperabilidad a prueba
+de futuro en el intercambio de la información a través de la especificación de: 
+	\begin{itemize}
+	  \item un modelo orientado a objetos y semántico de toda la estructura de la información,
+	  \item métodos de intercambio de la información con interfaces permanentes y bien definidas,
+	  \item mapeo de estas interfaces a protocolos de comunicación acordes al estado del arte de las tecnologías de comunicación,
+	  \item y un lenguaje de configuración de los IEDs y de las redes de comunicación de los procesos eléctricos.
+	\end{itemize}
+
+La norma IEC 61850, en la actualidad, no se enfoca únicamente a subestaciones,
+también es aplicable y extensible para satisfacer las necesidades 
+de comunicación de casi la
+totalidad de la cadena de suministro de energía, entre los cuales destacamos
+los sistemas de transmisión, distribución y generación (eólica, hidroeléctrica
+y fotovoltaica)\cite{Schwarz:2008} y 
+varios proyectos pilotos tales como aplicaciones de la norma a
+coches eléctricos \cite{Germany:2009}.
+
+La correcta utilización del modelo jerárquico de la información especificado en
+la norma IEC 61850 a través de nodos lógicos es una cuestión clave y debe
+adaptarse a la filosofía de la planta. Las agrupaciones de los nodos lógicos de
+forma adecuada representan funciones o equipos utilizados en los sistemas de potencia. Cada nodo lógico provee una
+lista de información bien designada y organizada. Los objetos y servicios
+definidos en la parte IEC 61850--7--2 \cite{IEC61850-7-2:2003} de la norma
+permiten el intercambio de esta información.
+
+En julio del 2007 las extensiones de los nodos lógicos a centrales
+hidroeléctricas han sido aprobadas, publicadas y están listas para su uso, en
+el apartado IEC 61850--7--4--10: \emph{``Hydroelectric Power Plants -- Communication
+for monitoring and control''}; agregando 60 nodos lógicos y 350 Data Objects a
+la serie IEC 61850 \cite{IEC61850-7-410:2007}.
+
+Este trabajo consiste en la aplicación de la norma IEC 61850, en especial de la 
+elección de nodos lógicos definidos en la parte 7--4--10 -- \emph{Hydro Power Plants} y de
+los servicios de comunicación para la automatización del regulador de
+velocidad de una unidad generadora típica de Itaipu, y la realización de una
+propuesta al TC57 (International Electrotechnical Commission, Technical
+Committee 57) para la complementación o extensión de nodos lógicos de la norma
+que actualmente son insuficientes para las unidades generadoras de Itaipu. Este
+trabajo de investigación se basa en el ítem del documento \emph{``Proposta de
+Temas para Monografias de Especializa\c c\~ao - Automa\c c\~ao, Controle e
+Supervis\~ao do Processo Elétrico Baseado na Norma  IEC 61850 -- A--4 -- Automa\c
+c\~ao de Unidades Geradoras -- Modelagem Completa da Unidade Geradora''} de la
+Itaipu Binacional, redactado por Marcos Fonseca Mendes, Antonio Sertich
+Koehler y Ladislao Aranda Arriola, funcionarios de la Itaipu Binacional.
+

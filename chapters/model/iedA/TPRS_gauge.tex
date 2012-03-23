@@ -1,0 +1,59 @@
+
+\subsection{Nodo l\'ogico: 			 TPRS}
+
+    \subsubsection{Instancias del nodo l\'ogico TPRS}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Pa\_TPRS2 & LD7accesories & (11) Pressure-gauge \\
+            \hline
+            Pa\_TPRS3 & LD7accesories & (12) Pressure-gauge \\
+            \hline
+    \end{tabular}
+    \caption{Instancias TPRS en el IED IEDMainTnk}
+    \label{table:lnInstTPRS_gauge}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedTPRS,
+            caption=Instancias TPRS representadas en SCL
+            ]{chapters/model/iedA/iedTPRS_gauge.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ TPRS}  - Pressure-gauge} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            SmpRteRng & ING & Available sampling rate range \\
+            \hline
+            Pres & SAV & Pressure of media [Pa] \\
+            \hline
+            SmpRte & ING & Sampling rate setting \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla TPRS del IED IEDMainTnk}
+    \label{table:lnTypeTPRS_gauge}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclTPRS,
+            caption=TPRS - Pressure-gauge - Representaci\'on en SCL
+            ]{chapters/model/iedA/TPRS.xml}
+    

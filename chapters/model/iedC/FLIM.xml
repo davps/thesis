@@ -1,0 +1,15 @@
+<LNodeType desc="Wicket gate closure travel limit" id="FLIM_" lnClass="FLIM">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO desc="High Limit reached" name="HiLim" type="xLim_1"/>
+			<DO desc="Low Limit reached" name="LoLim" type="xLim_1"/>
+			<!-- Measured values -->
+			<DO desc="Output signal" name="Out" type="Out_1"/>
+			<DO desc="High Limit setpoint" name="HiLimSpt" type="xLimSpt_1"/>
+			<DO desc="Low Limit setpoint" name="LoLimSpt" type="xLimSpt_1"/>
+			<DO desc="Block operation" name="Blk" type="Blk_1"/>
+		</LNodeType>

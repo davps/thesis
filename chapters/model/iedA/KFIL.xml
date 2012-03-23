@@ -1,0 +1,11 @@
+<LNodeType desc="Filter for the supply of the actuator" id="KFIL_actuator" lnClass="KFIL">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO name="ACAlm" type="ACAlm_1"/>
+			<DO name="MotPro" type="MotPro_1"/>
+			<DO name="FilAlm" type="FilAlm_1"/>
+		</LNodeType>

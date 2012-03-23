@@ -1,0 +1,7 @@
+<LNodeType id="LLN0_1" lnClass="LLN0">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+		</LNodeType>

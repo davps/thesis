@@ -1,0 +1,102 @@
+\section{Requisitos del diseño}
+
+En esta sección se identifican las necesidades 
+y condiciones que debe
+satisfacer el diseño del modelo de nodos lógicos 
+y servicios de comunicación de los sistemas 
+de automatización del regulador de velocidad.
+Estos requisitos fueron elaborados acorde 
+a las directrices de gerenciamiento
+de proyecto dadas en la IEC 61850--3 \cite{IEC61850-4:2002} y procedimientos
+básicos recomendados para la especificación de 
+requisitos de software conforme a la norma IEEE 830 \cite{IEEE:830-1998}  
+(En la ingeniería de software se utiliza el 
+término \emph{``Especificación de requisitos de software''} 
+para contenidos similares a esta sección, 
+sin embargo, 
+en este trabajo se utiliza simplemente el 
+término \emph{``Requisitos del diseño''}
+o \emph{``Definiciõn de los requisitos de diseño''} 
+debido a que en el contexto de la 
+automatización de sistemas de energía eléctrica el término 
+\emph{``Especificación''} es utilizado 
+con un significado y un contexto bien definidos, 
+distintos a lo expuesto en esta sección). 
+
+%\todo[inline]{Leer http://bloqnum.com/pfc/proyecto/node11.html} 
+
+
+\subsection{Requisitos para la obtención del diseño de este modelo en
+conformidad con la norma IEC 61850}
+	\begin{itemize}
+	  \item Los nodos lógicos deben ser obtenidos de las partes 7--4
+	  \cite{IEC61850-7-4:2003} y 7--4--10 \cite{IEC61850-7-410:2007} de la norma
+		IEC 61850.
+	  \item Las nomenclaturas técnicas para la designación de los objetos 
+	  en los diseños de ingeniería y la identificación de señales \cite[cl.
+	  8.4]{IEC61850-6:2004} deben estar en armonía con las directrices definidas
+	  por la Itaipu Binacional en el marco de actualización tecnológica de la
+	  central. En el caso que no sea posible obtener dichas
+	  informaciones se utilizará la norma IEC 61346 \cite{IEC61346-1:1996} para el
+	  efecto.
+	  \item Los archivos SCL generados durante el proyecto deben ser validados
+	  acorde al XML Shema definido en la norma IEC 61850-6 \cite{IEC61850-6:2004}.
+ 	  Para este trabajo, no es requisito la conformidad con los Tissues
+ 	  \cite{IEC61850:tissues}.
+	\end{itemize}
+
+\subsection{Requisitos tecnológicos}
+Los diseños realizados en este trabajo, en la medida de lo  posible,  deben
+tener en cuenta el estado del arte de 
+las implementaciones de la norma IEC 61850 existentes en el
+mercado (para subestaciones, debido a que aún no existen implementaciones
+comerciales de los nodos lógicos de monitoreo y control para hidroeléctricas).
+La identificación (a grandes rasgos) de los problemas técnicos existentes para
+la fabricación de dispositivos que implementen 
+las definiciones de la norma IEC 61850 ayuda al
+proceso de especificación de equipos, pues de esta forma  
+el mercado podrá ofertar el producto deseado en los plazos 
+establecidos. \footnote{No todos los nodos lógicos ni servicios de comunicación
+definidos por la norma IEC 61850 están implementados en el mercado}
+
+Para ello, las siguientes consideraciones son necesarias:
+	\begin{itemize}
+      \item Identificación de los servicios de comunicación
+      definidos por la norma IEC 61850 que ya están 
+      implementados en dispositivos totalmente funcionales
+      y disponibles en el mercado, o bien están en proceso 
+      de consolidación.
+      \item Los nodos lógicos podrán ser utilizados en su totalidad, sin
+      limitarse a la utilización de nodos lógicos disponibles en el mercado,
+      debiendo evitarse en lo posible la utilización de los 
+      nodos lógicos del grupo G de la 
+      IEC 61850-7-4 \cite[cl. 5.7]{IEC61850-7-4:2003} si existen los nodos
+      lógicos especializados, adecuados para el efecto \footnote{Dicho
+      requisito se debe a que la utilización de 
+      los nodos lógicos genéricos pierden las definiciones
+      semánticas (congruencia de la información en términos y significado) 
+      que se intenta establecer con la implementación de los nodos
+      lógicos especializados definidos en toda la 
+      IEC 61850--7--4--x \cite{IEC61850-7-4:2003}, \cite{IEC61850-7-410:2007},
+      \cite{IEC61850-7-420:2009}, \cite{IEC61850-7-430:200-X} }.
+      \item En caso que no existan los nodos lógicos que cubran las
+      necesidades del diseño del modelo del regulador de velocidad de Itaipu se
+      se deberá proponer la extensión o complementación de los nodos lógicos de
+      la norma IEC 61850.
+    \end{itemize}
+
+\subsection{Requisitos para la documentación del diseño}
+Se requiere documentar adecuadamente todo el proceso de ingeniería aplicado
+durante el proyecto a través de:
+	\begin{itemize}
+      \item Planos de la arquitectura referencial del sistema y del modelo IEC
+      61850.
+	  \item Tablas de la plantilla de los nodos lógicos utilizados, identificando
+	  inclusive los Data Objects seleccionados.
+	  \item Descripción formal en SCL de la plantilla de los nodos lógicos
+	  utilizados, identificando los Data Objects seleccionados.
+	  \item Tablas de las instancias de los nodos lógicos, en sus correspondientes
+	  Logical Devices e IEDs.
+	  \item Descripción formal en SCL de las instancias de los nodos lógicos, en
+	  sus correspondientes Logical Devices e IEDs.
+	\end{itemize}

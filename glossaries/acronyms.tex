@@ -19,6 +19,30 @@ name={-USO interno-Kernel support vector machine (ksvm)}% change the default
 way of displaying the entry name in the list of acronyms ]{ksvm}{ksvm}{-USO interno-kernel 
 support vector machine}
 
+%%%API
+\newacronym[description={Es una interface
+a través del cual es posible acceder a 
+las funcionalidades de un software}, 
+name={API - Application programming interface}]
+{API}{API}{Application programming interface}
+
+%%%ACSI
+\newacronym[description={El \textbf{ACSI} define los pilares 
+del modelo de información 
+y el modelo de servicios
+de la norma IEC 61850}, 
+name={ACSI - Abstract Communication Service Interface}]
+{ACSI}{ACSI}{Abstract Communication Service Interface}
+
+
+%%%CDC 
+\newacronym[description={
+Corresponde al nivel 1 del ACSI, a través del cual
+se crean los \textbf{Data} de la IEC 61850-7-4 y 
+los Data Objects de la IEC 61850-6}, 
+name={CDC - Common Data Class}]
+{CDC}{CDC}{Common Data Class}
+
 
 %%%CID
 \newacronym[description={SCL file that contains
@@ -26,59 +50,93 @@ an instantiated IED within a project, current
 adresses of the IED, and optionally the 
 Substation related information related to the IED.
 }, 
-name={Configured IED Description}]
+name={CID - Configured IED Description}]
 {CID}{CID}{Configured IED Description}
 
 
 
 %%%O-O
-\newacronym[description={Object Oriented should be: Object oriented system, 
-object oriented programming, object oriented model, object oriented 
-technology},
-%name={Intelligent Electronic Device}
-]{O-O}{O-O}{Object-Oriented}
+% \newacronym[description={Object Oriented should be: Object oriented system, 
+% object oriented programming, object oriented model, object oriented 
+% technology},
+% %name={Intelligent Electronic Device}
+% ]{O-O}{O-O}{Object-Oriented}
+
+\newacronym[description={En el texto se habla de sistemas orientados a objetos, 
+programación orientada a objetos, modelo orientado a objetos 
+y tecnología orientada a objetos. Todas estas definiciones 
+se refieren a la aplicación del paradigma orientado a objetos},
+name={O-O - Orientado a Objetos}
+]{O-O-es}{O-O}{Orientado a Objetos}
+
 
 
 %%%ICD
-\newacronym[description={SCL file that contains 
-the description of the IED: Logical node implementations, 
-the quantity of avaliable instances of them, 
-their services and communication settings objects
-(without their values before SAS description 
-explained in the 
-section \ref{sec:SAS-description-scl-engineering} 
-and with the object values after the SAS description)
-}, 
-name={IED Capability Description}]
+\newacronym[description={Variante SCL que contiene
+la descripción del IED: La implementación de 
+nodos lógicos, la cantidad de instancias disponibles,
+sus servicios y configuraciones de comunicación, 
+pero sin contener aún 
+los parámetros de configuración definidos 
+por el dueño de la planta}, 
+name={ICD - IED Capability Description}]
 {ICD}{ICD}{IED Capability Description}
 
 
 %%%IED
-\newacronym[description={microprocessor based 
-device with network capabilities},
-name={Intelligent Electronic Device}
+\newacronym[description={Son dispositivos basados en uno o varios 
+microprocesadores integrados llamados 
+Intelligent Electronic Devices (IEDs). Manejan protocolos de comunicación  
+y sistemas de información con el objetivo de enviar o 
+recibir datos de o para varias fuentes para desempeñar las funciones de  
+monitoreo, supervisión, control, y protección de la generación, transmisión 
+y distribución de la energía eléctrica},
+name={IED - Intelligent Electronic Device}
 ]{IED}{IED}{Intelligent 
 Electronic Device}
 
 
 %%%LN
-\newacronym[description={This abbreviation of \emph{Logical Node} is used 
-by IED xml child node in the SCL},%
-%name={Logical Node}
-]{LN}{LN}{Logical Node}
+%\newacronym[description={This abbreviation of \emph{Logical Node} is used 
+%by IED xml child node in the SCL},%
+%name={LN - Logical Node}
+%]{LN}{LN}{Logical Node}
 
 
 %%%LNode
-\newacronym[description={This abbreviation of \emph{Logical Node} is used 
-by Substation xml child nodes in the SCL},%
+%\newacronym[description={This abbreviation of \emph{Logical Node} is used 
+%by Substation xml child nodes in the SCL},%
 %name={Logical Node}
-]{LNode}{LNode}{Logical Node}
+%]{LNode}{LNode}{Logical Node}
+
+
+
+\newacronym[description={El \emph{Merging Unit} conecta
+los transformadores de corriente y potencial convencionales
+a los dispositivos de control y protección
+a través del bus de proceso normalizado en 
+conformidad con la norma IEC61850-9},%
+name={MU - Merging Unit}
+]{MU}{MU}{Merging Unit}
 
 
 %%%SAS
-\newacronym[name={Substation Automation System}% change the default way of displaying the entry name in the list of acronyms
-]{SAS}{SAS}{Substation Automation System}
-
+\newacronym[description={
+Sistema de Automatización de 
+Subestaciones (del inglés \emph{Substation Automation System}).
+La norma IEC 61850 fue concebida inicialmente para 
+subestaciones. Debido a ello, en la norma IEC 
+61850 siempre se hace mención al SAS. Posteriormente
+la norma fue extendida para cubrir las necesidades 
+de los sistemas de automatización de las hidroeléctricas,
+pero debido a que ya se utilizaba extensamente en toda norma la 
+palabra ``Subestación'', es correcto 
+referirse a la automatización 
+de cualquier parte del sistema de potencia 
+como SAS 
+},
+name={SAS - Sistema de Automatización de Subestaciones}]
+{SAS}{SAS}{Sistema de Automatización de Subestaciones}
 
 %%%SCD
 \newacronym[description={SCL file that contains 
@@ -90,51 +148,86 @@ correspondences with IED LN objects,
 all the IED's ICD, headers, 
 communications details (identifies adresses and subnetworks) 
 },
-name={Substation Capability Description}]
+name={SCD - Substation Capability Description}]
 {SCD}{SCD}{Substation Capability Description}
 
 
 %%%SCL
-\newacronym[description={The SCL is a XML based language defined as a
-standard (IEC 61850-6 \cite{IEC61850-6:2004} ) and is used for IED
-configuration},% acronym's description name={Substation Configuration description Language}
+\newacronym[description={El SCL es un lenguaje basado en 
+XML definido como norma (IEC 61850-6 \cite{IEC61850-6:2004})
+y es utilizado para la configuración de los 
+equipos IEC 61850 de la planta},% acronym's description
+name={SCL - Substation Configuration description Language}
 ]{SCL}{SCL}{Substation Configuration description Language}
 
 
 %%%SSD
-\newacronym[description={SCL file that contains 
-the power system functions, i.e, the substation 
-xml node of the SCL, but without great details, 
-not including descriptions  
-such as substation LNodes 
-correspondences with IED LN objects},
-name={System Specification Description}]
+\newacronym[description={Esta variante SCL 
+contiene las funciones del sistema de potencia, 
+esto es, el elemento \textbf{Substation} del SCL, 
+pero sin grandes detalles},
+name={SSD - System Specification Description}]
 {SSD}{SSD}{System Specification Description}
+
+%%%SO
+\newacronym[description={
+La serialización, o \emph{marshalling} es el proceso
+de persistir un objeto en la memoria o para propósitos de transmisión,
+creando un archivo legible por humanos que contiene la estructura y los
+datos en un formato grabable en el computador. Un objeto 
+solo existe en tiempo de ejecución, y este es serializado para
+ser guardado por el tiempo que sea necesario o
+alternativamente, para ser transmitido a través de la red
+para otro host},
+name={SO - Serialización de objetos}]
+{SO}{SO}{Serialización de objetos}
 
 
 %%%UML
-\newacronym[description={Unified Modeling Language {\texttrademark}
-\cite{UML2:2009} is a specification to 
-describes the model of a application structure, 
-behabiour and system architecture}, %
-name={Unified Modeling Language {\texttrademark} - 
-UML}]{UML}{UML}{Unified Modeling Language}
+%\newacronym[description={Unified Modeling Language {\texttrademark}
+%\cite{UML2:2009} is a specification to 
+%describes the model of a application structure, 
+%behabiour and system architecture}, %
+%name={Unified Modeling Language {\texttrademark} - 
+%UML}]{UML}{UML}{Unified Modeling Language}
+
+%%%UML
+\newacronym[description={Lenguaje Unificado de Modelado \emph{Unified Modeling
+Language} {\texttrademark} \cite{UML2:2009} 
+Es una especificación para describir 
+el modelo de la estructura de una aplicación, 
+comportamiento o arquitectura del sistema}, %
+name={UML - Unified Modeling Language {\texttrademark} - 
+UML}]{UML-es}{UML}{Lenguaje Unificado de Modelado}
 
 
 %%%XSD
-\newacronym[description={XML is a text format
-which has a simple method to clasify 
-elements names and attributes},
-name={Extensible Markup Language}]
-{XML}{XML}{Extensible Markup Language}
+\newacronym[description={En la capa 1 del modelo OSI
+el PDU es un bit, en la capa 2 es una trama, 
+en la capa 3 un paquete y en la capa 4 es un segmento},
+name={PDU - Protocol Data Unit}]
+{PDU}{PDU}{Protocol Data Unit}
+
+
+
+%%%XML
+\newacronym[description={XML es un formato de texto 
+que proporciona un método que facilita a los seres humanos  
+la clasificación de nombres de elementos y sus atributos, 
+y además, es legible por las máquinas, existiendo
+una gran variedad de tecnologías de software 
+que la manipulan},
+name={XML - eXtensible Markup Language}]
+{XML}{XML}{eXtensible Markup Language}
 
 
 %%%XSD
-\newacronym[description={XML Shema is used 
-to describe the structure and restrictions 
-of the XML documents. In the IEC 61850-6 
-XSD files are asigned to SCL object models. 
-},
-name={XML Schema Definition}]
+\newacronym[description={El esquema XML o XSD 
+es utilizado para describir la estructura
+y las restricciones de los documentos XML. 
+En el apartado IEC 61850-6 \cite{IEC61850-6:2004}
+se vinculan XSDs a los modelos de objetos serializados
+del SCL},
+name={XSD - XML Schema Definition}]
 {XSD}{XSD}{XML Schema Definition}
 

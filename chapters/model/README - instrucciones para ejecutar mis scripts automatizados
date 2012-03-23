@@ -1,0 +1,32 @@
+1- Editar en icdDoc.py los valores de las siguientes variables:
+
+	a)	Indicarle al programa donde está el archivo ICD que quiero documentar, en este caso, el IED_RV.xml
+		scl = minidom.parse("c:\\python-61850\\thesis\\ICDs\\IED_RV.xml")
+
+	b)	Asignar el valor booleano adecuado para integrado_a_mi_tesis:
+		*Si es que va a ser para la tesis 
+			integrado_a_mi_tesis= True
+		*O si los archivos pdfs van a ser para un archivo independiente 
+			integrado_a_mi_tesis= False
+
+	c)	Ubicar el PATH donde se guardarán los archivos
+		En caso de que sea para la estructura de carpetas de mi tesis, voy a usar algo como:
+		pathThesis = "chapters/model/iedE/"
+		o bien, si es para el caso integrado_a_mi_tesis= False debo usar
+		pathThesis = ""
+		
+	d) 	Ejecutar el programa
+	
+	e)	Mover (a mano) los archivos generados a la carpeta indicada por la variable <pathThesis> de icdDoc.py
+		*Si pathThesis != "" (osea, integrado_a_mi_tesis= True ) entonces NO debo copiar 
+		 el archivo main.tex generado por icdDoc.py. Tengo que crear manualmente mi main.tex
+		*En caso de que  pathThesis = ""  no muevo nada. 		
+		
+	f) 	En caso de que sea la primera vez que agrego el ICD documentado a la tesis, debo agregar un input parecido a este 
+		\input{chapters/model/iedE/main}
+		en resumen-modelo.tex
+		
+	g)	run and enjoy!
+		Compilo mi archivo principal del latex, por ejemplo, usando el comando
+		pdflatex main.tex
+	

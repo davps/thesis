@@ -1,0 +1,4 @@
+<LN desc="(BA) Safety solenoid-operated valve BA with position switches CI and CJ" inst="9" lnClass="KVLV" lnType="KVLV_solenoid_operated" prefix="Pos_"/>
+<LN desc="(BB) Safety solenoid-operated valve BB with position switches CK and CL" inst="10" lnClass="KVLV" lnType="KVLV_solenoid_operated" prefix="Pos_"/>
+<LN desc="(BC) Solenoid-operated valve controlling the oil pressure-tank isolating valve" inst="13" lnClass="KVLV" lnType="KVLV_solenoid_operated" prefix="Pa_"/>
+<LN desc="(BD) Solenoid-operated valve controlling the wicket gate lock" inst="14" lnClass="KVLV" lnType="KVLV_solenoid_operated" prefix="Gv_"/>

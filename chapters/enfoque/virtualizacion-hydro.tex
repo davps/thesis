@@ -1,0 +1,118 @@
+\section{Virtualización IEC 61850 de unidades generadoras de centrales hidroeléctricas}
+%\ref{sec:Modelo-informacion-61850}
+
+Existen dos posibles enfoques para la definición de los 
+nodos lógicos de un sistema IEC 61850:
+\begin{enumerate}
+  \item Definición de los modelos de nodos lógicos 
+  de los puntos de comunicación entre dispositivos IEC 61850.
+  \item Definición de los modelos de nodos lógicos 
+  de los puntos de comunicación entre dispositivos IEC 61850, 
+  y virtualización IEC 61850 de toda la planta (incluso si el 
+  dato no será transmitido por la red).
+\end{enumerate}
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/virtualizacion-CBR.eps}
+  \caption{Virtualización de un interruptor}
+  \label{fig:virtulization-CBR}
+\end{center}
+\end{figure}
+
+
+
+El autor de este trabajo opta por diseñar el 
+modelo conforme al segundo enfoque mencionado arriba. Este enfoque
+presenta muchas ventajas, dado que se dota al sistema 
+de una semántica muy detallada de toda la planta. Una primera 
+aproximación puede ser observada en la figura
+\ref{fig:virtualizacion-hydro-presa}.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/virtualizacion-hydro-presa.eps}
+  \caption{Virtualización IEC 61850 de una central hidroeléctrica}
+  \label{fig:virtualizacion-hydro-presa}
+\end{center}
+\end{figure}
+
+
+
+En la figura \ref{fig:virtulization-CBR} obtenida
+del apartado IEC 61850--7--1 \cite{IEC61850-7-1:2003} se observa,
+un interruptor virtualizado con el nodo lógico \textbf{XCBR}. En el 
+caso (1) el interruptor físico recibe comunicación del IED (que se puede 
+encontrar a nivel de bay, por ejemplo)
+a través de cableado convencional, y el IED puede utilizar 
+el nodo lógico \textbf{XCBR} para activar los 
+comandos de apertura o cierre, de acuerdo a 
+las condiciones de trip definidos en el nodo lógico
+\textbf{PTRC}. En el mercado existen IEDs que permiten 
+asignar a los contactos físicos binarios los 
+comandos de apertura o cierre vía cableado convencional, 
+como así también existen IEDs que tienen los nodos lógicos
+desde el \textbf{PTOC} por ejemplo, hasta el \textbf{PTRC},
+pero sin incluir el \textbf{XCBR}, pero permitiendo 
+el accionamiento del interruptor por cableado convencional. Para 
+este tipo de IEDs se pierde parte de la semántica que podría 
+obtenerse con la virtualización del interruptor. En caso de 
+que se tenga el nodo lógico \textbf{XCBR}, siempre considerando 
+el caso 1 de la figura \ref{fig:virtulization-CBR},
+se pueden utilizar datos semánticos por norma (del \textbf{XCBR}) 
+en las lógicas del IED (que se encuentran fuera del alcance de la norma IEC
+61850), con lo que la complejidad del \gls{SAS} se simplifica.
+
+En los casos (2) y (3) de la figura \ref{fig:virtulization-CBR} 
+se pueden observar como se distribuye una función del \gls{SAS}
+entre varios IEDs. El hecho de poseer un modelo de nodos lógicos 
+que incluya el \textbf{XCBR} para este ejemplo, 
+disminuiría considerablemente los cambios en el proyecto
+para en un futuro migrar la función centralizada (caso 1)
+a una función distribuida entre varios IEDs (casos 2 y 3).
+
+Este mismo principio
+es totalmente aplicable en el diseño de modelos IEC 61850 de 
+hidroeléctricas, y 
+vuelve a ser esbozado en el apartado 
+IEC 61850--7--4--10 \cite{IEC61850-7-410:2007} a través 
+de la figura \ref{fig:virtulization-potenciometro}, donde 
+se puede visualizar la virtualización de la interfaz
+física con un potenciómetro motorizado a través 
+del nodo lógico \textbf{FSPT}, que es utilizado, entre otras cosas, para indicar valores de funciones de control.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/virtualizacion-potenciometro.eps}
+  \caption{Virtualización de una interfaz física con un potenciómetro
+  motorizado}
+  \label{fig:virtulization-potenciometro}
+\end{center}
+\end{figure}
+
+Entonces, siguiendo este enfoque, se han virtualizado 
+numerosos datos del sistema a través de nodos lógicos 
+que contienen el \gls{CDC} \textbf{SAV}, que es 
+utilizado para bus de proceso. Si bien no se 
+utilizará el bus de proceso para todos los nodos lógicos que contengan \textbf{CDCs} \textbf{SAV}, 
+se aplica el mismo principio de virtualización del 
+interruptor (\textbf{XCBR}) explicado en los párrafos anteriores.
+
+Los principales nodos lógicos de la 
+norma IEC 61850--7--4--10 \cite{IEC61850-7-410:2007} 
+que están compuestos por \textbf{CDCs} \textbf{SAV}
+son los del grupo T. Es posible observar 
+la interacción de este nodo lógico con 
+los nodos lógicos del bus de estación en la figura
+\ref{fig:LN-bus-proceso-7-4-10}, obtenida de \cite{IEC61850-7-410:2007}.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/virtualizacion-LNs-con-SAV.eps}
+  \caption{Los nodos lógicos del grupo T utilizan el bus de proceso (IEC
+  61850--9--x)}
+  \label{fig:LN-bus-proceso-7-4-10}
+\end{center}
+\end{figure}
+

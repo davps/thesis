@@ -1,0 +1,176 @@
+\section{Substation}
+
+
+El modelo de la subestación especificado 
+en el elemento SCL \emph{Substation} 
+permite construir el modelo de objetos 
+de los equipamientos primarios del 
+sistema, con las designaciones 
+de los puntos de comunicación del sistema
+(y la norma IEC 61850 sugiere utilizar 
+la norma IEC 61346 \cite{IEC61346-1:1996}
+para la nomenclatura de dichos puntos).
+
+Del paradigma \gls{O-O-es} sabemos 
+que los objetos IEC 61850 son 
+agrupaciones de datos y operaciones con 
+memoria autónoma que podría incidir  
+en el comportamiento de 
+cada invocación.
+Los datos de los objetos tienen 
+un estado que recuerdan el efecto 
+de cada operación \cite{Wegner:1987},
+y, a diferencia de las clases, 
+los nodos lógicos del elemento 
+\emph{Substation} son objetos que persisten
+en el archivo \gls{SCL} a través del 
+mecanismo de \glsentryfirst{SO}, 
+y los nodos lógicos implementados en 
+los dispositivos IED son objetos IEC 61850
+propiamente dichos, 
+y sólo existen en un proceso 
+en ejecución. 
+
+ 
+Centrándonos en la interrelación 
+entre el modelo de datos 
+definidos en el elemento \textbf{IED}
+y sus respectivos \textbf{DataTypeTemplates},
+podemos afirmar que:
+un objeto es creado a partir 
+de una clase, en otras palabras, 
+un objeto es una instancia de una clase.
+Análogamente, los nodos lógicos de 
+los elementos \textbf{IED} 
+son creados a partir 
+de \textbf{DataTypeTemplates}, 
+y siendo más específico, los  
+elementos \textbf{LN} 
+(ver figura \ref{fig:SCL-IED-depthMax-heredado})
+son creados a partir de la
+plantilla de datos \textbf{LNodeType}
+(ver figura \ref{fig:SCL-DataTypeTemplates-depthMax-heredado-simplificado}).
+
+
+Para fines prácticos, se presenta el 
+diagrama \gls{UML-es} de las clases 
+instanciables del elemento \emph{Substation}
+en la figura \ref{fig:SCL-substation-heredado}.
+En este diagrama es posible observar 
+las restricciones de cantidades 
+mínima y máxima de instancias permitidas
+y su ubicación dentro de la estructura
+de la subestación. Como puede observarse 
+en el pequeño bosquejo (el diagrama UML
+del elemento \emph{Substation} y las 
+flechas punteadas en rojo) diseñado 
+sobre el plano de una futura subestación 
+paraguaya \cite{Itaipu:6693DE15204E1R0} 
+(figura \ref{fig:SCL-SCD-unifilar-villa-hayes}), 
+el elemento \emph{Substation} del \gls{SCL} 
+permite describir prácticamente toda la 
+topología de una subestación, 
+siendo posible ubicar los nodos lógicos
+en cuaquier nivel jerárquico del 
+diagrama unifilar, gracias a que 
+prácticamente todas las clases 
+instanciables heredan la clase 
+abstracta \emph{PowerSystemResource}, 
+que hereda de \emph{LNodeContainer} 
+las agregaciones de
+\emph{LNode} (ver 
+figura \ref{fig:SCL-header-conHerencia}).
+Para una visión totalmente detallada de 
+la estructura del elemento subestación
+el autor recomienda leer el código \gls{XML}  
+\ref{cod:substation-profundo-xml} del 
+apéndice \ref{app:codigos-SCL}.
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-Substation-dept3-heredado.eps}
+  \captionsetup{font=scriptsize}
+  \caption{Clases instanciables del elemento \emph{Substation}}
+  \label{fig:SCL-substation-heredado}
+\end{center}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/SSD-and-6693DE15204E1R0} 
+  \captionsetup{font=scriptsize}
+  \caption{Diagrama unifilar de la subestación Villa Hayes
+  \cite{Itaipu:6693DE15204E1R0} y su relación (descripta en forma simplificada) 
+  con el SCL.} 
+  \label{fig:SCL-SCD-unifilar-villa-hayes}
+\end{center}
+\end{figure}
+\end{landscape}
+ 
+ 
+ 
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-Substation-deptMax-conHerencia.eps} 
+  \captionsetup{font=scriptsize}
+  \caption{Clases del elemento \emph{Substation}, incluyendo sus clases abstractas}
+  \label{fig:SCL-header-conHerencia}
+\end{center}
+\end{figure}
+\end{landscape}
+
+
+
+A pesar de que la variante SSD describe con gran detalle la estructura de las
+subestaciones, esta no describe con suficiente detalle 
+la estructura de las hidroeléctricas, es por ello que 
+su relevancia en el proceso de ingeniería en el ámbito de las centrales
+hidroeléctricas debe ser revisado. 
+En las subestaciones se define la estructura básica en base a niveles de 
+voltaje, bay, equipamientos conductores y sus terminales (que están 
+incluidos en el elemento \emph{Substation}). Actualmente aún 
+no es posible describir la estructura de una hidroeléctrica, 
+usando el SSD, 
+en términos de cotas, unidades generadoras y embalses, por ejemplo.  
+El SSD provee
+una descripción semántica de estructura del sistema y es útil 
+principalmente para el proyectista (en el ámbito de subestaciones), 
+pues gracias a el es posible realizar cambios del sistema 
+con mayor facilidad. Este sería el uso ideal del SSD. Gracias 
+al uso de un sólo SSD para todo el sistema, se facilita la 
+construcción de sistemas a prueba de futuro. Sin embargo, 
+no siempre es ventajoso empezar el proyecto 
+creando el SSD del sistema, ese es sólo un enfoque entre los
+tantos existentes (algunos enfoques se describen en la 
+sección \ref{sec:ENFOQUE-estado-del-arte-herramientas}). 
+El SSD bien podría ser creado en otra etapa del proceso 
+de ingeniería. 
+
+Para el enfoque utilizado en este 
+trabajo, se ha creado el SSD al final 
+del trabajo. En este caso particular, no proporcionaba 
+ventajas significativas el uso del SSD, pues entre 
+apoyar el diseño de los nodos lógicos en 
+la topología del sistema 
+y en la arquitectura del sistema de comunicación, 
+resultó más adecuado tomar
+los \textbf{LNTypes}
+con sos respectivos \textbf{DOType} 
+que forman parte del \textbf{DataTypeTemplates} 
+creado en el paso anterior,
+y a partir de allí 
+creando las instancias agrupadas en dispositivos lógicos, 
+ya conociendo de antemano la arquitectura del sistema. Se 
+describen mayores detalles al respecto 
+en la sección \ref{sec:ENFOQUE-ssd-vs-icd}.
+
+ 
+ 
+

@@ -1,0 +1,2 @@
+<LN desc="(LI) Thermostat temperature controller" inst="3" lnClass="STMP" lnType="STMP_thermostat" prefix="Tmp_"/>
+<LN desc="(13) Temperature controller" inst="4" lnClass="STMP" lnType="STMP_thermostat" prefix="Tmp_"/>

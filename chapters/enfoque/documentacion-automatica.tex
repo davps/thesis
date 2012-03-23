@@ -1,0 +1,52 @@
+\section{Documentación automática de este trabajo}
+\label{sec:doc-automatica}
+
+La norma IEC 61082 \cite{IEC61082-1:2004} recomienda una serie de
+principios para la generación 
+automática de documentos sobre electrotecnología.
+
+Las ventajas de este enfoque son muy claras:
+\emph{``Cuando la información es guardada en un formato 
+independiente de cualquier presentación, 
+esta información puede ser accesible 
+con diferentes vistas y formatos en el momento 
+en que sea necesitado y en la forma más adecuada 
+para los fines previstos.''} \cite{IEC61082-1:2004}
+
+El proceso puede ser observado en la 
+figura \ref{fig:Enfoque-documentos-generados-iec61082.eps}. 
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/documentos-generados-iec61082.eps} 
+  \caption{Enfoque propuesto por la norma IEC 61802 para la generación de
+  documentos sobre electrotecnología} 
+  \label{fig:Enfoque-documentos-generados-iec61082.eps}
+\end{center}
+\end{figure}
+
+Considerando que el \gls{SCL} permite expresar de 
+manera formal todo 
+el proyecto IEC 61850,
+resulta muy sencillo realizar la documentación automática
+de este proyecto. Es posible leer los archivos \gls{SCL}
+donde se encuentran los modelos de información
+mediante lenguajes de programación que provean librerías
+para la lectura de archivos XML. En este trabajo se ha
+utilizado el lenguaje de programación orientado a 
+objetos \emph{Python 2.6},
+que a partir de los ICDs diseñados durante
+el proceso de ingeniería,
+ha generado en forma automática 
+las tablas del capítulo \ref{cap:model},
+siguiendo las recomendaciones de la norma IEC 61082 \cite{IEC61082-1:2004}
+
+Por lo tanto, de aquí en más, todo el proceso de ingeniería 
+utilizado en este trabajo 
+expresa el flujo de trabajo y
+los diseños en términos de \gls{SCL}, 
+y los gráficos se presentan  
+como complemento.
+
+
+

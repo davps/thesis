@@ -1,0 +1,9 @@
+<LNodeType desc="Wicket gate closure travel limit set-point" id="FSPT_for_flim" lnClass="FSPT">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Measured values-->
+			<DO desc="Setpoint in memory" name="SptMem" type="SptMem_1"/>
+		</LNodeType>

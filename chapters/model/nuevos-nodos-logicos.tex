@@ -1,0 +1,207 @@
+\section{Propuesta de extensión de los nodos lógicos de la norma 
+IEC 61850-7-410}
+
+El autor de este trabajo propone agregar los siguientes nodos 
+lógicos a la norma IEC 61850:
+
+    
+% \subsection{LN: Operation control  -  Name: COPC}
+% 
+% 	Este nuevo nodo lógico permite definir el modo de 
+% 	operación. Inicialmente, se podrá operar en modo localísimo,
+% 	local, desde el sistema central, como así también la operación
+% 	del equipo podrá realizarse bajo control conjunto. 
+% 	
+% 
+%     \begin{table}[H]
+%     \begin{center}
+%     \begin{tabular}{|p{3.6cm}|p{2.4cm}|p{6.0cm}|p{0.1cm}|p{0.8cm}|}
+%             \hline
+%             \multicolumn{5}{|c|}{\cellcolor[gray]{0.8} \textbf{COPC Class} } \\
+%             \hline
+%             \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} &  \textbf{T} & \textbf{M/O}\\
+%             \hline
+%             LNName &   & Shall be inherited from Logical-Node Class (see IEC 61850-7-2) & &M \\
+%             \hline
+%             \multicolumn{5}{|l|}{\cellcolor[gray]{0.8} \textbf{Data} } \\
+%             \hline
+% 
+% 			\multicolumn{5}{|l|}{\textbf{Common Logical Node Information} } \\
+%             \hline
+%               &  &LN shall inherit all Mandatory Data from Common Logical Node Class & & \\
+%             \hline
+% 
+% 			\multicolumn{5}{|l|}{\textbf{Controls} } \\
+%             \hline
+%             OpLcls  & ACT  & Operación en modo localísimo & & O\\
+%             \hline
+%             OpLcl  & ACT  & Operación en modo local & & O\\
+%             \hline
+%             OpCntr  & ACT & Operación desde el control central & & O\\
+%             \hline
+%             OpCnj  & ACT & Operación bajo control conjunto & & O\\
+%             \hline
+% 			\end{tabular}
+%     \caption{Nuevo nodo lógico: COPC}
+%     \label{table:newLN-COPC}
+%     \end{center}
+%     \end{table}
+% 
+% 
+% \todo{traducir los DATA al ingles!}
+% 
+%     
+
+\subsection{LN: Hydraulic switch  -  Name: SSWI}
+
+	Este nuevo nodo lógico podría ser utilizado para modelar 
+	swiches
+	de los sistemas mecánicos. Este nodo lógico permite conocer 
+	la posición de la llave hidráulica. Resulta que el 
+	nodo lógico TPOS envía mensajes con los protocolos definidos 
+	en IEC 61850-9-x del porcentaje de abertura o cierre, por lo tanto, no siempre
+	se obtendrá un buen desempeño del flujo de información circulante por la red si
+	la llave selectora digital es escalonada (si tiene solamente dos o tres
+	posiciones fijas por ejemplo). En estos casos resulta exagerado el uso 
+	del bus de proceso con el \textbf{CDC SAV}, por lo que el autor de este trabajo
+	propone agregar este nodo lógico a la norma IEC 61850.
+    El item 22 del regulador Rapid77 \cite{Itaipu:52151071168i1r1}, llaves de
+    velocidad, también podría ser modelado con este nodo lógico.
+	
+	Este nodo lógico es muy similar al \textbf{HITG}, pero tiene 
+	la semántica adecuada.
+	
+
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|p{3.6cm}|p{2.4cm}|p{6.0cm}|p{0.1cm}|p{0.8cm}|}
+            \hline
+            \multicolumn{5}{|c|}{\cellcolor[gray]{0.8} \textbf{SSWI Class} } \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} &  \textbf{T} & \textbf{M/O}\\
+            \hline
+            LNName &   & Shall be inherited from Logical-Node Class (see IEC 61850-7-2) & &M \\
+            \hline
+            \multicolumn{5}{|l|}{\cellcolor[gray]{0.8} \textbf{Data} } \\
+            \hline
+
+			\multicolumn{5}{|l|}{\textbf{Common Logical Node Information} } \\
+            \hline
+              &  &LN shall inherit all Mandatory Data from Common Logical Node Class & & \\
+            \hline
+
+			\multicolumn{5}{|l|}{\textbf{Status information} } \\
+			\hline
+			SwTyp & INS & Switch type & & M\\
+			\hline
+			SwOpCap & INS & Switch operating capability && M\\
+            \hline
+            PosStep  & INS & Integer representing the position, counting from
+            lowest position & & O\\
+            \hline
+            PosUp  & SPS & Upper end position reached (switch cannot move
+            further)& & M\\
+            \hline
+            PosDn  & PosDn & Lower end position reached (switch cannot move
+            further) & & M\\
+            \hline
+            Mvm  & SPS & Switch is moving & & O\\
+            \hline
+			SwBlk & SPS & Switch is blocked (cannot move from present position) & &O\\
+            \hline
+
+			\multicolumn{5}{|l|}{\textbf{Controls} } \\
+             \hline
+             Opn  & SPC  & Switch to full open position & & O\\
+             \hline
+             Cls  & SPC &  Switch to full closed position & & O\\
+             \hline
+             BlkOpn  & SPC & Block opening of the switch & & O\\
+             \hline
+             BlkCls  & SPC & Block closing of the gate & & O\\
+             \hline
+			\end{tabular}
+    \caption{Nuevo nodo lógico: SSWI}
+    \label{table:newLN-COPC}
+    \end{center}
+    \end{table}
+
+En donde SwOpCap es una enumeración que representa las 
+capacidades físicas de operación de la llave o válvula.
+\begin{itemize}
+  \item None: 1
+  \item Open: 2
+  \item Close: 3
+  \item Open and Close: 4
+\end{itemize}
+
+Este nodo lógico está diseñado para trabajar en conjunto 
+con el nodo lógico \textbf{CSWI} en caso que sea necesario. 
+El nodo lógico \textbf{XSWI} no reemplaza a este nuevo nodo lógico 
+pues el \textbf{XSWI} fue concebido para llaves de apertura 
+de circuitos eléctricos, no hidráulicos ni neumáticos.
+
+\subsection{LN: Frecuency sensor  -  Name: SFRQ}
+
+El nodo lógico \textbf{SFRQ} representaría un sensor de frecuencia eléctrica
+que permita enviar los valores muestreados de frecuencia por la IEC 61850-9-x (a través del \GLS{CDC} \textbf{SAV}).
+El nodo lógico \textbf{MMXU} sólo realiza mediciones, no se permite utilizarlo para valores muestreados, 
+los nodos lógicos \textbf{TFRQ} y \textbf{TRTN} son específicos para el envío
+de la frecuencia no eléctrica. El regulador de velocidad de Itaipu
+necesita las frecuencias eléctricas medidas
+en la barra de 13KV y en la barra de 500KV. En el diseño se 
+ha utilizado el nodo lógico \textbf{TVTR}.
+
+	
+	
+
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|p{3.6cm}|p{2.4cm}|p{6.0cm}|p{0.1cm}|p{0.8cm}|}
+            \hline
+            \multicolumn{5}{|c|}{\cellcolor[gray]{0.8} \textbf{SFRQ Class} } \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} &  \textbf{T} & \textbf{M/O}\\
+            \hline
+            LNName &   & Shall be inherited from Logical-Node Class (see IEC 61850-7-2) & &M \\
+            \hline
+            \multicolumn{5}{|l|}{\cellcolor[gray]{0.8} \textbf{Data} } \\
+            \hline
+
+ 
+			\multicolumn{5}{|l|}{\textbf{Common Logical Node Information} } \\
+            \hline
+              &  &LN shall inherit all Mandatory Data from Common Logical Node Class & & \\
+            \hline
+            EEHealth & INS & External equipment health & & O\\
+            \hline
+            EEName & DPL & External equipment name plate & & O\\
+            \hline
+            OpTmh & INS & Operation time & & O\\
+            \hline
+
+
+			\multicolumn{5}{|l|}{\textbf{Measured values} } \\
+            \hline
+            Hz  & SAV & Frecuency (sampled value)& & M\\
+            \hline
+
+
+			\multicolumn{5}{|l|}{\textbf{Status Information} } \\
+            \hline
+            FuFail & SPS & TVTR fuse failure& & O\\
+            \hline
+			\multicolumn{5}{|l|}{\textbf{Settings} } \\
+            \hline
+            HzRtg  & ASG & Rated frecuency & & O\\
+            \hline
+			\end{tabular}
+    \caption{Nuevo nodo lógico: SFRQ}
+    \label{table:newLN-SFRQ}
+    \end{center}
+    \end{table}
+
+
+
+    
+    

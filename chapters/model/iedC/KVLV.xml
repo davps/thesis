@@ -1,0 +1,16 @@
+<LNodeType desc="Relief pressure valve" id="KVLV_relief" lnClass="KVLV">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>

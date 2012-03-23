@@ -1,0 +1,9 @@
+<LNodeType desc="Set point control function" id="FSPT_1" lnClass="FSPT">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Measured value-->
+			<DO name="SptMem" type="SptMem_1"/>
+		</LNodeType>

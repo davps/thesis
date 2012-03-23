@@ -1,0 +1,57 @@
+
+\subsection{Nodo l\'ogico: 			 TRTN}
+
+    \subsubsection{Instancias del nodo l\'ogico TRTN}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Spd\_TRTN1 & LD2 & Tacometer \\
+            \hline
+    \end{tabular}
+    \caption{Instancias TRTN en el IED IEDsensRot}
+    \label{table:lnInstTRTN_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedTRTN,
+            caption=Instancias TRTN representadas en SCL
+            ]{chapters/model/iedD/iedTRTN_1.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ TRTN}  - Tacometer} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            SmpRteRng & ING & Available sampling rate range \\
+            \hline
+            Hz & SAV & Rotational speed (Hz) \\
+            \hline
+            SmpRte & ING & Sampling rate setting \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla TRTN del IED IEDsensRot}
+    \label{table:lnTypeTRTN_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclTRTN,
+            caption=TRTN - Tacometer - Representaci\'on en SCL
+            ]{chapters/model/iedD/TRTN.xml}
+    

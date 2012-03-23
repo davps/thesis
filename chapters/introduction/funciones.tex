@@ -1,0 +1,102 @@
+\section{Funciones del Sistema de Automatización de Subestaciones}
+
+Las funciones del \gls{SAS} son las tareas que 
+tienen que ser realizadas
+dentro de la hidroeléctrica.
+
+En las centrales hidroeléctricas existen funciones 
+para monitorear, controlar y proteger 
+los equipamientos del sistema. También 
+existen funciones para la configuración del sistema,
+gerenciamiento de la comunicación,
+o gerenciamiento del software. \cite{IEC61850-5:2003}.
+
+
+
+\subsection{Libre ubicación de funciones}
+
+	Desde hace más de 20 años han 
+	surgido las necesidades (y se comenzó a investigar al respecto)
+	de tener la libertad de distribuir efectivamente
+	en diferentes equipamientos 
+	los objetos (virtuales) que realizan 
+	tareas computacionales.
+	
+	Estas frases fueron extraidas de la investigación
+	de Jazayeri, de 1988 \cite{Jazayeri:1988}:
+
+
+%	The effective distribution of Logical Nodes 
+%	on diferents IEDs  
+%	is a reality thanks to researches about 
+%	the structure of distributed systems. More 
+%	than 20 years ago emerged requirements 
+%	for the object paradigm to suport the 
+%	design and development of distributed systems.
+	
+%	Theses quotes were extracted from Jazayeri 
+%	1988 research:
+	
+	\emph{
+	``An object on one node can send a (multicast) message 
+	to several other objects \ldots''
+	} \cite{Jazayeri:1988} (Hoy en día esto es una realidad a través de 
+	las asociaciones \textbf{MCAA} y los mensajes \textbf{GSE}
+	definidos en las clases \textbf{ACSI})
+	
+	\emph{
+	`` \ldots The ability to group 
+	a set of objects and address them as one entity 
+	is important in many applications both from an 
+	efficiency point of view and from a program 
+	structuring point of view \ldots'' 
+	} \cite{Jazayeri:1988} (este aspecto también 
+	es una realidad, en la norma 
+	IEC 61850 se utilizan \textbf{DATA--SETs} \cite{Ozansoy:2009b}, 
+	\textbf{FCD},
+	\textbf{FCDA}, entre otros).
+	
+	\emph{
+	`` \ldots a final 
+	difference is that our objects are active and 
+	not reactive, in the sense that they can start 
+	up spontaneosly performing operations, not 
+	necessarily only in response to method invocations.
+	Such a facility is useful, for example, to allow objects 
+	to monitor the enviroment and change their behavior based 
+	on changes in the enviroment \ldots'' 
+	} \cite{Jazayeri:1988} (En el contexto de la norma IEC 61850
+	los objetos activos serían las clases abstractas
+	(utilizadas como interfaz para el envío de los mensajes)
+	\textbf{URCB}, \textbf{BRCB}  a travéz de 
+	sus opciones de \textbf{trigger}) \cite{Jazayeri:1988}.
+	 
+%	Some active objects 
+%	are GOOSE, URCB and some passive object 
+%	are \todo{completar y ver si esta bien})
+	
+	
+	
+	Las especificaciones de la norma IEC 61850,
+	basadas en
+	tecnologías orientadas a objetos ya maduras,
+	consiguen atender 
+	los requisitos de disponibilidad,
+	la filosofía de la central hidroeléctrica,
+	requisitos de performance,
+	costos,
+	y el estado del arte de la tecnología. 
+	
+	
+\subsection{Clasificación de las funciones según los niveles}
+	Según los niveles en el cual el IED se desempeña,
+	sus funciones pueden ser clasificadas en 3 grupos: 
+	
+	\begin{itemize}
+	  \item Nivel de proceso: I/O remotas, actuadores, sensores.
+	  \item Nivel de bay: IEDs de control, monitoreo y protección
+	  \item Nivel de estación: Estación de ingeniería de la subestación,
+	  base de datos, interfaces para comunicación remota.  
+	\end{itemize}
+	
+	

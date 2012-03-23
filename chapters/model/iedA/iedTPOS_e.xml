@@ -1,0 +1,2 @@
+<LN desc="(EB) Main pilot valve displacement sensor" inst="1" lnClass="TPOS" lnType="TPOS_e" prefix="Gv_"/>
+<LN desc="(EA) Actuator EA controlling the distributing valve 7" inst="2" lnClass="TPOS" lnType="TPOS_e" prefix="Gv_"/>

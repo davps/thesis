@@ -79,6 +79,14 @@ page 46, reference #8.
   year          = "1980"
 }
 
+@electronic{MIT-athena:2010,
+  title         = "Athena at MIT",
+  url           = "{http://ist.mit.edu/services/athena}",
+  organization	= "Massachusetts Institute of Technology",
+}
+
+
+
 @article{Capretz:2003,
  author = {Capretz, Luiz Fernando},
  title = {A brief history of the object-oriented approach},
@@ -149,6 +157,31 @@ note			= "Publication No. S-22",
   year          = "2009"
 }
 
+@electronic{Epri:2004,
+  author        = "{U}tility {C}onsulting {I}nternational (UCI)",
+  title         = "Guidelines for Implementing Substation Automation Using IEC61850, the International Power System Information Modeling Standard",
+  institution   = "Electric Power Research Institute - EPRI",
+  year          = "2004"
+}
+
+http://www.xmlmodeling.com/papers/SemanticModelsForXSD
+@inproceedings{Hypermodel:2010,
+ 	author = {David A. Carlson},
+	title = {Semantic Models for XML Schema with UML Tooling},
+	url = "http://xmlmodeling.com/",
+	booktitle = {SWESE '06: Proceedings of the 2nd International Workshop on Semantic Web Enabled Software Engineering},
+	year = {2006},
+}
+
+
+@electronic{Germany:2009,
+  title         = "Smart Grid Vehicle - Putting IEC61850-7-420 on wheels - SVG",
+  url           = "{http://www.smartgridvehicle.org/}",
+  organization	= "German Section of the International Solar Energy Society",
+}
+
+
+
 @article{Johnson:1988,
   author        = "Johnson R. E. and Foote B.",
   title         = "Designing Reusable Classes",
@@ -158,6 +191,21 @@ note			= "Publication No. S-22",
   year          = "1988",
   pages         = "22-35"
 }
+
+
+Esta es mi plantilla de IEEE journals
+@article{IEEEexample:article_typical,
+  author        = "S. Zhang and C. Zhu and J. K. O. Sin and P. K. T. Mok",
+  title         = "A Novel Ultrathin Elevated Channel Low-temperature 
+                   Poly-{Si} {TFT}",
+  journal       = IEEE_J_EDL,
+  volume        = "20",
+  month         = nov,
+  year          = "1999",
+  pages         = "569-571"
+}
+
+
 
 
  
@@ -174,6 +222,24 @@ IEEE Std. 100, IEEE, Piscataway, NJ, 1997 [CD-ROM].
   howpublished	= "CD-ROM",
   year          = "1999"
 }
+
+@standard{IEEE:830-1998,
+  author		= {IEEE},
+  title         = "IEEE Recommended Practice for 
+  				   Software Requirements Specifications",
+  institution   = "IEEE",
+  year          = "1998"
+}
+
+@standard{IEC61082-1:2004,
+  author		= {IEC-TC3},
+  title         = "Preparation of documents used in electrotechnology - Part 1: General requirements", 
+  institution   = "IEC",
+  publisher 	= "IEC TC3",
+  year          = "2004",
+}
+
+
 URL =  	"http://webstore.iec.ch/p-preview/info_iec61346-1%7Bed1.0%7Db.img.pdf",
 @standard{IEC61346-1:1996,
   author =	"{IEC}",
@@ -182,6 +248,7 @@ URL =  	"http://webstore.iec.ch/p-preview/info_iec61346-1%7Bed1.0%7Db.img.pdf",
 				industrial products — Structuring principles and
 				reference designations",
   publisher =	"International Electrotechnical Commission",
+  institution   = "IEC",
   address =	"3, rue de Varemb{\'e}, PO Box 131, CH-1211 Geneva 20,
 		 Switzerland. Telephone: +41 22 919 02 11. Telefax: +41
 		 22 919 03 00. E-mail: {\tt
@@ -195,7 +262,7 @@ author		= "{International Electrotechnical Commission -
 				Technical Committee 57: 
 				Power systems management and 
   				associated information exchange}"
-@standard{IEC61850-1:2003,
+@techreport{IEC61850-1:2003,
   author		= {IEC-TC57},
   title         = "IEC 61850-1: Communication networks 
   					and systems in substations - Part 1 - 
@@ -208,7 +275,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 
-@standard{IEC61850-2:2003,
+@techreport{IEC61850-2:2003,
   author		= {IEC-TC57},
   title         = "IEC 61850-2: Communication networks 
   					and systems in substations - Part 2 - 
@@ -220,14 +287,14 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-3:2002,
-  author		= {IEC-TC57},
-  title         = "IEC 61850-3: Communication networks 
-  					and systems in substations - Part 3 - 
-					General requirements",
-  institution   = "IEC",
-  publisher 	= "IEC TC57",
-  revision      = "IS Ed1:2002-02",
-  year          = "2002"
+  author		= {IEC--TC57},
+  title         = {IEC 61850--3: Communication networks 
+  					and systems in substations -- Part 3 -- 
+					General requirements},
+  institution   = {IEC},
+  publisher 	= {IEC TC57},
+  revision      = {IS Ed1:2002-02},
+  year          = {2002}
 }
 
 @standard{IEC61850-4:2002,
@@ -267,8 +334,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-7-1:2003,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-1: Communication networks 
@@ -277,15 +343,14 @@ author		= "{International Electrotechnical Commission -
 					Principles and models",
   institution   = "IEC",
   publisher 	= "IEC TC57",
-  revision      = "IS Ed1:2003-07 ",
+  revision      = "IS Ed1:2003-07",
   year          = "2003"
 }
 
 
 
 @standard{IEC61850-7-2:2003,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-2: Communication networks 
@@ -299,8 +364,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-7-3:2003,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-3: Communication networks 
@@ -313,8 +377,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-7-4:2003,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-4: Communication networks 
@@ -328,8 +391,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-7-410:2007,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-410: Communication networks 
@@ -343,8 +405,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-7-420:2009,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-420: Communication networks 
@@ -357,9 +418,8 @@ author		= "{International Electrotechnical Commission -
   year          = "2009"
 }
 
-@standard{IEC61850-7-430:200-X,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-430:200-X,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-430: Communication networks 
@@ -369,12 +429,12 @@ author		= "{International Electrotechnical Commission -
   institution   = "IEC",
   publisher 	= "IEC TC57",
   revision      = "57/954/NP",
+  year          = "2010"
 }  year          = " "
 
 
-@standard{IEC61850-7-5:2010,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-5:2010,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-5: Communication networks 
@@ -388,9 +448,8 @@ author		= "{International Electrotechnical Commission -
   year          = "2010"
 }
 
-@standard{IEC61850-7-500:2010,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-500:2010,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-500: Communication networks 
@@ -403,9 +462,8 @@ author		= "{International Electrotechnical Commission -
   year          = "2010"
 }
 
-@standard{IEC61850-7-510:2009,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-510:2009,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-510: Communication networks 
@@ -418,9 +476,8 @@ author		= "{International Electrotechnical Commission -
   year          = "2009"
 }
 
-@standard{IEC61850-7-520:2010,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-520:2010,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-520: Communication networks 
@@ -433,9 +490,8 @@ author		= "{International Electrotechnical Commission -
   year          = "2010"
 }
 
-@standard{IEC61850-7-10:2009,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+@techreport{IEC61850-7-10:2009,
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-7-10: Communication networks 
@@ -449,8 +505,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-8-1:2004,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-8-1: Communication networks 
@@ -466,8 +521,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-9-1:2003,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-9-1: Communication networks 
@@ -482,8 +536,7 @@ author		= "{International Electrotechnical Commission -
 }
 
 @standard{IEC61850-9-2:2004,
-  author		= "{International Electrotechnical Commission - 
-  					Technical Committee 57: 
+  author		= "{IEC-TC57: 
   					Power systems management and 
   					associated information exchange}",
   title         = "IEC 61850-9-2: Communication networks 
@@ -496,8 +549,93 @@ author		= "{International Electrotechnical Commission -
   year          = "2004"
 }
 
+@techreport{IEC61850-80-1:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-80-1: Communication networks 
+  					and systems in substations - Part 80-1 - 
+  					Guideline to exchanging information from a 
+  					CDC-based data model using IEC 60870-5-101 or IEC
+  					60870-5-104",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "TS Ed1:2008-12",
+  year          = "2008"
+}
 
-@standard{IEC61850-XXXXX:200-XXXXXX,
+@techreport{IEC61850-90-1:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-90-1: Communication networks 
+  					and systems in substations - Part 80-1 -
+  					Using IEC 61850 for the communication 
+  					between substations",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "TS Ed1:2009-08",
+  year          = "2009"
+}
+
+@techreport{IEC61850-90-2:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-90-2: Communication networks 
+  					and systems in substations - Part 80-1 -
+					Using IEC 61850 for the communication 
+					between substations and control centres",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "Draft 2010-01",
+  year          = "2010"
+}
+
+@techreport{IEC61850-90-3:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-90-3: Communication networks 
+  					and systems in substations - Part 80-1 -
+					Using IEC 61850 for Condition Monitoring",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "Draft 2010-06",
+  year          = "2004"
+}
+
+@techreport{IEC61850-90-4:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-90-4: Communication networks 
+  					and systems in substations - Part 80-1 -
+					Network Engineering Guidelines",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "Draft 2010-04",
+  year          = "2010"
+}
+
+
+@techreport{IEC61850-90-5:200-XXXXXX,
+  author		= "{IEC-TC57: 
+  					Power systems management and 
+  					associated information exchange}",
+  title         = "IEC 61850-90-5: Communication networks 
+  					and systems in substations - Part 80-1 -
+					Using IEC 61850 to transmit 
+					synchrophasor information according to IEEE C37.118",
+  institution   = "IEC",
+  publisher 	= "IEC TC57",
+  revision      = "Draft 2010-06",
+  year          = "2010"
+}
+
+
+
+@techreport{IEC61850-XXXXX:200-XXXXXX,
   author		= "{International Electrotechnical Commission - 
   					Technical Committee 57: 
   					Power systems management and 
@@ -511,6 +649,50 @@ author		= "{International Electrotechnical Commission -
   year          = "XXXXXXXXXXXX"
 }
 
+@electronic{Itaipu:linea500KV,
+  author        = "Central Hidroeléctrica Itaipu",
+  title         = "Especificaciones técnicas - Construcción de las subestaciones Villa Hayes y SEMD",
+  url           = "http://www2.itaipu.gov.py/LicitaPY/PDF/IA1780-2010%20PLIEGO%20COMPLETO.ZIP",
+  year          = "2010"
+}
+
+@misc{Itaipu:6693DE15207E,
+  title         = "Subestación {V}illa {Hayes} 500/220/66/23k{V} - {Sistema} integrado de supervisión, control y protección - Arquitectura general referencial - 6693-{D}{E}-15207-{E}",
+  organization  = "Central Hidroeléctrica Itaipu",
+  year			= "2010",
+  publisher		= "{Archivo} {Técnico} de {Itaipu}"
+}
+
+
+@misc{Itaipu:6693DE15204E1R0,
+  title         = "Subestación {V}illa {Hayes} 500/220/66/23k{V} - {S}ector de 500-220k{V} - {D}iagrama unifilar simplificado - 6693-{D}{E}-15204-{E}-{R}0",
+  organization  = "Central Hidroeléctrica Itaipu",
+  year			= "2010",
+  publisher		= "{Archivo} {Técnico} de {Itaipu}"
+}
+
+@misc{Itaipu:5215DF71167I1R1,
+  title         = "{G}overning {D}iagram - 52-15-{D}{F}-71167-{I}(1)-{R}1",
+  organization  = "Central Hidroeléctrica Itaipu",
+  year			= "1984",
+  publisher		= "{Archivo} {Técnico} de {Itaipu}"
+}
+
+@misc{Itaipu:52151071168i1r1,
+  title         = "{G}overning {D}iagram {D}escription - 52-15-10-71168-{I}(1)-{R}1",
+  organization  = "Central Hidroeléctrica Itaipu",
+  year			= "1984",
+  publisher		= "{Archivo} {Técnico} de {Itaipu}"
+}
+
+@misc{Itaipu:195860C8841ER0,
+  title         = "Central {H}idroeléctrica de {I}taipu, aspectos destacados de su ingeniería - 1958-60-{C}8841-{E}-{R}0",
+  organization  = "Central Hidroeléctrica Itaipu",
+  year			= "2005",
+  publisher		= "{Archivo} {Técnico} de {Itaipu}"
+}
+
+1958-60-C8841-E-R0
 
 @electronic{Java:specification,
   author        = "Sun Microsystems",
@@ -532,6 +714,16 @@ author		= "{International Electrotechnical Commission -
 	publisher = {ACM},
 	address = {New York, NY, USA},
 }
+
+@Article{Kruimer:2003,
+  author = 	 {B. Kruimer},
+  title = 	 {Substation Automation.  Historical Overview},
+  journal = 	 {IEC Seminar},
+  publisher =  {KEMA},
+  year = 	 {2003},
+  address = {Amsterdam, USA},
+}
+
 
 http://portal.acm.org/citation.cfm?id=126988#
 @article{Leavens:1991,
@@ -574,6 +766,18 @@ http://portal.acm.org/citation.cfm?id=62113#
 	address = {New York, NY, USA},
 }
  
+ 
+[4] R. Mackiewicz, “Technical Overview and Benefits of the IEC 61850 Standard for Substation Automation, Anales de la 2006 Power Systems Conference and Exposition, IEEE, Oct. 29-Nov 1, 2006, p. 623-630.
+@inproceedings{Mackiewicz:2006,
+	author = {R. Mackiewicz},
+	title = {Technical Overview and Benefits of the IEC 61850 Standard for Substation Automation},
+	booktitle = {PSCE '06: Power Systems Conference and Exposition},
+	year = {2006},
+	pages = {623--630},
+}
+
+
+
 @article{Micallef:1988,
   author        = "Micallef J.",
   title         = "Encapsulation, Reusability and Extensibility 
@@ -634,6 +838,31 @@ http://portal.acm.org/citation.cfm?id=323751&dl=GUIDE&coll=GUIDE&CFID=89967409&C
 }
 
 
+
+@article{Ozansoy:2009,
+  author        = "Cagil R. Ozansoy and Aladin Zayegh and Akhtar Kalam",
+  title         = "The Application-View Model of the
+					International Standard {IEC} 61850",
+  journal       = IEEE_J_PWRD,
+  volume        = "24",
+  month         = jul,
+  year          = "2009",
+  pages         = "1132-1139"
+}
+
+@article{Ozansoy:2009b,
+  author        = "Cagil R. Ozansoy and Aladin Zayegh and Akhtar Kalam",
+  title         = "Object Modeling of Data and DataSets in the
+				   International Standard IEC 61850",
+  journal       = IEEE_J_PWRD,
+  volume        = "24",
+  month         = jul,
+  year          = "2009",
+  pages         = "1140-1147"
+}
+
+
+
 @article{Parnas:1979,
  author = {Parnas, D. L.},
  title = {On the criteria to be used in decomposing systems into modules},
@@ -667,6 +896,16 @@ http://portal.acm.org/citation.cfm?id=323751&dl=GUIDE&coll=GUIDE&CFID=89967409&C
   keywords = {networks},
   updates = {PetersonDavie:2003}, isbn = {1558608338}
 }
+
+@article{PTI:SESEP2010,
+	author = {David Pérez and Rodrigo Ramos and Mario López and Ladislao Aranda},
+	title = {Experiencia del PTY-PY con el uso de herramientas de ingeniería IEC 61850},
+	journal = {SESEP - Seminario del Sector Eléctrico Paraguayo},
+	year = {2010},
+	publisher = {CIGRE Paraguay},
+	address = {Asunción, Paraguay},
+}
+
 
 
 @article{Rentsch:1982,
@@ -708,10 +947,20 @@ http://portal.acm.org/citation.cfm?id=323751&dl=GUIDE&coll=GUIDE&CFID=89967409&C
 	address = {Los Alamitos, CA, USA},
 	}
 
+@Article{Schwarz:2007,
+  author 	= 	 {Karlheinz Schwarz},
+  title 	= 	 {Impact of IEC 61850 on System Engineering, Tools, Peopleware and the Role of
+			  	  the System Integrator},
+  journal 	= 	 {DistribuTech 2007},
+  year 		= 	 {2007},
+  address 	= 	 {San Diego},
+  month			= "Feb"
+}
+
 TODO: En realidad la url no funciono. Intentar arreglar esto.
 [Accedido, Octubre 10, 2009].
 @electronic{Schwarz:2000mc,
-  author        = "K. Schwarz",
+  author        = "Karlheinz Schwarz",
   title         = "Micro-controller vs. Sub-Credit card size PC",
   url           = "{http://www.nettedautomation.com/solutions/uca/linux/uca\_linuxbox/inaLINUXbox\_pc.html}",
   howpublished  = "{inaLINUXbox\_pc.html}",
@@ -720,10 +969,18 @@ TODO: En realidad la url no funciono. Intentar arreglar esto.
   year          = "2007"
 }
 
+@article{Schwarz:2008,
+    author      = "Karlheinz Schwarz",
+	title 		= "IEC 61850 also outside the substation for the whole electrical power system",
+	journal 	= "Power Systems Computation Conference (PSCC)",
+	year 		= "2005",
+	address 	= "Liège, Belgium"
+}
+
 TODO: la url tampoco funciona correctamente, revisar el bug
 [Accedido, Octubre 10, 2009]
 @electronic{Schwarz:2008wi,
-  author        = "K. Schwarz",
+  author        = "Karlheinz Schwarz",
   title         = "What is IEC 61850 - one page overview",
   url           = "{http://www.nettedautomation.com/standardization/IEC\_TC57/WG10-12/iec61850/What-is-IEC61850.pdf}",
   howpublished  = "{What-is-IEC61850.pdf}",
@@ -748,6 +1005,16 @@ LiÃ¨ge, Belgium, Invited session, Agosto 22-26, 2005,
   address       = "Upper Saddle River, New Jersey 07458",
   year          = "2003"
 }
+
+
+@electronic{IEC61850:tissues,
+  author        = "IEC, TC 57",
+  title         = "IEC 61850 technical issues",
+  url           = "http://www.tissues.iec61850.com/",
+  year          = "2010"
+}
+
+
 
 @standard{UML2:2009,
   title         = "Unified Modeling Language",
@@ -1050,16 +1317,31 @@ page 205, reference #16.
 }
 
 
-a book
-From the May 2002 issue of "IEEE Transactions on Magnetics",
-page 1466, reference #4.
-@book{IEEEexample:book_typical,
-  author        = "B. D. Cullity",
-  title         = "Introduction to Magnetic Materials",
-  publisher     = "Addison-Wesley",
-  address       = "Reading, MA",
-  year          = "1972"
+@book{IECTC57:2004,
+  author        = "IEC TC 57",
+  title         = "IEC 61850 - Communication networks and systems in substations - Informative tutorial on the object models",
+  publisher     = "International Electrotechnical Commission Technical Committee",
+  year          = "2004"
+  
 }
+@Book{ID,
+  ALTauthor = 	 {Author},
+  ALTeditor = 	 {Editor},
+  title = 	 {Title},
+  publisher = 	 {Publisher},
+  year = 	 {Year},
+  OPTkey = 	 {},
+  OPTvolume = 	 {},
+  OPTnumber = 	 {},
+  OPTseries = 	 {},
+  OPTaddress = 	 {},
+  OPTedition = 	 {},
+  OPTmonth = 	 {},
+  OPTnote = 	 {},
+  OPTannote = 	 {}
+}
+
+
 
 
 

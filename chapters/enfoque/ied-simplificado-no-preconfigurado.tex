@@ -1,0 +1,189 @@
+\section{IED simplificado y no pre-configurado}
+
+En esta sección el autor propone el concepto de 
+ISNP (IED simplificado y no pre--configurado).
+
+Se dice que los ICDs están pre--configurados cuando 
+ya traen desde el TEMPLATE del ICD (la norma IEC 61850 recomienda 
+dar el nombre de TEMPLATE al ICD nuevo, obtenido del fabricante y sin cambiar
+nada) configuraciones para envío 
+de información a través de la red
+de forma eficiente a través de agrupaciones
+adecuadas de datos (\emph{DataSet}, \emph{Report}), o incluso asociaciones
+\emph{MCAA} o \emph{TPAA} ya preparadas.  Por dar un ejemplo, la
+herramienta de ingeniería PCM600 de la ABB, trae ICDs pre-configurados que han sido diseñados para 
+usos en funciones de automatización muy generales
+%\footnote{http://www02.abb.com/global/clabb/clabb151.nsf/bf177942f19f4a98c1257148003b7a0a/088b8658171c587bc125732c0058f550/$FILE/1MRK511200-UEN_-_en_PCM_600_engineering_workflow_for_pre-configured_IED_670.pdf}.
+%\footnote{\url{http://www02.abb.com/global/clabb/clabb151.nsf/bf177942f19f4a98c1257148003b7a0a/088b8658171c587bc125732c0058f550/$FILE/1MRK511200-UEN_-_en_PCM_600_engineering_workflow_for_pre-configured_IED_670.pdf}}.
+\footnote{\url{http://goo.gl/L80ft}}.
+
+
+El autor define a un ICD como simplificado si el elemento \emph{IED} del 
+SCL posee solamente los nodos hijos y sus atributos obligatorios, más las  
+instancias de los nodos lógicos y las instancias de los \emph{Data Objects}
+pero sin sus nodos hijos, y sin asociaciones ni agrupaciones de datos, pero 
+incluyendo obligatoriamente todos los servicios que serán utilizados, 
+y las referencias a los nodos hijos del \textbf{DataTypeTemplate}
+correspondientes solamente a las instancias definidas en el 
+elemento IED.
+La definición de ICD simplificado puede observarse en la figura
+\ref{fig:SCL-IED-ISNP-heredado}.
+
+Es ilustrativo comparar la estructura de un ICD ISNP (figura
+\ref{fig:SCL-IED-ISNP-heredado}) y el de un ICD completo (figura
+\ref{fig:SCL-IED-depthMax-heredado} y 
+código fuente \ref{cod:ied-profundo-xml}). 
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthISNP-heredado.eps}
+  \captionsetup{font=scriptsize}
+  \caption{Diagrama de clases para un IED ISNP}
+  \label{fig:SCL-IED-ISNP-heredado}
+\end{center}
+\end{figure}
+\end{landscape}
+
+La construcción de ICDs del tipo ISNP permite enfocar de una manera nueva 
+la espeficicación técnica de IEDs, pues en la variante ICD 
+es posible definir los nodos lógicos a ser utilizados por cada IED, 
+agrupados en sus respectivos \emph{Logical Devices}, 
+definiendo los \emph{DataObjects} de cada nodo lógico, 
+y describiendo los servicios de comunicación que deberán utilizarse.
+En realidad, al contrario de lo que pueda imaginarse el lector, 
+la construcción de ICDs del tipo ISNP no es difícil ni lleva mucho tiempo, 
+pues se describe solamente lo escencial, lo mínimo que podría tener 
+un IED. Y lo más importante, dicha descripción se realiza de una 
+manera formal (y en plena conformidad con la norma IEC 61850). En otras
+palabras, cualquier fabricante de IEDs podrá entener claramente las necesidades
+del sistema IEC 61850 de la planta
+sin tener que redactar documentos con largas 
+explicaciones sobre los modelos de información,
+modelos de servicios y arquitectura.
+En las definiciones formales de 
+nodos lógicos del apartado 
+IEC 61850--7--410 \cite{IEC61850-7-410:2007} 
+no se definen los servicios de comunicación  
+de cada nodo lógico
+(en el apartado IEC 61850--7--4 \cite{IEC61850-7-4:2003}
+sí se definen), pero es posible observar los
+servicios de comunicación de los \textbf{CDCs}
+utilizados. Cabe destacar que, en caso que
+se necesiten más servicios que los mencionados 
+en estos apartados de la norma, ellos 
+deben ser bien especificados.
+
+\label{chEnfoque:ied-simplif-no-preconfig}
+Con este nuevo enfoque, también surge un nuevo reto: Elaborar 
+una espeficicación de nodos lógicos y servicios de comunicación 
+que el fabricante pueda ofrecer. 
+Si bien es más sencillo especificar nodos lógicos, 
+la espeficicación técnica de las capacidades mínimas de los servicios de
+comunicación de los IEDs que necesita la planta
+es un poco más complicada, dado que
+se puede incurrir a especificar servicios que si bien están definidos 
+por la norma, no existen en el mercado. 
+
+Es por ello que 
+el autor propone la utilización de base de datos de ICDs 
+de múltiples fabricantes, y de esa forma obtener datos 
+estadísticos de las capacidades de los ICDs existentes actualmente en el
+mercado. Siguiendo este planteamiento, el autor ha elaborado 
+un \emph{script} Python a través del cual se obtuvieron las tablas 
+del apéndice \ref{app:Estadisticas-servicios}, 
+donde se observan los servicios de comunicación que 
+están implementados en 178 ICDs 
+de cuatro fabricantes distintos. 
+El hecho de que la espeficicación técnica de los sistemas 
+IEC 61850 definan los servicios mínimos que deban tener 
+los dispositivos (incluyendo la configuración de los atributos de los
+servicios) permite diseñar sistemas realmente a prueba de futuro, 
+pues en caso que un equipo se dañe, será muy simple sustituirlo 
+con otro, aunque sea de otro fabricante, sin tener que cambiar 
+el diseño de parte importante del sistema. Por dar un ejemplo, 
+al sustituir un IED con capacidades IEC 61850 distintas 
+cambiaría el 
+diseño del modelo IEC 61850 de todo un bay, lo cual a la vez
+provocaría desuniformidad de modelos con respecto 
+a los demás bays (que en teoría deberían ser iguales), y 
+de esa forma el sistema se vuelve complejo innecesariamente. 
+Los atributos de los servicios definidos en SCL 
+también son importantes, pues, volviendo al mismo escenario del 
+ejemplo del bay con un IED a ser cambiado, 
+si el IED a ser retirado utilizaba un \emph{DataSet}
+con 150 atributos de datos instanciados, y el nuevo 
+IED permite como máximo el envío de 50 atributos de 
+datos instanciados, entonces se deberá rever parte 
+importante del proyecto\footnote{Interoperability and Replacement of an IED by another
+one \url{http://blog.iec61850.com/2010/09/interoperability-and-replacement-of-ied.html}}. En
+este caso se puede observar que la espeficicación técnica de servicios de comunicación ayuda a 
+construir sistemas donde la intercambiabilidad de equipos 
+sea más sencilla. En este caso también resulta útil 
+utilizar métodos estadísticos aprovechando la 
+base de datos de ICDs, para conocer hasta cuántos
+atributos de datos instanciados se pueden agrupar en cada \emph{DataSet}
+según las capacidades de los fabricantes y el estado 
+del arte de las tecnologías IEC 61850. 
+ 
+La selección apropiada de los nodos lógicos 
+y de los \textbf{Data Objects}
+permite al dueño de la planta asegurar que los nodos lógicos 
+cumplan con los requerimientos funcionales. 
+La definición del tipo del nodo lógico
+y su cantidad de instancias no siempre es 
+suficiente. Según el autor de este trabajo,
+también es necesario especificar
+los \textbf{DOType} y \textbf{DOI} en el \textbf{SCL}. 
+Dando un ejemplo este enfoque queda más claro: si en la
+hidroeléctrica se necesita medir la frecuencia eléctrica, 
+se definiría el nodo lógico \textbf{MMXU},
+pero como el nodo lógico de tipo \textbf{MMXU} tiene 
+como \textbf{Data} opcional a la frecuencia,
+si el IED en realidad no implementa el \textbf{Data Object} \emph{Hz},
+el nodo lógico no estará cumpliendo con los requisitos
+funcionales existentes en la planta, por lo que 
+resulta pertinente especificar el nodo lógico
+\textbf{MMXU} y por lo menos su \textbf{DO} \emph{Hz}.
+
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  %\includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-heredado.eps} 
+  %\includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-heredado-y-sin-servicios.eps} 
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-heredado-sin-attributos-y-sin-servicios.eps} 
+  \captionsetup{font=scriptsize}
+  \caption{Clases del elemento \emph{IED} del SCL, omitiendo sus clases abstractas}
+  \label{fig:SCL-IED-depthMax-heredado}
+\end{center}
+\end{figure}
+\end{landscape}
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  %\includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-conHerencia.eps} 
+  %\includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-conHerencia-proporcional-a-hoja-A3.eps} 
+  %\includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-conHerencia-y-sin-Servicios.eps} 
+  \includegraphics[width=1.0\linewidth]{chapters/enfoque/figures/scl-IED-depthMax-conHerencia-sin-atributos-y-sin-Servicios.eps} 
+  \captionsetup{font=scriptsize}
+  \caption{Clases del elemento \emph{IED} del SCL, incluyendo sus clases abstractas}
+  \label{fig:SCL-IED-depthMax-conHerencia}
+\end{center}
+\end{figure}
+\end{landscape}
+
+
+
+
+
+
+
+
+
+
+

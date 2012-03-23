@@ -1,0 +1,10 @@
+<LN desc="Límites del estatismo DROOP temporario de la maquina" inst="1" lnClass="FLIM" lnType="FLIM_tipical" prefix="Drp_"/>
+<LN desc="Límites de la constante de tiempo derivada, Tn" inst="2" lnClass="FLIM" lnType="FLIM_tipical" prefix="Reg_"/>
+<LN desc="Límites de la constante de tiempo del dispositivo amortiguador, Td" inst="3" lnClass="FLIM" lnType="FLIM_tipical" prefix="Reg_"/>
+<LN desc="Límites del estatismo DROOP permanente de la maquina" inst="4" lnClass="FLIM" lnType="FLIM_tipical" prefix="Drp_"/>
+<LN desc="Límites de la constante de tiempo de la prontitud, Tx" inst="5" lnClass="FLIM" lnType="FLIM_tipical" prefix="Reg_"/>
+<LN desc="Límites del selector de velocidad" inst="6" lnClass="FLIM" lnType="FLIM_tipical" prefix="Spd_"/>
+<LN desc="Límites del valor de ajuste de apertura" inst="7" lnClass="FLIM" lnType="FLIM_tipical" prefix="Gv_"/>
+<LN desc="Límites del valor de ajuste de la frecuencia" inst="8" lnClass="FLIM" lnType="FLIM_tipical" prefix="Reg_"/>
+<LN desc="Límites de la frecuencia de referencia" inst="9" lnClass="FLIM" lnType="FLIM_tipical" prefix="Hz_"/>
+<LN desc="Límites del control limitador de apertura" inst="10" lnClass="FLIM" lnType="FLIM_tipical" prefix="Pos_"/>

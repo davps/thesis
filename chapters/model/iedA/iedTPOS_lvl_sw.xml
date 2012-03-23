@@ -1,0 +1,6 @@
+<LN desc="(BA) Safety solenoid-operated valve BA with position switches CI and CJ" inst="3" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Pos_"/>
+<LN desc="(BB) Safety solenoid-operated valve BB with position switches CK and CL" inst="4" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Pos_"/>
+<LN desc="(BC) PaKVLVbc position swiches CM and CN" inst="5" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Pa_"/>
+<LN desc="(BD) GvKVLVbd position swiches CO and CP" inst="6" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Gv_"/>
+<LN desc="(LG) Level switch" inst="9" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Lvl_"/>
+<LN desc="(LH) Level switch" inst="10" lnClass="TPOS" lnType="TPOS_lvl_sw" prefix="Lvl_"/>

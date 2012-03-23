@@ -1,0 +1,8 @@
+<xs:unique name="uniqueLNode">
+	<xs:selector xpath=".//scl:LNode"/>
+	<xs:field xpath="@lnInst"/>
+	<xs:field xpath="@lnClass"/>
+	<xs:field xpath="@iedName"/>
+	<xs:field xpath="@ldInst"/>
+	<xs:field xpath="@prefix"/>
+</xs:unique>

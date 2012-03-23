@@ -1,0 +1,15 @@
+<LNodeType desc="Limits of typical values" id="FLIM_tipical" lnClass="FLIM">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO desc="High limit reached (input signal above limit)" name="HiLim" type="HiLim_typical"/>
+			<DO desc="Low limit reached (input signal below limit)" name="LoLim" type="LoLim_typical"/>
+			<!--Measured values-->
+			<DO desc="Output signal" name="Out" type="Out_typical"/>
+			<!--Settings-->
+			<DO desc="High limit set point" name="HiLimSpt" type="HiLimSpt_typical"/>
+			<DO desc="Minimum limit set point" name="LoLimSpt" type="LoLimSpt_typical"/>
+		</LNodeType>

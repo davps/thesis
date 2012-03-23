@@ -1,0 +1,13 @@
+<LNodeType desc="Thermostat temperature controller" id="STMP_thermostat" lnClass="STMP">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="Alm" type="Alm_1"/>
+			<DO name="Trip" type="Trip_1"/>
+			<!-- Settings -->
+			<DO name="TmpAlmSpt" type="TmpAlmSpt_1"/>
+			<DO name="TmpTrSpt" type="TmpTrSpt_1"/>
+		</LNodeType>

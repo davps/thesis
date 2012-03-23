@@ -1,0 +1,12 @@
+<LNodeType desc="Pump unit" id="KPMPa" lnClass="KPMP">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO name="ACAlm" type="ACAlm_2"/>
+			<DO name="BlkSt" type="BlkSt_2"/>
+			<!-- Controls -->
+			<DO name="Operate" type="Operate_1"/>
+		</LNodeType>

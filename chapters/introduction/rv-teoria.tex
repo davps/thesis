@@ -1,0 +1,165 @@
+\section{Descripción del regulador de velocidad actual de una unidad generadora típica de Itaipu}
+
+Los generadores hidroeléctricos de la Itaipu están interconectados a los sistemas eléctricos del Paraguay y del Brasil. Uno 
+de los requisitos más importantes para dicha interconexión es que los generadores deben estar sincronizados a la frecuencia 
+del sistema. Para ello, los sistemas de regulación de velocidad abren o cierran las paletas del distribuidor de la turbina para controlar su rotación  
+en función a la carga, controlando asi la variación de frecuencia hasta límites permitidos. El regulador de velocidad también 
+controla la velocidad de rotación sin carga de la unidad durante la fase de puesta en marcha, 
+permitiendo una rápida sincronización con el sistema. El papel del regulador puede extenderse 
+a su participación en la regulación secundaria de un esquema de intercambio de cargas de potencia/frecuencia entre áreas.
+
+Estos regualadores de velocidad se clasifican como reguladores electro-hidráulicos 
+analógicos del tipo acelero-tacométrico con estatismo y constan de circuitos hidráulicos encargados 
+de mover las paletas del distribuidor (tanques, válvulas, servomotores), 
+circuitos neumáticos que acumulan energía potencial en forma de aire comprimido que poseen un 
+transductor electro-hidráulico que sirve como interfaz de comando
+y de circuitos electrónicos que controlan el desvío y la rapidez de variación de la velocidad de rotación de la unidad generadora 
+a través de una acción proporcional, integral y derivativa (PID). 
+
+El documento \cite{Itaipu:195860C8841ER0} describe la estructura del regulador de velocidad de la siguiente manera:
+\emph{``El regulador de velocidad `Rapid 77' posee una
+estructura en dos niveles jerárquicos, en la cual el sector
+de la regulación de velocidad y de carga se halla física y
+funcionalmente separado del sector de posicionamiento.
+La realimentación para el PID es tomada desde la señal
+eléctrica suministrada a la válvula principal de distribución
+del aceite, y el circuito hidráulico de los servomotores,
+que sirve para posicionar los álabes del distribuidor,
+posee sus propios medios de realimentación por vía de
+una señal tomada de los transductores ubicados sobre
+el mecanismo de operación de los álabes y sobre el
+husillo de la válvula principal de distribución, véase la
+figura \ref{fig:estructura-rv-rapid77}. Esta estructura en dos niveles facilita la
+configuración del regulador de velocidad, asiste al
+mantenimiento y mejora la confiabilidad operacional.''}
+La tabla \ref{table:esquema-funcional-rv} describe este esquema de la figura \ref{fig:estructura-rv-rapid77}.
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/introduction/figures/estructura-rv-rapid77.eps}
+  \caption{Estructura funcional del regulador Rapid 77}
+  \label{fig:estructura-rv-rapid77}
+\end{center}
+\end{figure}
+
+
+\subsection{Características básicas}
+
+El sistema de regulación actual está constituido por tres circuitos: El circuito hidráulico, el circuito de aire comprimido,
+y el circuito regulador electrónico, cuyo esquema funcional es indicado en la figura \ref{fig:esquema-funcional-rv-rapid77}.
+
+\subsubsection{El circuito regulador electrónico}
+Básicamente, está compuesto de:
+\begin{itemize}
+	\item Circuitos sensibles a la frecuencia del grupo
+	\item Dispositivos de regulación de carga -- frecuencia y retroalimentaciones de potencia y de apertura.
+	\item Mezclador general y amplificador de potencia.
+	\item Limitador de apertura o de potencia.
+	\item Circuito posicionador y amplificador de potencia.
+	\item Circuito taquimétrico auxiliar.
+\end{itemize}
+
+\subsubsection{El circuito hidráulico}
+El principio de funcionamiento y su conjunción con el circuito eléctrico se encuetra esquemáticamente descripto en 
+la figura \ref{fig:cadena-hidraulica-del-rv}. Sus componentes básicos son:
+
+
+\begin{itemize}
+	\item Transductor electro -- hidráulico (Actuador)
+	\item Válvula distribuidora
+	\item Servomotor
+	\item Tanques de aire/aceite
+	\item Bombas de aceite
+	\item Válvula de aislamiento
+	\item Sistema de amortiguamiento
+	\item Sobrevelocidad hidromecánica
+	\item Tanque de aceite (tanque sin presión)
+\end{itemize}
+
+
+\subsubsection{El sistema de aire comprimido}
+\begin{itemize}
+	\item Grupo moto--compresores de alta presión (3 etapas).
+	\item Tanque de aire comprimido
+	\item Eletroválvula BE
+\end{itemize}
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/introduction/figures/cadena-hidraulica-del-rv.eps}
+  \caption{Esquema funcional del conjunto electro-hidráulico del regulador}
+  \label{fig:cadena-hidraulica-del-rv}
+\end{center}
+\end{figure}
+
+
+\begin{figure}
+\begin{center}
+  \includegraphics[width=1.0\linewidth]{chapters/introduction/figures/esquema-funcional-rv-rapid77.eps}
+  \caption{Esquema funcional del conjunto electro-hidráulico del regulador.}
+  \label{fig:esquema-funcional-rv-rapid77}
+\end{center}
+\end{figure}
+
+
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|p{0.7cm}|p{6.5cm}|p{0.8cm}|p{7.5cm}|}
+	\cellcolor[gray]{0.8} \textbf{Nro.} & \cellcolor[gray]{0.8} \textbf{Descripción} & \cellcolor[gray]{0.8} \textbf{Nro.} & \cellcolor[gray]{0.8} \textbf{Descripción}\\
+	\hline
+	1 & Convertidor estático  & 24 & Actuador \\
+	\hline
+	2 & Repartidor de tensión & 25 & Polarización de marcha en vacío \\
+	\hline
+	3 & Transformador de tensión del grupo & 26 & Variómetro de retroceso del distribuidor \\
+	\hline
+	4 & Transformador de tensión de la red & 27 & Distribuidor hidráulico \\
+	\hline
+	5 & Cuarzo patrón de frecuencia & 28 & Filtro de aceite \\
+	\hline
+	6 & Variómetro de carga - frecuencia & 29 & Circuito hidráulico de regulación \\
+	\hline
+	7 & Motoreductor & 30 & Detección \\
+	\hline
+	8 & Detección & 31 & Transductor vatimétrico \\
+	\hline
+	9 & Circuito frecuencimétrico & 32 & Potenciómetro de consigna del limitadorde abertura \\
+	\hline
+	10 & Regulación del estatismo transitorio & 33 & Moto reductor \\
+	\hline
+	11 & Regulación del Tr del estatismo transitorio & 34 & Servomotor \\
+	\hline
+	12 & Regulación del Tv del acelerómetro & 35 & Leva \\
+	\hline
+	13 & Orden exterior & 36 & Variómetro de retroceso del servomotor \\
+	\hline
+	14 & Regulación del estatismo permanente & 37 & Turbina \\
+	\hline
+	15 & Primer mezclador & 38 & Alternador \\
+	\hline
+	16 & Programa & 39 & TC del alternador \\
+	\hline
+	17 & Teleregulación & 40 & TP del alternador \\
+	\hline
+	18 & Orden exterior & R3 & Relé de sincronización \\
+	\hline
+	19 & Mezclador general & R5 & Elección de retroalimentación de potencia o de abertura \\
+	\hline
+	20 & Comparador limitador & R7 & Programa o carga - frecuencia \\
+	\hline
+	21 & Circuito limitador & R10 & En reposo antes de acoplar \\
+	\hline
+	22 & Amplificador de potencia & R12 & Elección entre limitador de abertura o de potencia \\
+	\hline
+	23 & Detección  &  &  \\
+	\hline
+\end{tabular}
+\caption{Descripción de ítems del esquema funcional del conjunto electro-hidráulico del regulador}
+\label{table:esquema-funcional-rv}
+\end{center}
+\end{table}
+
+
+
+

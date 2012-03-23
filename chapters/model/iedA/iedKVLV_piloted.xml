@@ -1,0 +1,3 @@
+<LN desc="(5) idler system pilot valve" inst="4" lnClass="KVLV" lnType="KVLV_piloted" prefix="Gv_"/>
+<LN desc="(7) Main pilot valve (distributing valve)" inst="8" lnClass="KVLV" lnType="KVLV_piloted" prefix="Gv_"/>
+<LN desc="(9) Piloted distributing valve" inst="12" lnClass="KVLV" lnType="KVLV_piloted" prefix="Gv_"/>

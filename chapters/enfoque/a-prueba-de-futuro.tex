@@ -1,0 +1,58 @@
+\section{Consideraciones para construir sistemas a prueba de futuro}
+
+La norma IEC 61850 abre las posibilidades al proyectista para que este 
+pueda construir sistemas a prueba de futuro. Si bien este no es uno 
+de los objetivos fundamentales de la norma IEC 61850, 
+si el proyectista lo desea, puede considerar ciertos aspectos técnicos 
+que permitan construir sistemas que perduren en el tiempo.  
+
+El \gls{ACSI} fue diseñado 
+en base al paradigma \gls{O-O-es}, con una estructura muy sencilla (desde el
+punto de vista informático) basado en un modelo jerárquico de la información.
+Su principal objetivo, hablando en términos de diseño de sofware,  
+es desacoplar el diseño del sistema (el proyecto) de 
+la implementación tecnológica (los protocolos), 
+utilizando el patrón de diseño \gls{O-O-es} interface-implementación.
+
+La separación de la interfaz (IEC 61850--7--2) de la implementación 
+(IEC 61850--8--x e IEC 61850--9--x) es el compromiso más importante que 
+la norma IEC 61850 ha tomado para la construcción de sistemas a prueba de
+futuro. Si bien una buena cantidad de clases del \emph{ACSI} 
+son mapeadas directamente al protocolo MMS (osea, el ACSI en realidad no es tan
+desacoplado del protocolo MMS), las interfaces existen, funcionan, 
+y el proyectista del modelo IEC 61850 no tiene que preocuparse por como se
+realiza el mapeado del ACSI a la pila de protocolos de la norma IEC 61850,
+igualmente este aspecto es a prueba de futuro. En cuanto
+a los protocolos, sólo hay que
+preocuparse por definir sus parámetros adecuadamente.  
+
+
+El hecho de que a largo plazo se mantengan las interfaces \emph{ACSI} 
+facilita una parte importante de la labor del proyectista, pues 
+resulta beneficioso apostar por capacitarse en la norma IEC 61850, 
+dado que la norma acompaña de una manera más suave los cambios
+tecnológicos.  
+
+Resulta que el aporte de la norma IEC 61850 no es suficiente 
+para construir sistemas a prueba de futuro, aún resta el 
+aporte del proyectista. 
+El proyectista debe definir un modelo de datos consistente, 
+aprovechando todo el modelo de datos semántico 
+proveida por la norma IEC 61850
+(utilizando la menor cantidad de nodos lógicos del grupo G siempre que sea
+posible, por ejemplo)
+y la posibilidad de describir 
+en forma totalmente unificada, organizada y formal 
+toda la estructura del sistema IEC 61850 (manteniendo 
+un archivo SSD de todo el sistema).
+Otros aspectos muy importantes que podría definir 
+el proyectista para diseñar sistemas a prueba de futuro
+están mencionados en la sección
+\ref{chEnfoque:ied-simplif-no-preconfig}
+
+
+
+
+ 
+
+

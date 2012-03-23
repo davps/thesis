@@ -1,0 +1,40 @@
+\section{Arquitectura del sistema de 
+monitoreo y control del regulador de velocidad}
+
+La arquitectura del sistema IEC 61850 definido en este
+trabajo tiene las siguientes características:
+
+\begin{itemize}
+  \item Topología de red: Anillo.
+  \item Redundancia: Sistema totalmente duplicado e idéntico.
+  \item Regulación de velocidad: La regulación primaria y la regulación
+  secundaria es realizada en IEDs distintos.
+  \item Sensores de frecuencia: Se modelaron ICDs básicos
+  (conteniendo solamente un nodo lógico por fase, y suponiendo 
+  que la conexión del secundario del transformador están en 
+  estrella para simplificar aún más el modelo) 
+  de dos \glspl{MU} para obtener
+  la frecuencia del generador y la frecuencia del sistema de potencia.
+  \item Sistema Hidráulico: El sistema contiene 3 IEDs sensores 
+  para la parte hidráulica.
+  \item Tacómetro: Se ha definido un tacómetro en un ICD. Se 
+  han agregado varios nodos lógicos para el ajuste de curvas, 
+  en caso que sea necesario.
+\end{itemize} 
+
+La arquitectura general referencial puede visualizarse en la figura
+\ref{fig:arquitectura-Gral-Referencial1}. Se ha utilizado 
+el layout de la arquitectura general referencial de la 
+futura Subestación Villa Hayes \cite{Itaipu:6693DE15207E}.
+
+\begin{landscape}
+\thispagestyle{empty}
+\begin{figure}
+\begin{center}
+  \includegraphics[width=0.65\linewidth]{chapters/model/figures/arquitecturaGralReferencial.eps}
+  \captionsetup{font=scriptsize}
+  \caption{Arquitectura del sistema}
+  \label{fig:arquitectura-Gral-Referencial1}
+\end{center}
+\end{figure}
+\end{landscape}

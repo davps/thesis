@@ -1,0 +1,3 @@
+<LN desc="(6) Oil cooler temperature" inst="1" lnClass="TTMP" lnType="TTMP_6" prefix="Tmp_"/>
+<LN desc="(6) Oil cooler temperature" inst="2" lnClass="TTMP" lnType="TTMP_6" prefix="Tmp_"/>
+<LN desc="(13) Temperature" inst="4" lnClass="TTMP" lnType="TTMP_6" prefix="Tmp_"/>

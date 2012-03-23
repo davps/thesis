@@ -1,0 +1,12 @@
+<LNodeType desc="Thermostat temperature" id="TTMP_thermostat" lnClass="TTMP">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_3"/>
+			<!-- Measured values -->
+			<DO name="Tmp" type="Tmp_2"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_3"/>
+		</LNodeType>

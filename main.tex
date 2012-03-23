@@ -1,42 +1,45 @@
 %!TEX TS-program = xelatex 
 %!TEX encoding = UTF-8 Unicode
-%
+% 
 %  my_title
 %
 %  Created by David Perez on march 2010.
 %  Copyright (c) David Perez 2010. All rights reserved.
-%
+% 
+          
+  
+  
+  
+% -*- Mode:TeX -*- 
+   
 
-% -*- Mode:TeX -*-
-
- 
 
 %% The documentclass options along with the pagestyle can be used to generate
 %% a technical report, a draft copy, or a regular thesis.  You may need to
 %% re-specify the pagestyle after you \include  cover.tex.  For more 
 %% information, see the first few lines of mitthesis.cls. 
-
-%\documentclass[12pt,vi,twoside]{mitthesis}
+  
+%\documentclass[12pt,vi,twoside]{mitthesis_fork_une}
 %%
 %%  If you want your thesis copyright to you instead of MIT, use the
 %%  ``vi'' option, as above.
 %%
-%\documentclass[12pt,twoside,leftblank]{mitthesis}
+%\documentclass[12pt,twoside,leftblank]{mitthesis_fork_une}
 %%
 %% If you want blank pages before new chapters to be labelled ``This
 %% Page Intentionally Left Blank'', use the ``leftblank'' option, as
 %% above. 
 
 %For the final thesis
-\documentclass[12pt,vi]{mitthesis}
+\documentclass[12pt,vi]{mitthesis_fork_une}
 \pagestyle{plain}
 
 %for technical report
-%\documentclass[12pt,vi,twoside]{mitthesis}
+%\documentclass[12pt,vi,twoside]{mitthesis_fork_une}
 %\pagestyle{plain}
 
 %for draft
-%\documentclass[11pt,singlespace,draft]{mitthesis}
+%\documentclass[11pt,singlespace,draft]{mitthesis_fork_une}
 %\pagestyle{drafthead}
 
 
@@ -51,10 +54,19 @@
 %%\todo[noline]{A note with no line ...} noline o line o inline
 %%\missingfigure[figwidth=6cm]{Testing a long text string}
 
+
 %\usepackage[pdfborder={0 0 0}]{hyperref}
-\usepackage[colorinlistoftodos, textwidth=2.8cm, shadow]{todonotes}
-\usepackage{amsmath}
+\usepackage[disable, colorinlistoftodos, textwidth=2.8cm, shadow]{todonotes}
+\usepackage{amsmath} 
 \usepackage[displaymath, tightpage]{preview}
+ 
+ 
+\usepackage{tabularx,colortbl}
+\usepackage{multirow}
+\usepackage{float}
+ 
+\usepackage[latin1]{inputenc}
+\usepackage[spanish]{babel}
 
 
 
@@ -67,12 +79,16 @@
 %\usepackage[pdftex]{graphicx}
 %\else
 \usepackage{graphicx} 
+\usepackage{epstopdf} %esto es para convertir de epd a pdf 
 %\fi
 
+
 \usepackage{amsmath,amssymb,amsfonts} % easily align arrays of equations
+%\usepackage[pdfborder={0 0 0}]{hyperref} % hyperlinks  
 \usepackage{hyperref} % hyperlinks
 \usepackage{subfig} % multi-part figures
 \usepackage{pdfpages} % makes it easy to insert all those nsigmapi fits
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -101,13 +117,14 @@
 
 
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%begin code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %paquete para agregar codigo fuente
 %\usepackage{listings}
 \usepackage{listings}
 \usepackage{courier}
+\renewcommand{\lstlistlistingname}{Lista de códigos fuente} 
+\renewcommand{\lstlistingname}{Código fuente} 
 \lstset{
          basicstyle=\footnotesize\ttfamily, % Standardschrift
          %numbers=left,               % Ort der Zeilennummern
@@ -133,7 +150,15 @@
          %backgroundcolor=\color{lightgray},
          showstringspaces=false      % Leerzeichen in Strings anzeigen ?        
  }
- \lstloadlanguages{XML, Java}
+\lstloadlanguages{XML, Java}  
+\usepackage{caption}
+\DeclareCaptionFont{white}{\color{black}}
+\DeclareCaptionFormat{listing}{\colorbox{lightgray}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
+\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+ 
+%%%%%%%%%%%%%%%%%%%%end code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
 
 
 % \lstloadlanguages{% Check Dokumentation for further languages ...
@@ -143,72 +168,102 @@
 %         %C++
 %         XML
 %         %HTML
-%         Java
+%         Java 
 %}
     %\DeclareCaptionFont{blue}{\color{blue}} 
 
   %\captionsetup[lstlisting]{singlelinecheck=false, labelfont={blue}, textfont={blue}}
-\usepackage{caption}
-\DeclareCaptionFont{white}{\color{white}}
-\DeclareCaptionFormat{listing}{\colorbox[cmyk]{0.43, 0.35, 0.35,0.01}{\parbox{\textwidth}{\hspace{15pt}#1#2#3}}}
-\captionsetup[lstlisting]{format=listing,labelfont=white,textfont=white, singlelinecheck=false, margin=0pt, font={bf,footnotesize}}
+ 
 
-%%%%%%%%%%%%%%%%%%%%end code formatting%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+%estos paquetes son para el corte de las palabras, para que salgan bien
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\hyphenation{co-rres-pon-dien-tes 
+di-gi-ta-li-za-ci\'on 
+hi-dro-eléc-tri-cas
+in-te-ro-pe-ra-bi-li-dad 
+mo-ni-to-ring 
+pro-pues-to 
+pro-yec-ta-do 
+o-rien-ta-do
+actua-li-za-ción
+Alexis
+Es-ta-bi-li-dad
+Arrúa 
+com-pu-ta-do-ras
+do-cu-men-tos
+des-crip-ta
+Abstract
+ex-pe-rien-cia
+de-li-mi-ta-cio-nes
+Au-to-ma-ti-za-ción
+re-gu-la-dor
+di-fe-ren-tes
+Commu-ni-ca-tion
+con-fi-gu-ra-ción
+mo-dels
+classes
+dis-tri-bu-ted
+si-mi-la-res
+rea-li-zen
+abs-trac-ción
+ge-ne-ra-do-ra
+ge-ne-ra-do
+des-cri-ben
+des-cri-bir
+hi-dro-e-léc-tri-cas
+mo-di-fi-ca-cio-nes
+}
+
+ 
+ 
 \begin{document}
+%\input{chapters/ch-scl/scl-model}
+
+\renewcommand{\glossaryname}{Glosario}
+\renewcommand{\listtablename}{Índice de tablas} 
+\renewcommand{\tablename}{Tabla} 
+
+
 
 \include{cover}
 
 \pagestyle{plain}
 \include{contents}
-
-
-
-
-%\\.
-%\\. 
-%\\.
-%\\.
-%\todo[inline]{Agregar la secci\'on del cover}
-%	Debo agregar una hoja donde indique que estos cap\'itulos son
-%	el marco teorico de la investigaci\'on, dicho comando para
-%	agregar la palabra parte A por ejemplo, sin numeraci\'on de 
-%	paginas en esta, voy a encontrar en el formato de tesis 
-%	de la universidad de washintong basado en la del MIT, 
-%	dicho template esta en mis archivos de Google Docs
-
-
-
+  
 %\include{chapters/annotations}
+%\listoftodos
 
-\include{chapters/ch-overview}
+\include{chapters/overview}   
+\include{chapters/introduction} 
+\include{chapters/planteamiento}
+\include{chapters/enfoque}
+\include{chapters/model}  
+\include{chapters/conclusion}  
 
-\include{chapters/ch-iec61850-introduction}
-
-%%hello world!  first commit from linux! - this is a test
-
-\include{chapters/ch-oop}
-%\include{chapters/ch-networks}
-\include{chapters/ch-iec61850-overview}
-\include{chapters/ch-scl} 
-
-
-\appendix
+\appendix 
 %\include{appendices/appa}
 %\include{appendices/appb}
-\begin{singlespace}
 
-
-
-%esta es la bibliografia standard de la IEEE
-\bibliographystyle{IEEEtran}
-\bibliography{IEEEabrv,bibliography/myIEEEbibliography}
-%\bibliographystyle{plain}
-%\bibliography{bibliography/myIEEEbibliography}
-
-%\bibliography{main}
-%\bibliographystyle{plain}
+%este no funciona! no se que le pasa a
+% los XMLS, posiblemente es problema de los encodings,
+%por eso pase a pdf los xmls separadamente, y luego
+%recién le anexé a el documento principal 
+%\include{appendices/appResultadosSCL} 
+\include{appendices/appResultadosSCL2}
+\include{appendices/appc}
+\include{appendices/appEstadisticas}
+%\include{appendices/appJavaACSI}
+    
+\begin{singlespace} 
+	%esta es la bibliografia standard de la IEEE
+	\bibliographystyle{IEEEtran} %otra opción es 	%\bibliographystyle{plain}
+	\bibliography{IEEEabrv,bibliography/myIEEEbibliography}
+	\bibliographystyle{plain}
 \end{singlespace}
+
 \end{document}
 
+       

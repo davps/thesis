@@ -1,0 +1,71 @@
+\section{Lenguaje de descripción de Configuración de Subestaciones -- SCL}
+
+%El proceso de ingeniería IEC 61850 de todo el sistema de automatización de
+%subestaciones eléctricas se realiza utilizando el Lenguaje de Configuración de
+%Subestaciones.     
+
+El \gls{SCL} tiene como objetivo describir la
+estructura de los equipamientos primarios del sistema
+de potencia, el sistema de comunicación y la comunicación
+a nivel de aplicación.
+
+A nivel de aplicación, el \gls{SCL} permite describir 
+cómo los \textbf{Data Objects} están agrupados para
+su envío, cómo el \gls{IED} despacha el intercambio de 
+la información (\textbf{Trigger}), cuáles servicios 
+se eligieron durante el diseño del sistema,
+qué datos de entrada de otros IEDs son necesitados,
+qué dispositivos lógicos 
+están configurados en cada \gls{IED}, sus nodos lógicos con
+sus respectivas plantillas e instancias.
+
+A continuación, se enumeran los principales
+usos del \gls{SCL}.
+\begin{itemize}
+	\item Definición de la estructura del modelo de la información del sistema.
+	\item Descripción del sistema a través de nodos lógicos. 
+	\item Vínculo de los nodos lógicos del sistema con los nodos lógicos de los
+	IEDs.
+	\item Creación de las conexiones lógicas.
+	\item Definición de los métodos de intercambio de la información.
+	\item Configuración de los parámetros de la red.
+	\item Documentación formal del proceso de ingeniería.
+\end{itemize}
+
+%\begin{figure}
+%  \includegraphics[width=1.0\textwidth]{appendices/IEC61850SCL}
+%  \caption{Borrador - Esquema del futuro capitulo }
+%  \label{fig:lan-networks-topologies-fig4}
+%\end{figure}
+
+\subsection{Variantes SCL}
+
+Los archivos \gls{SCL}, dependiendo de su contenido, 
+según la IEC 61850--6 (Edición 1) \cite{IEC61850-6:2004} 
+se clasifican en:
+
+\begin{itemize}
+  \item SSD: La variante SSD (\emph{System Specification Description}) 
+  contiene el diagrama unifilar de la subestación (a través de los elementos
+  \textbf{Header}, \textbf{Substation} y opcionalmente el elemento
+  \textbf{DataTypeTemplates}).
+  \item ICD: La variante ICD (\emph{IED Capability Description}) 
+  describe las capacidades de los IEDs (IEDs aún no configurados)
+  (A través de los elementos \textbf{IED}, \textbf{Communication},
+  \textbf{Header} y \textbf{DataTypeTemplates}).
+  \item CID: La variante CID (\emph{Configured IED Description}) 
+  es la descripción de configuración
+  de un IED. Incluye todas las configuraciones IEC 61850 
+  que puedan ser configurables: asociaciones, parametrizaciones
+  de la red, entre otros.   (A través de los elementos \textbf{IED}, 
+  \textbf{Communication}, \textbf{Header} y \textbf{DataTypeTemplates}).
+  A diferencia de la variante ICD, un CID también contiene 
+  datos de los demás IEDs con los cuales se comunica.
+  \item SCD: La variante SCD (\emph{Substation Configuration Description}) 
+  contiene los archivos CID y su 
+  relación con respecto a la estructura del sistema eléctrico
+  descripto en el SSD, que también está incluido en el SCD.
+  (Contiene todos los elementos SCL, que pueden ser observados en 
+  la figura \ref{fig:SCL-main-parts}.  
+\end{itemize}
+ 

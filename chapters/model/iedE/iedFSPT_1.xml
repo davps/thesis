@@ -1,0 +1,14 @@
+<LN desc="Estatismo DROOP temporario de la maquina" inst="1" lnClass="FSPT" lnType="FSPT_1" prefix="Drp_"/>
+<LN desc="Constante de tiempo derivada, Tn" inst="2" lnClass="FSPT" lnType="FSPT_1" prefix="Reg_"/>
+<LN desc="Constante de tiempo del dispositivo amortiguador, Td" inst="3" lnClass="FSPT" lnType="FSPT_1" prefix="Reg_"/>
+<LN desc="Estatismo DROOP permanente de la maquina" inst="4" lnClass="FSPT" lnType="FSPT_1" prefix="Drp_"/>
+<LN desc="Constante de tiempo de la prontitud, Tx" inst="5" lnClass="FSPT" lnType="FSPT_1" prefix="Reg_"/>
+<LN desc="Bias de tension de puesta en marcha" inst="6" lnClass="FSPT" lnType="FSPT_1" prefix="V_"/>
+<LN desc="Frecuencia de referencia" inst="7" lnClass="FSPT" lnType="FSPT_1" prefix="Hz_"/>
+<LN desc="Selector de velocidad" inst="8" lnClass="FSPT" lnType="FSPT_1" prefix="Spd_"/>
+<LN desc="Valor de ajuste de apertura" inst="9" lnClass="FSPT" lnType="FSPT_1" prefix="Gv_"/>
+<LN desc="Bias de velocidad sin carga" inst="10" lnClass="FSPT" lnType="FSPT_1" prefix="Hz_"/>
+<LN desc="Bias de tension de velocidad sin carga" inst="11" lnClass="FSPT" lnType="FSPT_1" prefix="V_"/>
+<LN desc="Limitador de apertura" inst="12" lnClass="FSPT" lnType="FSPT_1" prefix="Lim_"/>
+<LN desc="Control frecuencia de carga" inst="13" lnClass="FSPT" lnType="FSPT_1" prefix="Hz_"/>
+<LN desc="Valor de ajuste de la frecuencia" inst="14" lnClass="FSPT" lnType="FSPT_1" prefix="Reg_"/>

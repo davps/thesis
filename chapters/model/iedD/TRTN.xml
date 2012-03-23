@@ -1,0 +1,12 @@
+<LNodeType desc="Tacometer" id="TRTN_1" lnClass="TRTN">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_1"/>
+			<!--Measured values-->
+			<DO name="Hz" type="Spd_1"/>
+			<!--Settings-->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>

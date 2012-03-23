@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL SCL.xsd">
+	<Header id="1">
+		<Text>DataTypeTemplate de la parte hidráulica del regulador de velocidad</Text>
+		<History>
+			<Hitem when="19/10/2010" revision="1" version="1.1">
+				Aquí terminé la definición del modelo de todos los nodos lógicos 
+				y sus data attributes que necesitará el proyecto de la parte hidráulica. 
+			</Hitem>
+			<Hitem when="20/10/2010" revision="2" version="1.2">
+				Aqui empezé a realizar la instanciación de los DataTypeTemplates
+				en mi IED del tanque principal
+			</Hitem>
+			<Hitem when="21/10/2010" revision="3" version="1.2">
+				Tardé mucho en escribir manualmente todos los elementos LNs del IED, por eso 
+				agarré el cvs del archivo excel donde había identificado los nodos lógicos, prefijos, 
+				descripciones, y otros detalles que necesita inicialmenente y preparé un script 
+				python que leia ese cvs y lo convertía al xml correspondiente para anexarlos 
+				al SCL de mi IED.
+				Luego creé otro script que me listaba todos mis dataTypeTemplates ordenados 
+				por lnClass, incluyendo id y desc, sin los DO. Allí hice la referencias cruzadas 
+				entre el id de los LNType y el type de los LN, y allí terminé.
+			</Hitem>
+			<Hitem when="21/10/2010" revision="2" version="1.0">
+				TODO: Falta eliminar los DataTypeTemplates que no se usan aqui.
+			</Hitem>
+		</History>
+	</Header>
+	<Communication>
+		<SubNetwork name="SN1">
+			<ConnectedAP iedName="IED_MAIN_TNK" apName="AP1">
+				<Address>
+					<P type="IP">192.168.10.1</P>
+					<P type="IP-SUBNET">0.0.0.0</P>
+					<P type="IP-GATEWAY">0.0.0.0</P>
+				</Address>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED name="IEDMainTnk" configVersion="1" desc="IED del tanque principal" manufacturer="David">
+		<Services>
+			<DynAssociation/>
+			<GetDataObjectDefinition/>
+			<DataObjectDirectory/>
+			<GetDataSetValue/>
+			<SetDataSetValue/>
+			<DataSetDirectory/>
+			<ConfDataSet max="50" maxAttributes="250"/>
+			<GetDirectory/>
+			<ReadWrite/>
+			<ConfReportControl max="7"/>
+			<GetCBValues/>
+			<ReportSettings intgPd="Dyn" trgOps="Dyn" bufTime="Dyn" optFields="Dyn" rptID="Dyn" datSet="Fix" cbName="Fix"/>
+			<GSESettings appID="Fix" cbName="Fix" dataLabel="Dyn" datSet="Fix"/>
+			<GOOSE max="5"/>
+			<FileHandling/>
+			<ConfLNs fixLnInst="true" fixPrefix="true"/>
+		</Services>
+		<AccessPoint name="AP1">
+			<Server>
+				<Authentication/>
+				<LDevice inst="1" ldName="LD1pumpingUnit" desc="Pumping units (AC), (AD) and (AE) with their removable suction filters">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="KTNK_1" inst="1" lnClass="KTNK" prefix="Act_" desc="(1) Main sump tank containing the oil required for operation of the generation unit"/>
+					<LN lnType="ZMOTa" inst="1" lnClass="ZMOT" prefix="Act_" desc="(AC) Motor for the pump unit"/>
+					<LN lnType="ZMOTa" inst="2" lnClass="ZMOT" prefix="Act_" desc="(AD) Motor for the pump unit"/>
+					<LN lnType="ZMOTa" inst="3" lnClass="ZMOT" prefix="Act_" desc="(AE) Motor for the pump unit"/>
+					<LN lnType="KPMPa" inst="1" lnClass="KPMP" prefix="Act_" desc="(AC) Pump unit"/>
+					<LN lnType="KPMPa" inst="2" lnClass="KPMP" prefix="Act_" desc="(AD) Pump unit"/>
+					<LN lnType="KPMPa" inst="3" lnClass="KPMP" prefix="Act_" desc="(AE) Pump unit"/>
+					<LN lnType="KFIL_29" inst="1" lnClass="KFIL" prefix="Act_" desc="(29) Pumping unit suction filter"/>
+					<LN lnType="KFIL_29" inst="2" lnClass="KFIL" prefix="Act_" desc="(29) Pumping unit suction filter"/>
+					<LN lnType="KFIL_29" inst="3" lnClass="KFIL" prefix="Act_" desc="(29) Pumping unit suction filter"/>
+				</LDevice>
+				<LDevice inst="2" ldName="LD2idlerSystem" desc="The idler system distributing valves (2), (3) and (4) with their pilot valve (5)">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="KVLV_idler_system" inst="1" lnClass="KVLV" prefix="Gv_" desc="(2) Idler system distributing valve"/>
+					<LN lnType="KVLV_idler_system" inst="2" lnClass="KVLV" prefix="Gv_" desc="(3) Idler system distributing valve"/>
+					<LN lnType="KVLV_idler_system" inst="3" lnClass="KVLV" prefix="Gv_" desc="(4) Idler system distributing valve"/>
+					<LN lnType="KVLV_piloted" inst="4" lnClass="KVLV" prefix="Gv_" desc="(5) idler system pilot valve"/>
+				</LDevice>
+				<LDevice inst="3" ldName="LD3oilCoolers" desc="The oil coolers (6) with adjusting isolating valve (36) and (37) flow switch (LN)">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="TTMP_6" inst="1" lnClass="TTMP" prefix="Tmp_" desc="(6) Oil cooler temperature"/>
+					<LN lnType="TTMP_6" inst="2" lnClass="TTMP" prefix="Tmp_" desc="(6) Oil cooler temperature"/>
+					<LN lnType="STMP6" inst="1" lnClass="STMP" prefix="Tmp_" desc="(6) Oil cooler temperature supervision"/>
+					<LN lnType="STMP6" inst="2" lnClass="STMP" prefix="Tmp_" desc="(6) Oil cooler temperature supervision"/>
+					<LN lnType="KVLV_adjusting_isolating_valve" inst="5" lnClass="KVLV" prefix="Tmp_" desc="(36) Oil adjusting isolating valve"/>
+					<LN lnType="KVLV_adjusting_isolating_valve" inst="6" lnClass="KVLV" prefix="Tmp_" desc="(37) Water adjusting isolating valve"/>
+					<LN lnType="KVLV_switch" inst="7" lnClass="KVLV" prefix="Flw_" desc="(LN) Oil coolers flow switch"/>
+				</LDevice>
+				<LDevice inst="4" ldName="LD4control" desc="the control installation of the wicket-gate servomotors">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="KVLV_piloted" inst="8" lnClass="KVLV" prefix="Gv_" desc="(7) Main pilot valve (distributing valve)"/>
+					<LN lnType="TPOS_e" inst="1" lnClass="TPOS" prefix="Gv_" desc="(EB) Main pilot valve displacement sensor"/>
+					<LN lnType="TPOS_e" inst="2" lnClass="TPOS" prefix="Gv_" desc="(EA) Actuator EA controlling the distributing valve 7"/>
+					<LN lnType="KVLV_solenoid_operated" inst="9" lnClass="KVLV" prefix="Pos_" desc="(BA) Safety solenoid-operated valve BA with position switches CI and CJ"/>
+					<LN lnType="KVLV_solenoid_operated" inst="10" lnClass="KVLV" prefix="Pos_" desc="(BB) Safety solenoid-operated valve BB with position switches CK and CL"/>
+					<LN lnType="TPOS_lvl_sw" inst="3" lnClass="TPOS" prefix="Pos_" desc="(BA) Safety solenoid-operated valve BA with position switches CI and CJ"/>
+					<LN lnType="TPOS_lvl_sw" inst="4" lnClass="TPOS" prefix="Pos_" desc="(BB) Safety solenoid-operated valve BB with position switches CK and CL"/>
+					<LN lnType="KVLV_restrictor" inst="11" lnClass="KVLV" prefix="Gv_" desc="(8) Adjustable restrictor valve enabling to obtain slackening during GvFLIM8"/>
+					<LN lnType="FLIM_" inst="1" lnClass="FLIM" prefix="Gv_" desc="(8) Wicket gate closure travel limit"/>
+					<LN lnType="KVLV_piloted" inst="12" lnClass="KVLV" prefix="Gv_" desc="(9) Piloted distributing valve"/>
+				</LDevice>
+				<LDevice inst="5" ldName="LD5filters" desc="Twit filter (10) for the supply of the actuator (EA)">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"></LN0>
+					<LN lnType="KFIL_actuator" inst="4" lnClass="KFIL" prefix="Act_" desc="(10) Twin filter for the supply of actuator EA"/>
+					<LN lnType="KFIL_actuator" inst="5" lnClass="KFIL" prefix="Act_" desc="(10) Twin filter for the supply of actuator EA"/>
+				</LDevice>
+				<LDevice inst="6" ldName="LD6valves" desc="Solenoid-operated valve (BC) controlling the oil pressure-tank isolating valve, with position switches (CM) and (CN)">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"></LN0>
+					<LN lnType="KVLV_solenoid_operated" inst="13" lnClass="KVLV" prefix="Pa_" desc="(BC) Solenoid-operated valve controlling the oil pressure-tank isolating valve"/>
+					<LN lnType="TPOS_lvl_sw" inst="5" lnClass="TPOS" prefix="Pa_" desc="(BC) PaKVLVbc position swiches CM and CN"/>
+					<LN lnType="KVLV_solenoid_operated" inst="14" lnClass="KVLV" prefix="Gv_" desc="(BD) Solenoid-operated valve controlling the wicket gate lock"/>
+					<LN lnType="TPOS_lvl_sw" inst="6" lnClass="TPOS" prefix="Gv_" desc="(BD) GvKVLVbd position swiches CO and CP"/>
+				</LDevice>
+				<LDevice inst="7" ldName="LD7accesories" desc="Accessories">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"></LN0>
+					<LN lnType="TPOS_prs_sw" inst="7" lnClass="TPOS" prefix="Pa_" desc="(DA) Pressure switch"/>
+					<LN lnType="TPOS_prs_sw" inst="8" lnClass="TPOS" prefix="Pa_" desc="(LO) Pressure switch"/>
+					<LN lnType="TTMP_thermostat" inst="3" lnClass="TTMP" prefix="Tmp_" desc="(LI) Thermostat temperature"/>
+					<LN lnType="STMP_thermostat" inst="3" lnClass="STMP" prefix="Tmp_" desc="(LI) Thermostat temperature controller"/>
+					<LN lnType="TPOS_lvl_sw" inst="9" lnClass="TPOS" prefix="Lvl_" desc="(LG) Level switch"/>
+					<LN lnType="TPOS_lvl_sw" inst="10" lnClass="TPOS" prefix="Lvl_" desc="(LH) Level switch"/>
+					<LN lnType="TPRS_gauge" inst="2" lnClass="TPRS" prefix="Pa_" desc="(11) Pressure-gauge"/>
+					<LN lnType="TPRS_gauge" inst="3" lnClass="TPRS" prefix="Pa_" desc="(12) Pressure-gauge"/>
+					<LN lnType="TTMP_6" inst="4" lnClass="TTMP" prefix="Tmp_" desc="(13) Temperature"/>
+					<LN lnType="STMP_thermostat" inst="4" lnClass="STMP" prefix="Tmp_" desc="(13) Temperature controller"/>
+					<LN lnType="TLEV_gauge" inst="1" lnClass="TLEV" prefix="Lvl_" desc="(14) Level gauge "/>
+					<LN lnType="FXUT_1" inst="1" lnClass="FXUT" prefix="Lvl_" desc="(14) Level at under threshold"/>
+					<LN lnType="FXOT_1" inst="1" lnClass="FXOT" prefix="Lvl_" desc="(14) Level at over threshold"/>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="LLN0_1" lnClass="LLN0">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+		</LNodeType>
+		<LNodeType id="FLIM_" lnClass="FLIM" desc="Wicket gate closure travel limit">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="HiLim" type="xLim_1" desc="High Limit reached"/>
+			<DO name="LoLim" type="xLim_1" desc="Low Limit reached"/>
+			<!-- Measured values -->
+			<DO name="Out" type="Out_1" desc="Output signal"/>
+			<DO name="HiLimSpt" type="xLimSpt_1" desc="High Limit setpoint"/>
+			<DO name="LoLimSpt" type="xLimSpt_1" desc="Low Limit setpoint"/>
+			<DO name="Blk" type="Blk_1" desc="Block operation"/>
+		</LNodeType>
+<!--		<LNodeType id="FSPT_for_flim" lnClass="FSPT" desc="Wicket gate closure travel limit set-point">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			--><!--Measured values--><!--
+			<DO type="SptMem_1" name="SptMem" desc="Setpoint in memory"/>
+		</LNodeType>
+-->		
+		<LNodeType id="FXOT_1" lnClass="FXOT" desc="Level at over threshold">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO type="Op_1" name="Op"/>
+		</LNodeType>
+		<LNodeType id="FXUT_1" lnClass="FXUT" desc="Level at under threshold">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO type="Op_1" name="Op"/>
+		</LNodeType>
+		<LNodeType id="KFIL_29" lnClass="KFIL" desc="Pumping unit suction filter">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO type="ACAlm_1" name="ACAlm"/>
+			<DO type="MotPro_1" name="MotPro"/>
+			<DO type="FilAlm_1" name="FilAlm"/>
+		</LNodeType>
+		<LNodeType id="KFIL_actuator" lnClass="KFIL" desc="Filter for the supply of the actuator">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO type="ACAlm_1" name="ACAlm"/>
+			<DO type="MotPro_1" name="MotPro"/>
+			<DO type="FilAlm_1" name="FilAlm"/>
+		</LNodeType>
+		<LNodeType id="KPMPa" lnClass="KPMP" desc="Pump unit">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO name="ACAlm" type="ACAlm_2"/>
+			<DO name="BlkSt" type="BlkSt_2"/>
+			<!-- Controls -->
+			<DO name="Operate" type="Operate_1"/>
+		</LNodeType>
+		<LNodeType id="KTNK_1" lnClass="KTNK" desc="Main sump tank">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="TnkTyp" type="TnkTyp_1"/>
+			<!-- Settings -->
+			<DO name="VlmCap" type="VlmCap_1"/>
+			<!-- Measured values -->
+			<DO name="Pres" type="Pres_1"/>
+			<DO name="LevPc" type="LevPc_1"/>
+			<DO name="Vlm" type="Vlm_1"/>
+			<DO name="Tmp" type="Tmp_1"/>
+		</LNodeType>
+		<!--<LNodeType id="KTNK_air_oil" lnClass="KTNK" desc="Air-oil pressure tank">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			--><!-- Status information --><!--
+			<DO name="TnkTyp" type="TnkTyp_1"/>
+			--><!-- Settings --><!--
+			<DO name="VlmCap" type="VlmCap_1"/>
+			--><!-- Measured values --><!--
+			<DO name="Pres" type="Pres_1"/>
+			<DO name="LevPc" type="LevPc_1"/>
+			<DO name="Vlm" type="Vlm_1"/>
+			<DO name="Tmp" type="Tmp_1"/>
+		</LNodeType>-->
+		<LNodeType id="KVLV_idler_system" lnClass="KVLV" desc="Idler system distributing valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="OpCnt" type="OpCnt_1"/>
+			<DO name="Loc" type="Loc_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<LNodeType id="KVLV_adjusting_isolating_valve" lnClass="KVLV" desc="Oil adjusting isolating valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<LNodeType id="KVLV_piloted" lnClass="KVLV" desc="Piloted distributing valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+		</LNodeType>
+		<LNodeType id="KVLV_solenoid_operated" lnClass="KVLV" desc="Solenoid operated valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="Stuck" type="Stuck_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<LNodeType id="KVLV_restrictor" lnClass="KVLV" desc="Adjustable restrictor valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<!--<LNodeType id="KVLV_relief" lnClass="KVLV" desc="Relief pressure valve">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			--><!-- Status information --><!--
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			--><!-- Controls --><!--
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>-->
+		<!--<LNodeType id="KVLV_aut_contr" lnClass="KVLV" desc="Automatic controlled isolating valve">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			--><!-- Status information --><!--
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			--><!-- Controls --><!--
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>-->
+		<LNodeType id="KVLV_switch" lnClass="KVLV" desc="Switch">
+			<!--Flow switches such as LN-->
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<LNodeType id="STMP6" lnClass="STMP" desc="Oil cooler temperature supervision">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="Loc" type="Loc_1"/>
+			<!-- Status information -->
+			<DO name="Alm" type="Alm_1"/>
+			<DO name="Trip" type="Trip_1"/>
+			<!-- Settings -->
+			<DO name="TmpAlmSpt" type="TmpAlmSpt_1"/>
+			<DO name="TmpTrSpt" type="TmpTrSpt_1"/>
+		</LNodeType>
+		<LNodeType id="STMP_thermostat" lnClass="STMP" desc="Thermostat temperature controller">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="Alm" type="Alm_1"/>
+			<DO name="Trip" type="Trip_1"/>
+			<!-- Settings -->
+			<DO name="TmpAlmSpt" type="TmpAlmSpt_1"/>
+			<DO name="TmpTrSpt" type="TmpTrSpt_1"/>
+		</LNodeType>
+		<LNodeType id="TLEV_gauge" lnClass="TLEV" desc="Level gauge">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Measured values -->
+			<DO name="LevPc" type="LevPc_2"/>
+			<DO name="SmpRteSet" type="SmpRteSet_1"/>
+		</LNodeType>
+		<!--<LNodeType id="TLEV_float" lnClass="TLEV" desc="Float level gauge">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			--><!-- Measured values --><!--
+			<DO name="LevPc" type="LevPc_2"/>
+			<DO name="SmpRteSet" type="SmpRteSet_1"/>
+		</LNodeType>-->
+		<LNodeType id="TPOS_e" lnClass="TPOS" desc="valve displacement sensor">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>
+		<LNodeType id="TPOS_lvl_sw" lnClass="TPOS" desc="Level switch">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>
+		<LNodeType id="TPOS_prs_sw" lnClass="TPOS" desc="Pressure switch">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>
+		<!--<LNodeType id="TPRS5" lnClass="TPRS" desc="REVISAR!">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_2"/>
+			--><!-- Measured values --><!--
+			<DO name="Pres" type="Pres_2"/>
+			--><!-- Settings --><!--
+			<DO name="SmpRte" type="SmpRte_2"/>
+		</LNodeType>-->
+		<!--<LNodeType id="TPRS_trans" lnClass="TPRS" desc="Pressure transmitter">
+			--><!-- Common logical node information --><!--
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_2"/>
+			--><!-- Measured values --><!--
+			<DO name="Pres" type="Pres_2"/>
+			--><!-- Settings --><!--
+			<DO name="SmpRte" type="SmpRte_2"/>
+		</LNodeType>-->
+		<LNodeType id="TPRS_gauge" lnClass="TPRS" desc="Pressure-gauge">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_4"/>
+			<!-- Measured values -->
+			<DO name="Pres" type="Pres_3"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_4"/>
+		</LNodeType>
+		<LNodeType id="TTMP_6" lnClass="TTMP" desc="Oil cooler temperature">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_3"/>
+			<!-- Measured values -->
+			<DO name="Tmp" type="Tmp_2"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_3"/>
+		</LNodeType>
+		<LNodeType id="TTMP_thermostat" lnClass="TTMP" desc="Thermostat temperature">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_3"/>
+			<!-- Measured values -->
+			<DO name="Tmp" type="Tmp_2"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_3"/>
+		</LNodeType>
+		<LNodeType id="ZMOTa" lnClass="ZMOT" desc="Motor for the pump unit">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="OpTmh" type="OpTmh_1"/>
+			<!-- Controls -->
+			<DO name="DExt" type="DExt_1"/>
+		</LNodeType>
+		<!--  Data Objects - IEC 61850-7-3 -->
+		<DOType cdc="ASG" id="VlmCap_1" desc="Total Volume capacity"/>
+		<DOType cdc="ASG" id="xLimSpt_1" desc="Hight limit set point"/>
+		<DOType cdc="ASG" id="TmpAlmSpt_1" desc="Temperature alarm level reached"/>
+		<DOType cdc="ASG" id="TmpTrSpt_1" desc="Temperature trip level reached"/>
+		<DOType cdc="DPC" id="Operate_1" desc="Operate pump"/>
+		<DOType cdc="DPC" id="ClsPos_1" desc="Closed end position reached (valve can not move further)"/>
+		<DOType cdc="DPC" id="OpnPos_1" desc="Open end position reached (valve can not move further)"/>
+		<DOType cdc="DPC" id="Opn_1" desc="Valve to full open position"/>
+		<DOType cdc="DPC" id="Cls_1" desc="Valve to full closed position"/>
+		<DOType cdc="ING" id="SmpRteSet_1" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_1" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_2" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_3" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_4" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRteRng_1" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_2" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_3" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_4" desc="Available sampling rate range"/>
+		<DOType cdc="INC" id="Mod_1" desc="Mode"/>
+		<DOType cdc="INS" id="Beh_1" desc="Behaviour"/>
+		<DOType cdc="INS" id="Health_1" desc="Health"/>
+		<DOType cdc="INS" id="TnkTyp_1" desc="Type of tank (pressure only, level only, both pressure and level)"/>
+		<DOType cdc="INS" id="OpCnt_1" desc="Operation counter"/>
+		<DOType cdc="INS" id="OpTmh_1" desc="Operation time"/>
+		<DOType cdc="LPL" id="NamPlt_1" desc="Name plate"/>
+		<DOType cdc="MV" id="Pres_1" desc="Pressure in the tank"/>
+		<DOType cdc="MV" id="LevPc_1" desc="Level in the tank (as percentage of full
+ tank level)"/>
+		<DOType cdc="MV" id="Out_1" desc="Output signal"/>
+		<DOType cdc="MV" id="SptMem_1" desc="Set point in memory"/>
+		<DOType cdc="MV" id="Vlm_1" desc="Volume of media in tank"/>
+		<DOType cdc="MV" id="Tmp_1" desc="Temperature of the media in the tank"/>
+		<DOType cdc="MV" id="Tmp_2" desc="Temperature (C)"/>
+		<DOType cdc="SAV" id="LevPc_2" desc="Level (percentage)"/>
+		<DOType cdc="SAV" id="PosPc_1" desc="Position given as percentage of full movement"/>
+		<DOType cdc="SAV" id="Pres_2" desc="Pressure of media [Pa]"/>
+		<DOType cdc="SAV" id="Pres_3" desc="Pressure of media [Pa]"/>
+		<DOType cdc="SPC" id="Blk_1" desc="Block operation"/>
+		<DOType cdc="SPC" id="BlkOpn_1" desc="Block opening of the valve"/>
+		<DOType cdc="SPC" id="BlkCls_1" desc="Block closing of the valve"/>
+		<DOType cdc="SPC" id="DExt_1" desc="De-excitation"/>
+		<DOType cdc="SPS" id="BlkSt_2" desc="The pump is blocked from operation"/>
+		<DOType cdc="SPS" id="xLim_1" desc="Limit reached"/>
+		<DOType cdc="SPS" id="Op_1" desc="Level of action reached"/>
+		<DOType cdc="SPS" id="ACAlm_1" desc="AC supply failure (fuse or other problem)"/>
+		<DOType cdc="SPS" id="ACAlm_2" desc="AC supply failure (fuse or other problem)"/>
+		<DOType cdc="SPS" id="Alm_1" desc="Temperature alarm level reached"/>
+		<DOType cdc="SPS" id="Trip_1" desc="Temperature trip level reached"/>
+		<DOType cdc="SPS" id="MotPro_1" desc="Motor protection tripped"/>
+		<DOType cdc="SPS" id="MotPro_2" desc="Motor protection tripped"/>
+		<DOType cdc="SPS" id="FilAlm_1" desc="Filter alarm"/>
+		<DOType cdc="SPS" id="Loc_1" desc="Local operation selected"/>
+		<DOType cdc="SPS" id="Mov_1" desc="Valve is moving"/>
+		<DOType cdc="SPS" id="Stuck_1" desc="Valve is blocked (can not move from present position)"/>
+	</DataTypeTemplates>
+</SCL>

@@ -1,0 +1,16 @@
+<LNodeType desc="Main sump tank" id="KTNK_1" lnClass="KTNK">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="TnkTyp" type="TnkTyp_1"/>
+			<!-- Settings -->
+			<DO name="VlmCap" type="VlmCap_1"/>
+			<!-- Measured values -->
+			<DO name="Pres" type="Pres_1"/>
+			<DO name="LevPc" type="LevPc_1"/>
+			<DO name="Vlm" type="Vlm_1"/>
+			<DO name="Tmp" type="Tmp_1"/>
+		</LNodeType>

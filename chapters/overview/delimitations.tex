@@ -1,0 +1,27 @@
+\section{Delimitaciones}
+
+Para alcanzar los objetivos de esta investigación fueron definidas algunas
+delimitaciones. La descripción de esas delimitaciones son importantes para una
+mayor comprensión de este documento. Las delimitaciones son:
+
+\begin{itemize}
+  \item Las instancias de los tipos de datos definidos por la norma IEC
+  61850 utilizadas en el diseño están limitadas a los correspondientes al
+  regulador de velocidad de una unidad generadora típica de Itaipu.
+  \item Se enfocó el esfuerzo hacia la ingeniería de automatización IEC
+  61850 aplicado a sistemas de potencia, no cubriendo el mantenimiento ni la
+  operación de los mismos y simplificándose aspectos, notaciones y
+  representaciones utilizadas en otras disciplinas tales como ingeniería de
+  software y telecomunicaciones.
+  \item El diseño del modelo IEC 61850 se realizó utilizando 
+  exclusivamente los modelos de información y servicios abstractos
+  definidos a través del \gls{ACSI} y sus capas superiores
+  (\Glspl{CDC} y nodos lógicos),
+  conforme a las indicaciones de la norma, no profundizando 
+  en los \Glspl{PDU}. Por lo tanto, no se utilizaron 
+  herramientas de ingeniería para análisis de la red.
+  \item El regulador de velocidad de Itaipu tiene un lazo de control con el
+  regulador de tensión. En este trabajo se realizaron simplificaciones 
+  para eliminar las dependencias con dichas partes, de modo a simplificar 
+  el levantamiento de los requisitos funcionales IEC 61850.
+\end{itemize} 

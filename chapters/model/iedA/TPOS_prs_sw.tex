@@ -1,0 +1,59 @@
+
+\subsection{Nodo l\'ogico: 			 TPOS}
+
+    \subsubsection{Instancias del nodo l\'ogico TPOS}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Pa\_TPOS7 & LD7accesories & (DA) Pressure switch \\
+            \hline
+            Pa\_TPOS8 & LD7accesories & (LO) Pressure switch \\
+            \hline
+    \end{tabular}
+    \caption{Instancias TPOS en el IED IEDMainTnk}
+    \label{table:lnInstTPOS_prs_sw}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedTPOS,
+            caption=Instancias TPOS representadas en SCL
+            ]{chapters/model/iedA/iedTPOS_prs_sw.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ TPOS}  - Pressure switch} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            SmpRteRng & ING & Available sampling rate range \\
+            \hline
+            PosPc & SAV & Position given as percentage of full movement \\
+            \hline
+            SmpRte & ING & Sampling rate setting \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla TPOS del IED IEDMainTnk}
+    \label{table:lnTypeTPOS_prs_sw}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclTPOS,
+            caption=TPOS - Pressure switch - Representaci\'on en SCL
+            ]{chapters/model/iedA/TPOS.xml}
+    

@@ -1,0 +1,53 @@
+
+\subsection{Nodo l\'ogico: 			 HSPD}
+
+    \subsubsection{Instancias del nodo l\'ogico HSPD}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Spd\_HSPD1 & LD2 & Speed monitoring \\
+            \hline
+    \end{tabular}
+    \caption{Instancias HSPD en el IED IEDsensRot}
+    \label{table:lnInstHSPD_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedHSPD,
+            caption=Instancias HSPD representadas en SCL
+            ]{chapters/model/iedD/iedHSPD_1.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ HSPD}  -  } \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            SmpRteRng & ING & Available sampling rate range \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla HSPD del IED IEDsensRot}
+    \label{table:lnTypeHSPD_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclHSPD,
+            caption=HSPD -   - Representaci\'on en SCL
+            ]{chapters/model/iedD/HSPD.xml}
+    

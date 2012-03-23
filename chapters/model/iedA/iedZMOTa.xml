@@ -1,0 +1,3 @@
+<LN desc="(AC) Motor for the pump unit" inst="1" lnClass="ZMOT" lnType="ZMOTa" prefix="Act_"/>
+<LN desc="(AD) Motor for the pump unit" inst="2" lnClass="ZMOT" lnType="ZMOTa" prefix="Act_"/>
+<LN desc="(AE) Motor for the pump unit" inst="3" lnClass="ZMOT" lnType="ZMOTa" prefix="Act_"/>

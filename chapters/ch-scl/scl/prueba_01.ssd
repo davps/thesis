@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<scl:SCL xmlns:scl="http://www.iec.ch/61850/2006/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL file:///D:/My%20Documents/IEC61850/SCL/xsd/SCL.xsd">
-	<scl:Header id="Version 1" revision="01" toolID="Hecho a mano - David Perez"/>
-	
-	
-	
-</scl:SCL>

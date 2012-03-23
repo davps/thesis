@@ -1,0 +1,79 @@
+
+\subsection{Nodo l\'ogico: 			 FSPT}
+
+    \subsubsection{Instancias del nodo l\'ogico FSPT}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Drp\_FSPT1 & LD3 & Estatismo DROOP temporario de la m\'aquina \\
+            \hline
+            Reg\_FSPT2 & LD3 & Constante de tiempo derivada, Tn \\
+            \hline
+            Reg\_FSPT3 & LD3 & Constante de tiempo del dispositivo amortiguador, Td \\
+            \hline
+            Drp\_FSPT4 & LD3 & Estatismo DROOP permanente de la m\'aquina \\
+            \hline
+            Reg\_FSPT5 & LD3 & Constante de tiempo de la prontitud, Tx \\
+            \hline
+            V\_FSPT6 & LD4 & Bias de tensi\'on de puesta en marcha \\
+            \hline
+            Hz\_FSPT7 & LD4 & Frecuencia de referencia \\
+            \hline
+            Spd\_FSPT8 & LD4 & Selector de velocidad \\
+            \hline
+            Gv\_FSPT9 & LD4 & Valor de ajuste de apertura \\
+            \hline
+            Hz\_FSPT10 & LD4 & Bias de velocidad sin carga \\
+            \hline
+            V\_FSPT11 & LD4 & Bias de tensi\'on de velocidad sin carga \\
+            \hline
+            Lim\_FSPT12 & LD4 & Limitador de apertura \\
+            \hline
+            Hz\_FSPT13 & LD4 & Control frecuencia de carga \\
+            \hline
+            Reg\_FSPT14 & LD4 & Valor de ajuste de la frecuencia \\
+            \hline
+    \end{tabular}
+    \caption{Instancias FSPT en el IED IEDRV}
+    \label{table:lnInstFSPT_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedFSPT,
+            caption=Instancias FSPT representadas en SCL
+            ]{chapters/model/iedE/iedFSPT_1.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ FSPT}  - Set point control function} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            SptMem & MV & Set point in memory \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla FSPT del IED IEDRV}
+    \label{table:lnTypeFSPT_1}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclFSPT,
+            caption=FSPT - Set point control function - Representaci\'on en SCL
+            ]{chapters/model/iedE/FSPT.xml}
+    

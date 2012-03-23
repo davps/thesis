@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL SCL.xsd">
+	<Header id="1">
+		<Text>DataTypeTemplate de la parte hidráulica del regulador de velocidad</Text>
+		<History>
+			<Hitem when="21/10/2010" revision="1" version="1.0">
+				Este ICD fue iniciado a partir de la version 1.2 revisión 3 del ICD del tanque principal.
+			</Hitem>
+			<Hitem when="21/10/2010" revision="2" version="1.0">
+				TODO: Falta corregir los números de instancias de cada nodo lógico.
+				TODO: Falta eliminar los DataTypeTemplates que no se usan aqui.
+			</Hitem>
+		</History>
+	</Header>
+	<Communication>
+		<SubNetwork name="SN1">
+			<ConnectedAP iedName="IED_MAIN_TNK" apName="AP1">
+				<Address>
+					<P type="IP">192.168.10.1</P>
+					<P type="IP-SUBNET">0.0.0.0</P>
+					<P type="IP-GATEWAY">0.0.0.0</P>
+				</Address>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED name="IEDcmprsAirPlant" configVersion="1" desc="IED de la planta de aire comprimido" manufacturer="David">
+		<Services>
+			<DynAssociation/>
+			<GetDataObjectDefinition/>
+			<DataObjectDirectory/>
+			<GetDataSetValue/>
+			<SetDataSetValue/>
+			<DataSetDirectory/>
+			<ConfDataSet max="50" maxAttributes="250"/>
+			<GetDirectory/>
+			<ReadWrite/>
+			<ConfReportControl max="7"/>
+			<GetCBValues/>
+			<ReportSettings intgPd="Dyn" trgOps="Dyn" bufTime="Dyn" optFields="Dyn" rptID="Dyn" datSet="Fix" cbName="Fix"/>
+			<GSESettings appID="Fix" cbName="Fix" dataLabel="Dyn" datSet="Fix"/>
+			<GOOSE max="5"/>
+			<FileHandling/>
+			<ConfLNs fixLnInst="true" fixPrefix="true"/>
+		</Services>
+		<AccessPoint name="AP1">
+			<Server>
+				<Authentication/>
+				<LDevice inst="1" ldName="LD1tank" desc="Air oil pressure-tanks">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="ZMOTa" inst="4" lnClass="ZMOT" prefix="Pa_" desc="(AF) Motor for the compressor unit AF"/>
+					<LN lnType="KVLV_relief" inst="24" lnClass="KVLV" prefix="Pa_" desc="(24) Relief valve"/>
+					<LN lnType="TPRS_gauge" inst="10" lnClass="TPRS" prefix="Pa_" desc="(25) Pressure-gauge"/>
+					<LN lnType="TPOS_prs_sw" inst="29" lnClass="TPOS" prefix="Pa_" desc="(DE) Pressure switch"/>
+					<LN lnType="TPOS_prs_sw" inst="30" lnClass="TPOS" prefix="Pa_" desc="(DF) Pressure switch"/>
+					<LN lnType="TPOS_prs_sw" inst="31" lnClass="TPOS" prefix="Pa_" desc="(DG) Pressure switch"/>
+					<LN lnType="TPOS_prs_sw" inst="32" lnClass="TPOS" prefix="Pa_" desc="(LM) Pressure switch"/>
+					<LN lnType="TPOS_e" inst="33" lnClass="TPOS" prefix="Gv_" desc="(EC) Wicket-gate displacement sensor"/>
+					<LN lnType="FLIM_" inst="2" lnClass="FLIM" prefix="Gv_" desc="(LA) Limit to reach the overspeed (speed limit)"/>
+					<LN lnType="FSPT_for_flim" inst="1" lnClass="FSPT" prefix="Gv_" desc="(LA) Speed limit set-point"/>
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="LLN0_1" lnClass="LLN0">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+		</LNodeType>
+		<LNodeType id="FLIM_" lnClass="FLIM" desc="Wicket gate closure travel limit">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="HiLim" type="xLim_1" desc="High Limit reached"/>
+			<DO name="LoLim" type="xLim_1" desc="Low Limit reached"/>
+			<!-- Measured values -->
+			<DO name="Out" type="Out_1" desc="Output signal"/>
+			<DO name="HiLimSpt" type="xLimSpt_1" desc="High Limit setpoint"/>
+			<DO name="LoLimSpt" type="xLimSpt_1" desc="Low Limit setpoint"/>
+			<DO name="Blk" type="Blk_1" desc="Block operation"/>
+		</LNodeType>
+		<LNodeType id="FSPT_for_flim" lnClass="FSPT" desc="Wicket gate closure travel limit set-point">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Measured values-->
+			<DO type="SptMem_1" name="SptMem" desc="Setpoint in memory"/>
+		</LNodeType>
+		<LNodeType id="KVLV_relief" lnClass="KVLV" desc="Relief pressure valve">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Status information -->
+			<DO name="ClsPos" type="ClsPos_1"/>
+			<DO name="OpnPos" type="OpnPos_1"/>
+			<DO name="Mov" type="Mov_1"/>
+			<!-- Controls -->
+			<DO name="Opn" type="Opn_1"/>
+			<DO name="Cls" type="Cls_1"/>
+			<DO name="BlkOpn" type="BlkOpn_1"/>
+			<DO name="BlkCls" type="BlkCls_1"/>
+		</LNodeType>
+		<LNodeType id="TPOS_e" lnClass="TPOS" desc="valve displacement sensor">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>
+		<LNodeType id="TPOS_prs_sw" lnClass="TPOS" desc="Pressure switch">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>
+		<LNodeType id="TPRS_gauge" lnClass="TPRS" desc="Pressure-gauge">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_4"/>
+			<!-- Measured values -->
+			<DO name="Pres" type="Pres_3"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_4"/>
+		</LNodeType>
+		<LNodeType id="ZMOTa" lnClass="ZMOT" desc="Motor for the pump unit">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="OpTmh" type="OpTmh_1"/>
+			<!-- Controls -->
+			<DO name="DExt" type="DExt_1"/>
+		</LNodeType>
+		<!--  Data Objects - IEC 61850-7-3 -->
+		<DOType cdc="ASG" id="VlmCap_1" desc="Total Volume capacity"/>
+		<DOType cdc="ASG" id="xLimSpt_1" desc="Hight limit set point"/>
+		<DOType cdc="ASG" id="TmpAlmSpt_1" desc="Temperature alarm level reached"/>
+		<DOType cdc="ASG" id="TmpTrSpt_1" desc="Temperature trip level reached"/>
+		<DOType cdc="DPC" id="Operate_1" desc="Operate pump"/>
+		<DOType cdc="DPC" id="ClsPos_1" desc="Closed end position reached (valve can not move further)"/>
+		<DOType cdc="DPC" id="OpnPos_1" desc="Open end position reached (valve can not move further)"/>
+		<DOType cdc="DPC" id="Opn_1" desc="Valve to full open position"/>
+		<DOType cdc="DPC" id="Cls_1" desc="Valve to full closed position"/>
+		<DOType cdc="ING" id="SmpRteSet_1" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_1" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_2" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_3" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRte_4" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRteRng_1" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_2" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_3" desc="Available sampling rate range"/>
+		<DOType cdc="ING" id="SmpRteRng_4" desc="Available sampling rate range"/>
+		<DOType cdc="INC" id="Mod_1" desc="Mode"/>
+		<DOType cdc="INS" id="Beh_1" desc="Behaviour"/>
+		<DOType cdc="INS" id="Health_1" desc="Health"/>
+		<DOType cdc="INS" id="TnkTyp_1" desc="Type of tank (pressure only, level only, both pressure and level)"/>
+		<DOType cdc="INS" id="OpCnt_1" desc="Operation counter"/>
+		<DOType cdc="INS" id="OpTmh_1" desc="Operation time"/>
+		<DOType cdc="LPL" id="NamPlt_1" desc="Name plate"/>
+		<DOType cdc="MV" id="Pres_1" desc="Pressure in the tank"/>
+		<DOType cdc="MV" id="LevPc_1" desc="Level in the tank (as percentage of full
+ tank level)"/>
+		<DOType cdc="MV" id="Out_1" desc="Output signal"/>
+		<DOType cdc="MV" id="SptMem_1" desc="Set point in memory"/>
+		<DOType cdc="MV" id="Vlm_1" desc="Volume of media in tank"/>
+		<DOType cdc="MV" id="Tmp_1" desc="Temperature of the media in the tank"/>
+		<DOType cdc="MV" id="Tmp_2" desc="Temperature (C)"/>
+		<DOType cdc="SAV" id="LevPc_2" desc="Level (percentage)"/>
+		<DOType cdc="SAV" id="PosPc_1" desc="Position given as percentage of full movement"/>
+		<DOType cdc="SAV" id="Pres_2" desc="Pressure of media [Pa]"/>
+		<DOType cdc="SAV" id="Pres_3" desc="Pressure of media [Pa]"/>
+		<DOType cdc="SPC" id="Blk_1" desc="Block operation"/>
+		<DOType cdc="SPC" id="BlkOpn_1" desc="Block opening of the valve"/>
+		<DOType cdc="SPC" id="BlkCls_1" desc="Block closing of the valve"/>
+		<DOType cdc="SPC" id="DExt_1" desc="De-excitation"/>
+		<DOType cdc="SPS" id="BlkSt_2" desc="The pump is blocked from operation"/>
+		<DOType cdc="SPS" id="xLim_1" desc="Limit reached"/>
+		<DOType cdc="SPS" id="Op_1" desc="Level of action reached"/>
+		<DOType cdc="SPS" id="ACAlm_1" desc="AC supply failure (fuse or other problem)"/>
+		<DOType cdc="SPS" id="ACAlm_2" desc="AC supply failure (fuse or other problem)"/>
+		<DOType cdc="SPS" id="Alm_1" desc="Temperature alarm level reached"/>
+		<DOType cdc="SPS" id="Trip_1" desc="Temperature trip level reached"/>
+		<DOType cdc="SPS" id="MotPro_1" desc="Motor protection tripped"/>
+		<DOType cdc="SPS" id="MotPro_2" desc="Motor protection tripped"/>
+		<DOType cdc="SPS" id="FilAlm_1" desc="Filter alarm"/>
+		<DOType cdc="SPS" id="Loc_1" desc="Local operation selected"/>
+		<DOType cdc="SPS" id="Mov_1" desc="Valve is moving"/>
+		<DOType cdc="SPS" id="Stuck_1" desc="Valve is blocked (can not move from present position)"/>
+	</DataTypeTemplates>
+</SCL>

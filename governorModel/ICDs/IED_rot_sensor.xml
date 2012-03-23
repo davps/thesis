@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SCL xmlns="http://www.iec.ch/61850/2006/SCL" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iec.ch/61850/2006/SCL SCL.xsd">
+	<Header id="1">
+		<Text>DataTypeTemplate de la parte hidráulica del regulador de velocidad</Text>
+		<History>
+			<Hitem when="22/10/2010" revision="1" version="1.0">
+				Empezé a construir este ICD a partir del ICD del regulador de velocidad.
+			</Hitem>
+		</History>
+	</Header>
+	<Communication>
+		<SubNetwork name="SN1">
+			<ConnectedAP iedName="IED_MAIN_TNK" apName="AP1">
+				<Address>
+					<P type="IP">192.168.10.1</P>
+					<P type="IP-SUBNET">0.0.0.0</P>
+					<P type="IP-GATEWAY">0.0.0.0</P>
+				</Address>
+			</ConnectedAP>
+		</SubNetwork>
+	</Communication>
+	<IED name="IEDsensRot" configVersion="1" desc="IED sensor de rotación" manufacturer="David">
+		<Services>
+			<DynAssociation/>
+			<GetDataObjectDefinition/>
+			<DataObjectDirectory/>
+			<GetDataSetValue/>
+			<SetDataSetValue/>
+			<DataSetDirectory/>
+			<ConfDataSet max="50" maxAttributes="250"/>
+			<GetDirectory/>
+			<ReadWrite/>
+			<ConfReportControl max="7"/>
+			<GetCBValues/>
+			<ReportSettings intgPd="Dyn" trgOps="Dyn" bufTime="Dyn" optFields="Dyn" rptID="Dyn" datSet="Fix" cbName="Fix"/>
+			<GSESettings appID="Fix" cbName="Fix" dataLabel="Dyn" datSet="Fix"/>
+			<GOOSE max="5"/>
+			<FileHandling/>
+			<ConfLNs fixLnInst="true" fixPrefix="true"/>
+		</Services>
+		<AccessPoint name="AP1">
+			<Server>
+				<Authentication/>
+				<LDevice inst="1" ldName="LD1" desc="L\'imites de los valores t\'ipicos de ajuste">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN inst="1" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="1" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="2" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="2" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="3" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="3" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="4" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="4" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="5" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="5" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="6" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="6" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="7" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="7" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="8" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="8" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="9" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="9" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+					<LN inst="10" lnType="FLIM_tipical" lnClass="FLIM" prefix="Spd_" desc="L\'imite de la velocidad"/>
+					<LN inst="10" lnType="FSPT_1" lnClass="FSPT" prefix="Spd_" desc="Punto configurable de la velocidad"/>
+				</LDevice>
+				<LDevice inst="2" ldName="LD2" desc="L\'imites de valores de ajuste">
+					<LN0 lnType="LLN0_1" inst="" lnClass="LLN0"/>
+					<LN lnType="HSPD_1" inst="1" lnClass="HSPD" prefix="Spd_" desc="Speed monitoring" />
+					<LN lnType="TRTN_1" inst="1" lnClass="TRTN" prefix="Spd_" desc="Tacometer" />
+				</LDevice>
+			</Server>
+		</AccessPoint>
+	</IED>
+	<DataTypeTemplates>
+		<LNodeType id="LLN0_1" lnClass="LLN0">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+		</LNodeType>
+		<LNodeType id="FLIM_tipical" lnClass="FLIM" desc="Limits of typical values">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO type="HiLim_typical" name="HiLim" desc="High limit reached (input signal above limit)"/>
+			<DO type="LoLim_typical" name="LoLim" desc="Low limit reached (input signal below limit)"/>
+			<!--Measured values-->
+			<DO type="Out_typical" name="Out" desc="Output signal"/>
+			<!--Settings-->
+			<DO type="HiLimSpt_typical" name="HiLimSpt" desc="High limit set point"/>
+			<DO type="LoLimSpt_typical" name="LoLimSpt" desc="Minimum limit set point"/>
+		</LNodeType>
+		<LNodeType id="FSPT_1" lnClass="FSPT" desc="Set point control function">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Measured value-->
+			<DO type="SptMem_1" name="SptMem"/>
+		</LNodeType>
+		<LNodeType id="TRTN_1" lnClass="TRTN" desc="Tacometer">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO type="SmpRteRng_1" name="SmpRteRng"/>
+			<!--Measured values-->
+			<DO type="Spd_1" name="Hz"/>
+			<!--Settings-->
+			<DO type="SmpRte_1" name="SmpRte"/>
+		</LNodeType>
+		<LNodeType id="HSPD_1" lnClass="HSPD">
+			<!--Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO type="SmpRteRng_1" name="SmpRteRng"/>
+			<!--TODO: falta completar bien-->
+		</LNodeType>
+		<!--  Data Objects - IEC 61850-7-3 -->
+		<DOType cdc="ASG" id="HiLimSpt_typical"/>
+		<DOType cdc="ASG" id="LoLimSpt_typical"/>
+		<DOType cdc="ASG" id="Kp_pid" desc="Proportional gain"/>
+		<DOType cdc="ASG" id="Kl_pid" desc="Integral gain"/>
+		<DOType cdc="ING" id="PidAlg_pid" desc="PID"/>
+		<DOType cdc="ING" id="SmpRte_1" desc="Sampling rate setting"/>
+		<DOType cdc="ING" id="SmpRteRng_1" desc="Available sampling rate range"/>
+		<DOType cdc="INC" id="Mod_1" desc="Mode"/>
+		<DOType cdc="INS" id="Beh_1" desc="Behaviour"/>
+		<DOType cdc="INS" id="Health_1" desc="Health"/>
+		<DOType cdc="LPL" id="NamPlt_1" desc="Name plate"/>
+		<DOType cdc="MV" id="Out_typical"/>
+		<DOType cdc="MV" id="SptMem_1" desc="Set point in memory"/>
+		<DOType cdc="MV" id="Out_pid" desc="PID output"/>
+		<DOType cdc="MV" id="PAct_pid" desc="Proportional action"/>
+		<DOType cdc="MV" id="IAct_pid" desc="Integral action"/>
+		<DOType cdc="MV" id="DAct_pid" desc="Derivative action"/>
+		<DOType cdc="MV" id="P_pid" desc="P output"/>
+		<DOType cdc="MV" id="I_pid" desc="I output"/>
+		<DOType cdc="MV" id="D_pid" desc="D output"/>
+		<DOType cdc="SPS" id="HiLim_typical"/>
+		<DOType cdc="SPS" id="LoLim_typical"/>
+		<DOType cdc="SAV" id="Spd_1" desc="Rotational speed (Hz)"/>
+	</DataTypeTemplates>
+</SCL>

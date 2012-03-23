@@ -1,0 +1,433 @@
+<Substation desc="" name="">
+  <Text source="http://tempuri.org">
+    <ANY-ELEMENT/>
+  </Text>
+  <Private source="http://tempuri.org" type="">
+    <ANY-ELEMENT/>
+  </Private>
+  <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+    <Text source="http://tempuri.org">
+      <ANY-ELEMENT/>
+    </Text>
+    <Private source="http://tempuri.org" type="">
+      <ANY-ELEMENT/>
+    </Private>
+  </LNode>
+  <PowerTransformer desc="" name="" type="PTR" virtual="false">
+    <Text source="http://tempuri.org">
+      <ANY-ELEMENT/>
+    </Text>
+    <Private source="http://tempuri.org" type="">
+      <ANY-ELEMENT/>
+    </Private>
+    <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+    </LNode>
+    <TransformerWinding desc="" name="" type="PTW" virtual="false">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+      <Terminal bayName="" cNodeName="" connectivityNode="" desc="" name="" substationName="" voltageLevelName="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </Terminal>
+      <SubEquipment desc="" name="" phase="none" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+      </SubEquipment>
+      <TapChanger desc="" name="" type="LTC" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+      </TapChanger>
+    </TransformerWinding>
+  </PowerTransformer>
+  <GeneralEquipment desc="" name="" type="AXN" virtual="false">
+    <Text source="http://tempuri.org">
+      <ANY-ELEMENT/>
+    </Text>
+    <Private source="http://tempuri.org" type="">
+      <ANY-ELEMENT/>
+    </Private>
+    <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+    </LNode>
+  </GeneralEquipment>
+  <VoltageLevel desc="" name="">
+    <Text source="http://tempuri.org">
+      <ANY-ELEMENT/>
+    </Text>
+    <Private source="http://tempuri.org" type="">
+      <ANY-ELEMENT/>
+    </Private>
+    <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+    </LNode>
+    <PowerTransformer desc="" name="" type="PTR" virtual="false">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+      <TransformerWinding desc="" name="" type="PTW" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+        <Terminal bayName="" cNodeName="" connectivityNode="" desc="" name="" substationName="" voltageLevelName="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </Terminal>
+        <SubEquipment desc="" name="" phase="none" virtual="false">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+          <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+          </LNode>
+        </SubEquipment>
+        <TapChanger desc="" name="" type="LTC" virtual="false">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+          <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+          </LNode>
+        </TapChanger>
+      </TransformerWinding>
+    </PowerTransformer>
+    <GeneralEquipment desc="" name="" type="AXN" virtual="false">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+    </GeneralEquipment>
+    <Voltage multiplier="" unit="V">0.0</Voltage>
+    <Bay desc="" name="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+      <PowerTransformer desc="" name="" type="PTR" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+        <TransformerWinding desc="" name="" type="PTW" virtual="false">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+          <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+          </LNode>
+          <Terminal bayName="" cNodeName="" connectivityNode="" desc="" name="" substationName="" voltageLevelName="">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+          </Terminal>
+          <SubEquipment desc="" name="" phase="none" virtual="false">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+            <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+              <Text source="http://tempuri.org">
+                <ANY-ELEMENT/>
+              </Text>
+              <Private source="http://tempuri.org" type="">
+                <ANY-ELEMENT/>
+              </Private>
+            </LNode>
+          </SubEquipment>
+          <TapChanger desc="" name="" type="LTC" virtual="false">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+            <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+              <Text source="http://tempuri.org">
+                <ANY-ELEMENT/>
+              </Text>
+              <Private source="http://tempuri.org" type="">
+                <ANY-ELEMENT/>
+              </Private>
+            </LNode>
+          </TapChanger>
+        </TransformerWinding>
+      </PowerTransformer>
+      <GeneralEquipment desc="" name="" type="AXN" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+      </GeneralEquipment>
+      <ConductingEquipment desc="" name="" type="CBR" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+        <Terminal bayName="" cNodeName="" connectivityNode="" desc="" name="" substationName="" voltageLevelName="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </Terminal>
+        <SubEquipment desc="" name="" phase="none" virtual="false">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+          <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+            <Text source="http://tempuri.org">
+              <ANY-ELEMENT/>
+            </Text>
+            <Private source="http://tempuri.org" type="">
+              <ANY-ELEMENT/>
+            </Private>
+          </LNode>
+        </SubEquipment>
+      </ConductingEquipment>
+      <ConnectivityNode desc="" name="" pathName="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+      </ConnectivityNode>
+    </Bay>
+  </VoltageLevel>
+  <Function desc="" name="">
+    <Text source="http://tempuri.org">
+      <ANY-ELEMENT/>
+    </Text>
+    <Private source="http://tempuri.org" type="">
+      <ANY-ELEMENT/>
+    </Private>
+    <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+    </LNode>
+    <SubFunction desc="" name="">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+      <GeneralEquipment desc="" name="" type="AXN" virtual="false">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+        <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+          <Text source="http://tempuri.org">
+            <ANY-ELEMENT/>
+          </Text>
+          <Private source="http://tempuri.org" type="">
+            <ANY-ELEMENT/>
+          </Private>
+        </LNode>
+      </GeneralEquipment>
+    </SubFunction>
+    <GeneralEquipment desc="" name="" type="AXN" virtual="false">
+      <Text source="http://tempuri.org">
+        <ANY-ELEMENT/>
+      </Text>
+      <Private source="http://tempuri.org" type="">
+        <ANY-ELEMENT/>
+      </Private>
+      <LNode desc="" iedName="None" ldInst="" lnClass="LPHD" lnInst="" lnType="" prefix="">
+        <Text source="http://tempuri.org">
+          <ANY-ELEMENT/>
+        </Text>
+        <Private source="http://tempuri.org" type="">
+          <ANY-ELEMENT/>
+        </Private>
+      </LNode>
+    </GeneralEquipment>
+  </Function>
+</Substation>

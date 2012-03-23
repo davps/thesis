@@ -1,9 +1,0 @@
-<Substation name="S12" desc="Baden">
-	<VoltageLevel name="D1" desc="Voltage level of the substation">
-		<!-- childs here -->
-	</VoltageLevel>
-	<VoltageLevel name="E1" desc="Voltage level of the substation">
-		<!-- childs here -->
-	</VoltageLevel>
-</Substation>
-	

@@ -1,0 +1,12 @@
+<LNodeType desc="Pressure switch" id="TPOS_prs_sw" lnClass="TPOS">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<DO name="SmpRteRng" type="SmpRteRng_1"/>
+			<!-- Measured values -->
+			<DO name="PosPc" type="PosPc_1"/>
+			<!-- Settings -->
+			<DO name="SmpRte" type="SmpRte_1"/>
+		</LNodeType>

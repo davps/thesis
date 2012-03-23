@@ -1,0 +1,2 @@
+<LN desc="(DA) Pressure switch" inst="7" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>
+<LN desc="(LO) Pressure switch" inst="8" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>

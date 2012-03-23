@@ -1,0 +1,38 @@
+\section{Datos del sistema}
+
+%Uno de los primeros pasos del proceso de ingeniería 
+%IEC 61850 consiste en identificar los datos
+%disponibles, y en base a estos datos, determinar 
+%los nodos lógicos correspondientes.
+
+En este trabajo se toma como punto de partida los documentos
+\emph{Itaipu, aspectos destacados de su ingeniería} \cite{Itaipu:195860C8841ER0},
+\emph{Governing Diagram} \cite{Itaipu:5215DF71167I1R1}, y 
+\emph{Governing Diagram -- Description} \cite{Itaipu:52151071168i1r1}, 
+donde ya se detallan todos los datos del regulador
+de velocidad. Muchos de estos datos no necesariamente
+se envían por la red. Se ha diseñado el modelo de  
+todos los datos posibles para tener un mayor
+grado de virtualización de los sistemas reales, 
+de este modo, la programación de las funciones
+de control dentro de los IEDs manejan 
+datos semánticos que podrían facilitar 
+el diseño de los bloques de control 
+dentro del IED o también el monitoreo del sistema.
+
+Los nodos lógicos son presentados en un formato tabla. El diseño del modelo IEC 61850 
+presentado en este trabajo se basa en los modelos de nodos lógicos presentados por esta norma. En 
+otras palabras, la combinación seleccionada de nodos lógicos (modelos de información definidos por la norma y presentados como
+\textbf{DataTypeTemplates} en este trabajo) constituye el diseño del sistema (modelo de información del sistema, presentado como
+instancias de nodos lógicos). En resumen, en este capítulo se utilizan:
+  
+\begin{itemize}
+	\item Tablas: Enumeran las instancias de un determinado nodo lógico. Las descripciones incluyen los datos de las unidades generadoras
+	de Itaipu.
+	\item DataTypeTemplates: Plantillas \textbf{LNType}, del elemento \textbf{DataTypeTemplates}. Estos modelos son extraidos del apartado 7-4-10 
+	de la norma IEC 61850 y contiene las descripciones proveidas por esta norma, sin incluir los datos de las unidades generadoras de Itaipu. Cuando 
+	el lector desee conocer la aplicación de estas plantillas de nodos lógicos deberá observar la tabla de instancias del nodo lógico. 
+	\item Descripción en \GLS{SCL}: Para ofrecer una descripción formal este trabajo también presenta el diseño de los modelos 
+	de plantillas e instancias usando \GLS{SCL}, que es el lenguaje definido por la norma IEC 61850.
+\end{itemize}
+

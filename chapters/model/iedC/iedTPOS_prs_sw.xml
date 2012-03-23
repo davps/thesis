@@ -1,0 +1,4 @@
+<LN desc="(DE) Pressure switch" inst="29" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>
+<LN desc="(DF) Pressure switch" inst="30" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>
+<LN desc="(DG) Pressure switch" inst="31" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>
+<LN desc="(LM) Pressure switch" inst="32" lnClass="TPOS" lnType="TPOS_prs_sw" prefix="Pa_"/>

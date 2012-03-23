@@ -1,0 +1,67 @@
+\section{Estado del arte del proceso de ingeniería IEC 61850}
+	\label{sec:ENFOQUE-estado-del-arte-herramientas}
+
+Durante la experiencia adquirida 
+con el uso de herramientas de ingeniería IEC 61850 \cite{PTI:SESEP2010}, 
+el autor ha observado que 
+el uso de estas herramientas como apoyo a la elaboración
+de especificaciones y proyectos ejecutivos es un campo muy nuevo en el área de
+la ingeniería eléctrica. Todas las herramientas disponibles en el mercado se
+encuentran en sus primeras versiones estables, y existen muchas teorías,
+discusiones y debates vigentes respecto de las características necesarias en
+una herramienta de este tipo para soportar el proceso de ingeniería IEC 61850.       
+
+Las diversas herramientas tercerizadas existentes en el mercado implementan lo
+establecido abstractamente por la IEC61850 usando metodologías y flujos de
+trabajo diferentes en mayor o menor grado, en ocasiones con interpretaciones
+diferentes de lo establecido por la norma. Esto es natural, considerando la
+complejidad de la misma y que estas son las primeras implementaciones prácticas
+disponibles hoy en día como productos comerciales. 
+
+Las herramientas Helinks y Visual SCL
+proponen utilizar flujos de trabajo similares. Dichas 
+herramientas han sido diseñadas para asistir el proceso de
+ingeniería denominado \emph{``Top down engineering''}, 
+que consiste básicamente en la especificación del sistema 
+a través de la variante SSD, la selección e inclusión 
+de los ICDs que realizen las funciones definidas en el SSD,
+y la configuración completa del sistema a través de 
+la variante SCD donde se realizan referencias cruzadas 
+entre los archivos ICD y el SSD.
+
+La herramienta H\&S STS fue diseñada para trabajar con 
+el mismo flujo de trabajo que las dos herramientas arriba 
+mencionadas, pero como paso alternativo, propone
+que el proyectista diseñe los 
+de ICDs en modo gráfico a partir del SSD, 
+para especificar los IEDs (con sus ICDs)
+a ser comprados para el proyecto. De hecho, esto también puede
+ser realizado en las herramientas anteriores, pero no fueron 
+optimizadas para ello, por lo tanto, no dan mucha asistencia 
+al proyectista.   
+
+La herramienta Kalkitech SCL Manager también propone el mismo 
+flujo de trabajo que las dos primeras herramientas mencionadas,
+y además tiene un módulo para crear variantes ICD. 
+
+La herramienta de ingeniería Atlan61850 propone iniciar 
+el proceso de ingeniería con la inclusión de los ICDs 
+en el proyecto, omitiendo el uso de la variante SSD, 
+y creando directamente los CIDs
+correspondientes. A este enfoque se lo denomina
+\emph{``Bottom up engineering''}.
+
+El autor de este trabajo ha analizado las posiblidades de 
+utilizar estas herramientas durante el proceso de ingeniería,
+pero debido a las dificultades encontradas (Helinks no posee 
+el nodo lógico \textbf{KTNK}, en la versión demo de Kalkitech SCL Manager
+no es posible guardar el proyecto, en la versión demo de H\&S STS
+se habilitan menos de una decena de nodos lógicos de subestaciones,
+y la herramienta Atlan61850 acepta los ICDs y XSDs desarrollados por el 
+autor pero requiere la profundidad del ICD hasta los \textbf{DAI}
+para manejar todos los puntos del sistema)
+el autor no ha utilizado una sola herramienta, 
+sino que utiliza un enfoque mixto 
+usando varias herramientas para definir un nuevo enfoque, 
+adecuado al problema planteado, que será explicado en este capítulo.
+

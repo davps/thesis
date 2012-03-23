@@ -1,0 +1,9 @@
+<LNodeType desc="Level at over threshold" id="FXOT_1" lnClass="FXOT">
+			<!-- Common logical node information -->
+			<DO name="Mod" type="Mod_1"/>
+			<DO name="Beh" type="Beh_1"/>
+			<DO name="Health" type="Health_1"/>
+			<DO name="NamPlt" type="NamPlt_1"/>
+			<!--Status information-->
+			<DO name="Op" type="Op_1"/>
+		</LNodeType>

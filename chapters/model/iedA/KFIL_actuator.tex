@@ -1,0 +1,59 @@
+
+\subsection{Nodo l\'ogico: 			 KFIL}
+
+    \subsubsection{Instancias del nodo l\'ogico KFIL}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{6.8cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{IED Logical Nodes} } \\
+            \hline
+            \textbf{LN Name} & \textbf{Logical Device Allocation} & \textbf{Code and description} \\
+            \hline
+            Act\_KFIL4 & LD5filters & (10) Twin filter for the supply of actuator EA \\
+            \hline
+            Act\_KFIL5 & LD5filters & (10) Twin filter for the supply of actuator EA \\
+            \hline
+    \end{tabular}
+    \caption{Instancias KFIL en el IED IEDMainTnk}
+    \label{table:lnInstKFIL_actuator}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:scliedKFIL,
+            caption=Instancias KFIL representadas en SCL
+            ]{chapters/model/iedA/iedKFIL_actuator.xml}
+    
+    \subsubsection{DataTypeTemplate}
+    \begin{table}[H]
+    \begin{center}
+    \begin{tabular}{|l|l|p{8.5cm}|}
+            \hline
+            \multicolumn{3}{|c|}{\cellcolor[gray]{0.8} \textbf{ KFIL}  - Filter for the supply of the actuator} \\
+            \hline
+            \textbf{Attribute Name} & \textbf{Attr. Type} & \textbf{Explanation} \\
+            \hline 
+            Mod & INC & Mode \\
+            \hline
+            Beh & INS & Behaviour \\
+            \hline
+            Health & INS & Health \\
+            \hline
+            NamPlt & LPL & Name plate \\
+            \hline
+            ACAlm & SPS & AC supply failure (fuse or other problem) \\
+            \hline
+            MotPro & SPS & Motor protection tripped \\
+            \hline
+            FilAlm & SPS & Filter alarm \\
+            \hline
+    \end{tabular}
+    \caption{Plantilla KFIL del IED IEDMainTnk}
+    \label{table:lnTypeKFIL_actuator}
+    \end{center}
+    \end{table}
+    
+    \lstinputlisting[label=code:sclKFIL,
+            caption=KFIL - Filter for the supply of the actuator - Representaci\'on en SCL
+            ]{chapters/model/iedA/KFIL.xml}
+    
