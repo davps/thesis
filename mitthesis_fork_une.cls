@@ -488,7 +488,8 @@ grado de
 %% page.
 %% Krishna Sethuraman (1990)
 \def\endabstractpage{\end{abstract}\noindent
- \unvcopy\@abstractsupervisor \newpage}
+ %\unvcopy\@abstractsupervisor %Quité esta linea para seguir los estandares de la UNE
+ \newpage}
 
 %% This counter is used to save the page number for the second copy of
 %% the abstract.
