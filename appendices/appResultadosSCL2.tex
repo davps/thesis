@@ -77,7 +77,7 @@ definidos en IEC 61850-7-410 \cite{IEC61850-7-410:2007}. En
 los demás ficheros \emph{XSD} sólo se ha modificado
 el espacio de nombres, que originalmente estaba
 definido con la URL de 2006 en \cite{IEC61850-6:2004},
-y el autor de este trabajo cambió dicho espacio 
+y en el presente trabajo se cambió dicho espacio 
 de nombres para la URL de 2003 de la iec, 
 porque el la herramienta de ingeniería Atlan61850
 sólo aceptaba este espacio de nombres. Con la herramienta
@@ -85,14 +85,15 @@ Atlan61850 fue obtenida la figura \ref{fig:LNodes-reg-veloc}
 (y luego han sido retocados con otro software de propósito general 
 para la edición de imágenes).
 
- 
-El autor de este trabajo tiene entendido de que
-la mejor práctica es utilizar el fichero XSD 
+Está claro que 
+utilizar el fichero XSD 
 \emph{SCL\_Maintenance} para 
-realizar estas modificaciones. Dicho 
+realizar estas modificaciones
+es una buena práctica. Dicho 
 enfoque será considerado por el autor para un 
 trabajo futuro (los resultados son los mismos,
-sólo cambia la modularidad de las definciones).
+sólo cambia la modularidad del código fuente 
+donde se encuentran las definciones).
 
 	\subsection{SCL.xsd}
 		\lstinputlisting[label=cod:scl-xsd,
@@ -104,4 +105,3 @@ sólo cambia la modularidad de las definciones).
 		caption=SCL\_Enums.xsd]
 		{governorModel/xsd2003/SCL_Enums.xsd} 
 
-	
