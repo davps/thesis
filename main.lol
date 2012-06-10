@@ -90,7 +90,7 @@
 \contentsline {lstlisting}{\numberline {5.88}TRTN - Tacometer - Representaci\'on en SCL}{187}{lstlisting.5.88}
 \contentsline {lstlisting}{\numberline {5.89}Instancias HSPD representadas en SCL}{188}{lstlisting.5.89}
 \contentsline {lstlisting}{\numberline {5.90}HSPD - - Representaci\'on en SCL}{189}{lstlisting.5.90}
-\contentsline {lstlisting}{\numberline {A.1}SCL.xsd}{264}{lstlisting.Alph1.1}
-\contentsline {lstlisting}{\numberline {A.2}SCL\_Enums.xsd}{266}{lstlisting.Alph1.2}
-\contentsline {lstlisting}{\numberline {B.1}Elemento \emph {Substation} con profundidad completa}{285}{lstlisting.Alph2.1}
-\contentsline {lstlisting}{\numberline {B.2}Elemento \emph {IED} con profundidad completa}{298}{lstlisting.Alph2.2}
+\contentsline {lstlisting}{\numberline {A.1}SCL.xsd}{269}{lstlisting.Alph1.1}
+\contentsline {lstlisting}{\numberline {A.2}SCL\_Enums.xsd}{271}{lstlisting.Alph1.2}
+\contentsline {lstlisting}{\numberline {B.1}Elemento \emph {Substation} con profundidad completa}{290}{lstlisting.Alph2.1}
+\contentsline {lstlisting}{\numberline {B.2}Elemento \emph {IED} con profundidad completa}{303}{lstlisting.Alph2.2}
