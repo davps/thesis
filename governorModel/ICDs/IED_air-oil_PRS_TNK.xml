@@ -10,6 +10,9 @@
 				TODO: Falta corregir los números de instancias de cada nodo lógico.
 				TODO: Falta eliminar los DataTypeTemplates que no se usan aqui.
 			</Hitem>
+			<Hitem when="01/11/2011" revision="3" version="1.0">
+				Este es el SCL candidato para la versión final.
+			</Hitem>
 		</History>
 	</Header>
 	<Communication>
@@ -40,7 +43,11 @@
 			<GSESettings appID="Fix" cbName="Fix" dataLabel="Dyn" datSet="Fix"/>
 			<GOOSE max="5"/>
 			<FileHandling/>
-			<ConfLNs fixLnInst="true" fixPrefix="true"/>
+			<ConfLNs fixLnInst="true" fixPrefix="false"/>
+			<SMVSettings smpRate="Conf">
+				<SmpRate>256</SmpRate>
+				<SmpRate>80</SmpRate>
+			</SMVSettings>
 		</Services>
 		<AccessPoint name="AP1">
 			<Server>

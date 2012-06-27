@@ -5,5 +5,24 @@
 			<DO name="Health" type="Health_1"/>
 			<DO name="NamPlt" type="NamPlt_1"/>
 			<DO name="SmpRteRng" type="SmpRteRng_1"/>
-			<!--TODO: falta completar bien-->
+			<!-- Status information -->
+			<DO name="StndStl" type="status_HSPD"/>
+			<DO name="SpdCrp" type="status_HSPD"/>
+			<DO name="SpdBrk" type="status_HSPD"/>
+			<DO name="SpdLub" type="status_HSPD"/>
+			<DO name="SpdLft" type="status_HSPD"/>
+			<DO name="SpdRB" type="status_HSPD"/>
+			<DO name="SpdExt" type="status_HSPD"/>
+			<DO name="SpdSyn" type="status_HSPD"/>
+			<DO name="SpdOvr" type="status_HSPD"/>
+			<DO name="DirRot" type="status_HSPD"/>
+			<DO name="SetSpdCrp" type="settings_HSPD"/>
+			<DO name="SetSpdBrk" type="settings_HSPD"/>
+			<DO name="SetSpdLub" type="settings_HSPD"/>
+			<DO name="SetSpdLft" type="settings_HSPD"/>
+			<DO name="SetSpdRb" type="settings_HSPD"/>
+			<DO name="SetSpdExt" type="settings_HSPD"/>
+			<DO name="SetSpdSyn" type="settings_HSPD"/>
+			<DO name="SetSpdOv" type="settings_HSPD"/>
+			<DO name="Spd" type="meas_spd"/>
 		</LNodeType>

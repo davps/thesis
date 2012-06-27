@@ -6,6 +6,9 @@
 			<Hitem when="22/10/2010" revision="1" version="1.0">
 				Empezé a construir este ICD a partir del ICD del regulador de velocidad.
 			</Hitem>
+			<Hitem when="01/11/2011" revision="3" version="1.0">
+				Este es el SCL candidato para la versión final.
+			</Hitem>
 		</History>
 	</Header>
 	<Communication>
@@ -21,22 +24,21 @@
 	</Communication>
 	<IED name="IEDsensRot" configVersion="1" desc="IED sensor de rotación" manufacturer="David">
 		<Services>
-			<DynAssociation/>
 			<GetDataObjectDefinition/>
 			<DataObjectDirectory/>
-			<GetDataSetValue/>
-			<SetDataSetValue/>
-			<DataSetDirectory/>
-			<ConfDataSet max="50" maxAttributes="250"/>
+			<ConfDataSet max="5" maxAttributes="50"/>
 			<GetDirectory/>
-			<ReadWrite/>
-			<ConfReportControl max="7"/>
+			<ConfReportControl max="5"/>
 			<GetCBValues/>
 			<ReportSettings intgPd="Dyn" trgOps="Dyn" bufTime="Dyn" optFields="Dyn" rptID="Dyn" datSet="Fix" cbName="Fix"/>
 			<GSESettings appID="Fix" cbName="Fix" dataLabel="Dyn" datSet="Fix"/>
 			<GOOSE max="5"/>
 			<FileHandling/>
-			<ConfLNs fixLnInst="true" fixPrefix="true"/>
+			<ConfLNs fixLnInst="true" fixPrefix="false"/>
+			<SMVSettings smpRate="Conf">
+				<SmpRate>256</SmpRate>
+				<SmpRate>80</SmpRate>
+			</SMVSettings>
 		</Services>
 		<AccessPoint name="AP1">
 			<Server>
@@ -114,7 +116,7 @@
 			<!--Measured values-->
 			<DO type="Spd_1" name="Hz"/>
 			<!--Settings-->
-			<DO type="SmpRte_1" name="SmpRte"/>
+			<DO type="StndStl" name="StndStl"/>
 		</LNodeType>
 		<LNodeType id="HSPD_1" lnClass="HSPD">
 			<!--Common logical node information -->
@@ -123,13 +125,33 @@
 			<DO name="Health" type="Health_1"/>
 			<DO name="NamPlt" type="NamPlt_1"/>
 			<DO type="SmpRteRng_1" name="SmpRteRng"/>
-			<!--TODO: falta completar bien-->
+			<!-- Status information -->
+			<DO type="status_HSPD" name="StndStl"/>
+			<DO type="status_HSPD" name="SpdCrp"/>
+			<DO type="status_HSPD" name="SpdBrk"/>
+			<DO type="status_HSPD" name="SpdLub"/>
+			<DO type="status_HSPD" name="SpdLft"/>
+			<DO type="status_HSPD" name="SpdRB"/>
+			<DO type="status_HSPD" name="SpdExt"/>
+			<DO type="status_HSPD" name="SpdSyn"/>
+			<DO type="status_HSPD" name="SpdOvr"/>
+			<DO type="status_HSPD" name="DirRot"/>
+			<DO type="settings_HSPD" name="SetSpdCrp"/>
+			<DO type="settings_HSPD" name="SetSpdBrk"/>
+			<DO type="settings_HSPD" name="SetSpdLub"/>
+			<DO type="settings_HSPD" name="SetSpdLft"/>
+			<DO type="settings_HSPD" name="SetSpdRb"/>
+			<DO type="settings_HSPD" name="SetSpdExt"/>
+			<DO type="settings_HSPD" name="SetSpdSyn"/>
+			<DO type="settings_HSPD" name="SetSpdOv"/>
+			<DO type="meas_spd" name="Spd"/>
 		</LNodeType>
 		<!--  Data Objects - IEC 61850-7-3 -->
 		<DOType cdc="ASG" id="HiLimSpt_typical"/>
 		<DOType cdc="ASG" id="LoLimSpt_typical"/>
 		<DOType cdc="ASG" id="Kp_pid" desc="Proportional gain"/>
 		<DOType cdc="ASG" id="Kl_pid" desc="Integral gain"/>
+		<DOType cdc="ASG" id="settings_HSPD" desc="HSPD settings"/>
 		<DOType cdc="ING" id="PidAlg_pid" desc="PID"/>
 		<DOType cdc="ING" id="SmpRte_1" desc="Sampling rate setting"/>
 		<DOType cdc="ING" id="SmpRteRng_1" desc="Available sampling rate range"/>
@@ -146,8 +168,10 @@
 		<DOType cdc="MV" id="P_pid" desc="P output"/>
 		<DOType cdc="MV" id="I_pid" desc="I output"/>
 		<DOType cdc="MV" id="D_pid" desc="D output"/>
+		<DOType cdc="MV" id="meas_spd" desc="Rotational speed of the shaft (r/s)"/>
 		<DOType cdc="SPS" id="HiLim_typical"/>
 		<DOType cdc="SPS" id="LoLim_typical"/>
+		<DOType cdc="SPS" id="status_HSPD" desc="HSPD status information"/>
 		<DOType cdc="SAV" id="Spd_1" desc="Rotational speed (Hz)"/>
 	</DataTypeTemplates>
 </SCL>

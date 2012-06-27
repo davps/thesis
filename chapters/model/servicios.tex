@@ -1,0 +1,106 @@
+\section{Servicios de comunicación}
+
+El modelo de los servicios de comunicación de los IEDs definidos en este trabajo
+son presentados a través de la variante SCL ISNP (sección \ref{sec:ied-simplificado-y-no-pre-configurado}), conforme al proceso de ingeniería
+definido en el capítulo \ref{ch:enfoque-del-autor}.
+
+En las siguientes subsecciones se presenta la descripción del modelo de servicios ACSI 
+utilizando una notación simple y amigable para el lector (formato tabla). Las definiciones 
+formales, presentadas en SCL, pueden ser encontradas en el apéndice \ref{app:resultados2-codigos-SCL}.
+ 
+
+\subsection{Servicios ACSI de los IEDs IEDRV, IEDMainTnk, IEDairOilTNK e IEDcmprsAirPlant}
+
+    \begin{table}[H]
+	\begin{center}    
+	\begin{tabular}{|l|p{8cm}|}
+	    \hline
+	    \multicolumn{2}{|c|}{\cellcolor[gray]{0.8}  \textbf{IED IEDRV - Servicios ACSI}  } \\
+	        \hline
+	        \textbf{Nombre del Servicio ACSI} & \textbf{Parámetros del servicio} \\
+	        \hline 
+	        DynAssociation &  \\
+	        \hline
+	        GetDataObjectDefinition &  \\
+	        \hline
+	        DataObjectDirectory &  \\
+	        \hline
+	        GetDataSetValue &  \\
+	        \hline
+	        SetDataSetValue &  \\
+	        \hline
+	        DataSetDirectory &  \\
+	        \hline
+	        ConfDataSet & max=50, maxAttributes=250 \\
+	        \hline
+	        GetDirectory &  \\
+	        \hline
+	        ReadWrite &  \\
+	        \hline
+	        ConfReportControl & max=7 \\
+	        \hline
+	        GetCBValues &  \\
+	        \hline
+	        ReportSettings & intgPd=Dyn, trgOps=Dyn, bufTime=Dyn, optFields=Dyn, rptID=Dyn, datSet=Fix, cbName=Fix \\
+	        \hline
+	        GSESettings & appID=Fix, cbName=Fix, dataLabel=Dyn, datSet=Fix \\
+	        \hline
+	        GOOSE & max=5 \\
+	        \hline
+	        FileHandling &  \\
+	        \hline
+	        ConfLNs & fixLnInst=true, fixPrefix=false \\
+	        \hline
+			SMVSettings & smpRate=Conf \\
+	        \hline
+	\end{tabular}
+    \caption{Servicios ACSI de los IEDs IEDRV, IEDMainTnk, IEDairOilTNK e IEDcmprsAirPlant}
+    \label{table:app-Servicios-acsi-IEDs}
+	\end{center}
+    \end{table}
+
+%\subsection{Servicios ACSI del IED IEDMainTnk}
+%\subsection{Servicios ACSI del IED IEDairOilTNK}
+%\subsection{Servicios ACSI del IED IEDcmprsAirPlant}
+
+\subsection{Servicios ACSI del IED IEDsensRot}
+
+    \begin{table}[H]
+	\begin{center}    
+	\begin{tabular}{|l|p{8cm}|}
+	    \hline
+	    \multicolumn{2}{|c|}{\cellcolor[gray]{0.8}  \textbf{IED IEDMainTnk - Servicios ACSI}  } \\
+	        \hline
+	        \textbf{Nombre del Servicio ACSI} & \textbf{Parámetros del servicio} \\
+	        \hline
+	        GetDataObjectDefinition &  \\
+	        \hline
+	        DataObjectDirectory &  \\
+	        \hline
+	        DataSetDirectory &  \\
+	        \hline
+	        ConfDataSet & max=5, maxAttributes=50 \\
+	        \hline
+	        GetDirectory &  \\
+	        \hline
+	        ConfReportControl & max=5 \\
+	        \hline
+	        GetCBValues &  \\
+	        \hline
+	        ReportSettings & intgPd=Dyn, trgOps=Dyn, bufTime=Dyn, optFields=Dyn, rptID=Dyn, datSet=Fix, cbName=Fix \\
+	        \hline
+	        GSESettings & appID=Fix, cbName=Fix, dataLabel=Dyn, datSet=Fix \\
+	        \hline
+	        GOOSE & max=5 \\
+	        \hline
+	        FileHandling &  \\
+	        \hline
+	        ConfLNs & fixLnInst=true, fixPrefix=false \\
+	        \hline
+			SMVSettings & smpRate=Conf \\
+	        \hline
+	\end{tabular}
+    \caption{Servicios ACSI para el IEDsensRot}
+    \label{table:app-Servicios-acsi-IEDsensRot}
+	\end{center}
+    \end{table}

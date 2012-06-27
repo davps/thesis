@@ -1,2 +1,0 @@
-\contentsline {todo}{{\color@box {}{orange}{\leavevmode {\color {orange}o}}\ Debo mejorar los labels de las tablas de nodos logicos que uso, incluyendo el nombre del IED en el label correspondiente, esto evitaria conflictos dados por labels repetidos si se utiliza un mismo template de LN en distintos IEDs. Actualmente el label se basa solo en el template, no en el iedName}}{29}{section*.10}
-\contentsline {todo}{{\color@box {}{orange}{\leavevmode {\color {orange}o}}\ actualizar urgente!}}{200}{section*.220}
