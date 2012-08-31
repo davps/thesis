@@ -13,17 +13,6 @@ be better again, but one step at a time.)
 The work herein is Copyright 2010, 2011, 2012 David Daniel Perez Sosa. 
 **No rights are given to reproduce or modify this work.**
 
-## Plagiarism
-
-Making the document available will create a verifiable history; 
-if people want to see the
-work I'm doing before it's ready to be published, I admire their investigative
-spirit.
-
-## LaTeX compilation
-
-You won't be able to compile it yourselves. Sorry.
-
 -----
  
 David Perez
